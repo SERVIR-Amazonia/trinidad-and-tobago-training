@@ -1,4 +1,4 @@
-Website for Barbados trainings.
+Website for Trinidad and Tobago trainings.
 
 Updates to be made:
 - [ ] add t&t 12 day overview
