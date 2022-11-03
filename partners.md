@@ -16,4 +16,4 @@ The CMO takes on a number of different roles within the Caribbean Community:
 3. It represents the regional meteorological community's interests in relation to international civil aviation matters. 
 4. It **works closely with regional agencies** involved in disaster preparedness, response and relief. 
 
-For more information about the CMO, please visit their website: http://www.cmo.org.tt/index.html
+For more information about the CMO, please visit their website: [http://www.cmo.org.tt/](http://www.cmo.org.tt/)
