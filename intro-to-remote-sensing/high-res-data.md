@@ -95,6 +95,8 @@ Use QGIS to find the mean and median NDVI values inside the protected areas with
 * *Hint 1: You will have to add the [PROTECTED AREA SHAPEFILE NAME] and [NON-PROTECTED AREA SHAPEFILE NAME] as two different layers in the project.*
 * *Hint 2: The Zonal Statistics tool will come in handy in this exercise.*  
 
+**Congratulations!** You completed the Introduction to Remote Sensing workshop. You can refer back to this material anytime you want throughout the learning series, and don’t forget to look through the Resources section to learn more about the material discussed in this lesson. Before you go, here is one final challenge problem:
+
 ### Challenge 4: Conduct analysis on your own study area!
 Try out each of the exercises from this lesson on your own study area. If you complete this challenge, share your maps and images with the workshop coordinator to get them featured on the website. 
 
