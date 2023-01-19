@@ -15,7 +15,7 @@ Some analyses require the detection of smaller objects on the ground, or more fr
 4. Calculate NDVI using Planet NICFI imagery. 
 
 ## PlanetScope Imagery
-PlanetScope is a constellation of around 130 Dove satellites, Planet’s signature 10x10x30 centimeter lightweight satellite. The immense number of satellites in this constellation allows for daily imaging of the entire Earth at approximately 3 meter spatial resolution. The table below summarizes the key differences between PlanetScope, Landsat 8, and Sentinel-2:
+PlanetScope is a constellation of around 130 Dove satellites, Planet’s signature 10 cm x 10 cm x 30 cm lightweight satellite. The immense number of satellites in this constellation allows for daily imaging of the entire Earth at approximately 3 meter spatial resolution. The table below summarizes the key differences between PlanetScope, Landsat 8, and Sentinel-2:
 
 | Satellite | Spatial Resolution | Temporal Resolution | Temporal Extent | Bands | 
 | --------- | ------------------ | ------------------- | --------------- | ----- |
@@ -29,7 +29,8 @@ PlanetScope is a constellation of around 130 Dove satellites, Planet’s signatu
 1. Open QGIS.
 2. Open a recent project or create a new one. 
 3. Click on `Plugins > Manage and Install Plugins...`
-4. In the search bar, type `Planet_Explorer`. [INSERT PLANET PLUGIN SCREENSHOT HERE]
+4. In the search bar, type `Planet_Explorer`.
+<img align="center" src="../images/intro-rs-images/planet-plugin.png"  vspace="10" width="600">
 5. Click `Install Plugin`. 
 6. Once the plugin is installed, follow the prompt in the Planet panel of the QGIS project to login to your QGIS account and start browsing the available data.
 
@@ -40,19 +41,19 @@ Another difference left out of the table in the previous section is each image s
 This exercise will explore the effect of differing remote sensing data projections and how to change a projection system so that all the data used in a project stays consistent.
 
 1. Open QGIS.
-2. Under `Recent Projects`, select `landsat-vis` and open it.
+2. Under `Recent Projects`, select `intro-remote-sensing` and open it.
 3. Click on `Layer > Add Layer > Add Raster Layer...` and click on `...` next to the `Raster dataset(s)` field to browse and select a file. 
-4. Navigate to [DATA FOLDER NAME] and select [PLANET TROPICAL BASEMAP SINGLE IMAGE TIF]. Click on the `Open` button and then click on `Add` to add the layer to the canvas. 
+4. Navigate to `intro-rs-data` and select `planet-analytical-monthly-09-2022.tif`. Click on the `Open` button and then click on `Add` to add the layer to the canvas. 
 5. **Inspect the image projection.** Toggle the layer on and off. What do you notice? The images don’t seem to be lining up quite right, most likely due to a difference in image projection. Let’s find out.
-    1. Right-click on [LANDSAT LAYER NAME]. Hover over `Layer CRS`. Note the first item listed in grey – that is the layer’s projected coordinate reference system (CRS).
-    2. Now, repeat the process for [PLANET LAYER NAME]. The listed CRS should be different – but why do the layers align? QGIS automatically reprojects layers based on the project projection so that layers will appear aligned, but they cannot be used for any type of analysis. 
-    3. Let’s visualize what it would look like if the layers were not automatically reprojected: right-click on [PLANET LAYER NAME]. Select `Set to [STEP 5A CRS]`. The layers should be completely misaligned!
+    1. Right-click on 'l8-sr-tc-negril`. Hover over `Layer CRS`. Note the first item listed in grey – that is the layer’s projected coordinate reference system (CRS).
+    2. Now, repeat the process for `planet-analytical-monthly-09-2022`. The listed CRS should be different – but why do the layers align? QGIS automatically reprojects layers based on the project projection so that layers will appear aligned, but they cannot be used for any type of analysis. 
+    3. Let’s visualize what it would look like if the layers were not automatically reprojected: right-click on `planet-analytical-monthly-09-2022`. Select `Set to EPSG:32618`. The layers should be completely misaligned!
 6. **Update the image projection.** In order to avoid the inconsistencies between data layers, we need to ensure that each layer is projected in the same way. 
-    1. Select [LANDSAT LAYER NAME].
+    1. Select `planet-analytical-monthly-09-2022`.
     2. Click on `Raster > Projections > Warp (Reproject)...`
-    3. Under the `Source CRS` field, select [ORIGINAL PROJECTION]. 
-    4. Under the `Target CRS` field, select [TARGET PROJECTION]. 
-    5. Next to the `Reprojected` field, click on `...` and navigate to [DATA FOLDER NAME]. Name the file [NAME] and press `Save`.
+    3. Under the `Source CRS` field, select `EPSG:3857`. 
+    4. Under the `Target CRS` field, select `EPSG:32618`. 
+    5. Next to the `Reprojected` field, click on `...` and navigate to the `outputs` directory. Name the file `planet-analytical-monthly-09-2022-reproj` and press `Save`.
     6. Click `Run`.
 7. Now, repeat step 5 with the reprojected layer. Notice that the projections are now the same. Save the project. 
 
@@ -65,35 +66,37 @@ Let’s revisit our research question one final time: **How does vegetation cove
 This exercise explains two methods for loading and using Planet data to calculate NDVI for Negril in QGIS.
 
 1. Open QGIS.
-2. Under `Recent Projects`, select `intro-to-rs` and open it.
+2. Under `Recent Projects`, select `intro-remote-sensing` and open it.
 3. Choose one of the following methods for calculation:
     1. **Stream NICFI data.** *This option requires an active Planet NICFI account.*
         1. Click on the `Log In` button in the Planet panel of QGIS and sign in with your Planet NICFI account. 
         2. Select the `Basemaps` tab. In the `Select Basemap` box next to the `Name` field, select `PS Tropical Normalized Analytic Monthly Monitoring`.
-        3. Check the box next to [MONTH, YEAR]. 
+        3. Check the box next to `September 2022`. 
         4. Click on the `Order` button.
         5. Select the option to `Create Streaming Connection(s)` and click `Next`.
         6. Press `Submit Order`.
-        7. The [PLANET BASEMAP LAYER NAME] should pop up in the `Layers` panel. It could take a minute to load. Press the grey arrow next to the layer name to expand the details below. 
+        7. The `PS Tropical Analytical Monthly Monitoring - September 2022` should pop up in the `Layers` panel. It could take a minute to load. Press the grey arrow next to the layer name to expand the details below. 
         8. Next to the `Processing:` field, select `ndvi`.
-        9. Next to the `Color ramp:` field, select `ndvi`. Save the project.
+        9. Next to the `Color ramp:` field, select `ndvi` or `rdylgrn`. 
+        10. Click `Submit Order`. Save the project.
     2. **Calculate NDVI layer.** *No account required for this option.*
         1. We will use the NDVI formula to create a new, single-band image showing the NDVI values for the region. Select `Processing > Toolbox` to open the QGIS toolbox. 
-        2. Either type in `Raster calculator` in the search box or navigate to `Raster analysis > Raster calculator` and double-click to open the tool. [IMAGE raster calculator] 
+        2. Either type in `Raster calculator` in the search box or navigate to `Raster analysis > Raster calculator` and double-click to open the tool. 
         3. In the calculator, you can either write your own expression or use a predefined expression. In the `Expression` field, copy and paste the following text: `(NIR - Red) / (NIR + Red)`
-        4. Now, highlight the first instance where it says `NIR` and double-click on [PLANET BASEMAP NIR BAND NAME] to replace it with the actual image band. Repeat for the other instance of `NIR`. [IMAGE expression w band subbed in]
-        5. Next, highlight the first instance where it says `Red` and double-click on [PLANET BASEMAP RED BAND NAME] to replace it with the actual image band. Repeat for the other instance of `Red`. [IMAGE complete expression]
-        6. Scroll down to the `Reference layer(s)` field. Click on `...` and check either the [PLANET BASEMAP NIR BAND NAME] or [PLANET BASEMAP RED BAND NAME]. Click `OK`.
-        7. Click on `... > Save to File...` next to the `Output` field. Name the file [NDVI PLANET IMAGE NAME] and click on `Save.` [IMAGE complete raster calc fields]
+        4. Now, highlight the first instance where it says `NIR` and double-click on `planet-analytical-monthly-09-2022@4` to replace it with the actual image band. Repeat for the other instance of `NIR`.
+        5. Next, highlight the first instance where it says `Red` and double-click on `planet-analytical-monthly-09-2022@3` to replace it with the actual image band. Repeat for the other instance of `Red`.
+        6. Scroll down to the `Reference layer(s)` field. Click on `...` and check either the `planet-analytical-monthly-09-2022@4` or `planet-analytical-monthly-09-2022@3`. Click `OK`.
+        7. Click on `... > Save to File...` next to the `Output` field. Save the file in the `outputs` field, name the file `planet-ndvi-09-2022`, and click on `Save.` 
         8. Click `Run`. Once the process has finished running (it may take a few minutes), click `Close` to close the window. Save the project.
         9. Customize the layer using the same color ramp you chose in Exercise 2.5. Save the project.
+
+<img align="center" src="../images/intro-rs-images/final-ndvi.png"  vspace="10" width="600">
 
 Now, toggle the layers on and off to compare the NDVI results between Landsat 8, Sentinel-2, and PlanetScope. How do they compare? Does the high resolution data give us additional insight or change our answer to the research question at all?
 
 ### Challenge 3: Quantify PlanetScope-derived NDVI.
 Use QGIS to find the mean and median NDVI values inside the protected areas within Jamaica and in the non-protected areas of Jamaica. Compare the values to see if there is a difference in vegetation levels between protected and non-protected areas. Do these values differ from the values calculated in Challenges 1 or 2?
-* *Hint 1: You will have to add the [PROTECTED AREA SHAPEFILE NAME] and [NON-PROTECTED AREA SHAPEFILE NAME] as two different layers in the project.*
-* *Hint 2: The Zonal Statistics tool will come in handy in this exercise.*  
+* *Hint 1: Follow the same process as Challenge 2 and 3.*
 
 **Congratulations!** You completed the Introduction to Remote Sensing workshop. You can refer back to this material anytime you want throughout the learning series, and don’t forget to look through the Resources section to learn more about the material discussed in this lesson. Before you go, here is one final challenge problem:
 
