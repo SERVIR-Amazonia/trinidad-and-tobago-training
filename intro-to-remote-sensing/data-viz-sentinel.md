@@ -59,7 +59,7 @@ This exercise provides a step-by-step process for creating and displaying a new,
 <img align="center" src="../images/intro-rs-images/ex-3.1-ndvi-expression.png"  vspace="10" width="600">
 
 10. Scroll down to the “Reference layer(s)” field. Click on “...” and check “s2-sr-negril-cloudfree-ndvi”. Click “OK.”
-11. Click on “... > Save to File…” next to the “Output” field. Name the file “s2-sr-ndvi-negril.” and click on “Save.”
+11. Click on “... > Save to File…” next to the “Output” field. Save the file to the `outputs` directory, name the file `s2-sr-ndvi-negril`, and click on `Save`.
 12. Click “Run.” Once the process has finished running, click “Close” to close the window. Save the project.
 <img align="center" src="../images/intro-rs-images/ex-3.1-ndvi-canvas.png"  vspace="10" width="600">
 
@@ -72,5 +72,5 @@ Toggle the Sentinel-2 and Landsat 8 NDVI layers on and off. How do these results
 
 Use QGIS to find the mean and median NDVI values inside the protected areas within Negril and in the non-protected areas of Negril. Compare the values to see if there is a difference in vegetation levels between protected and non-protected areas. Do these values differ from the values calculated in Challenge 1?
 
-* *Hint 1: You will have to add the negril-pa-shapefile.zip and the **non_protectedArea_savanna.shp** as two different layers in the project.*
-* *Hint 2: The Zonal Statistics tool will come in handy in this exercise.*
+* *Hint 1: The process is very similar to Challenge 1.*
+* *Hint 2: Save your results to an output file for easier comparison.*
