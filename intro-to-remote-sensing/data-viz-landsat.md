@@ -61,10 +61,10 @@ Examine the differences between the two images. Notice how the SR image appears 
 
 ### Exercise 2.2 Create a cloud-free true color image.
 
-This exercise will walk through how to create a true color composite image using Landsat 8 bands and remove clouds from the image using the Cloud Masking plugin. Check the link just to see some of the L8 spectral specifications https://www.usgs.gov/landsat-missions/landsat-8
+This exercise will walk through how to create a true color composite image using Landsat 8 bands and remove clouds from the image using the Cloud Masking plugin. Check the link just to see some of the L8 spectral specifications [https://www.usgs.gov/landsat-missions/landsat-8](https://www.usgs.gov/landsat-missions/landsat-8)
 
-1. Open QGIS
-2. Under “Recent Projects,” select “intro-to-remote-sensing” and open it.
+1. Open QGIS.
+2. Under “Recent Projects,” select `intro-to-remote-sensing` and open it.
 3. **Create a true color image**. This is the same process that was used to create the premade true color images used in Exercise 2.1.
     1. Select “Raster > Miscellaneous > Merge…”
     2. Click on the “...” next to the “Input layers” field.
@@ -90,10 +90,10 @@ This exercise will walk through how to create a true color composite image using
     7. Save the file in “intro-rs-data > outputs” and name it “l8-sr-tc-negril-cloudmasked.” Press Save.
     8. Click “Apply mask.” It may take a couple minutes to run.
     <img align="center" src="../images/intro-rs-images/ex-2.2-apply-cloudmask.png"  vspace="10" width="400">
-5. Repeat steps 7-9 from Exercise 2.1 to enhance the image, but adjust the “Cumulative count cut” values to **1.0** and **99.0**. Save the project.
+5. Repeat steps 7-9 from Exercise 2.1 to enhance the image, but adjust the “Cumulative count cut” values to **1.0** and **99.0**. You may need to lower the gamma value as well. Save the project.
 <img align="center" src="../images/intro-rs-images/ex-2.2-cloudmask-final.png"  vspace="10" width="600">
 
-Now we have a cloud-free, Landsat 8 surface reflectance image! Obviously there are some significant gaps where the clouds were present, so it’s usually best to mask out clouds and create a cloud-image composite over a particular season, or try to use images that have less than 30% (or a threshold of your choice) cloud cover to minimize the amount of data removal. Cloud masking is not a perfect science – sometimes you need to test out a number of different algorithms to find the one that best suits your data and study area. More information about cloud masking is available in the [Resources](https://eos.com/blog/cloud-mask/) section.
+Now we have a cloud-free, Landsat 8 surface reflectance image! Obviously there are some significant gaps where the clouds were present, so it’s usually best to mask out clouds and create a cloud-image composite over a particular season, or try to use images that have less than 30% (or a threshold of your choice) cloud cover to minimize the amount of data removal. Cloud masking is not a perfect science – sometimes you need to test out a number of different algorithms to find the one that best suits your data and study area.
 
 ## Vegetation Analysis: Part 1
 
@@ -116,7 +116,7 @@ This exercise will illustrate how to create a color infrared composite image usi
 <img align="center" src="../images/intro-rs-images/ex-2.3-ordered-nir-bands.png"  vspace="10" width="600">
 
 7. Under the “Input layers…” field, check the “Place each input file into a separate band” option to create one composite image.
-8. Finally, next to the “Merged” field, select the “... > Save to File…” to specify where you want the image saved. Save the image in [DATA FOLDER NAME] and input “l8-sr-nir-negril-2022-09-16” as the file name. Press “Save.”
+8. Finally, next to the “Merged” field, select the “... > Save to File…” to specify where you want the image saved. Save the image in `outputs` and input `l8-sr-nir-negril-2022-09-16` as the file name. Press “Save.”
 <img align="center" src="../images/intro-rs-images/ex-2.3-merge-options-final.png"  vspace="10" width="600">
 
 9. Press “Run” to create and load the image onto the canvas and click “Close” to close the “Merge” window.
@@ -124,7 +124,7 @@ This exercise will illustrate how to create a color infrared composite image usi
 
 Toggle the near-infrared layer on and off to compare the false color composite to the true color composite. Areas with dense, green vegetation should appear bright red, while non-productive or non-vegetated areas should appear somewhere between a brown to a white-ish blue color. The false color composite makes it much easier to quickly identify highly productive, vegetated areas.
 
-**Band math**. The true color and color infrared visualizations did not require any calculations. Instead, the bands could be arranged in a particular order to make the image appear differently. [RESOURCE NAME, LINK] provides a reference for other common band combinations for remote sensing data visualization. More complex analysis requires more than a rearrangement of bands – oftentimes, bands must be combined using an equation whose output is stored in a new band and corresponds to some sort of analysis metric. 
+**Band math**. The true color and color infrared visualizations did not require any calculations. Instead, the bands could be arranged in a particular order to make the image appear differently. This [website](https://gisgeography.com/landsat-8-bands-combinations/) provides a reference for other common band combinations for Landsat 8 data visualization. More complex analysis requires more than a rearrangement of bands – oftentimes, bands must be combined using an equation whose output is stored in a new band and corresponds to some sort of analysis metric. 
 
 One of the most common indices for visualizing vegetation in an image is the Normalized Difference Vegetation Index (NDVI). NDVI is calculated using the following equation:
 
@@ -145,14 +145,14 @@ This exercise provides a step-by-step process for creating and displaying a new,
 <img align="center" src="../images/intro-rs-images/ex-2.4-processing-toolbox.png"  vspace="10" width="600">
 
 7. In the calculator, you can either write your own expression or use a predefined expression. NDVI is predefined in QGIS, but for the sake of practice, we will write our own expression. In the “Expression” field, copy and paste the following text: **(NIR - Red) / (NIR + Red)**
-8. Now, highlight the first instance where it says “NIR” and double-click on “LC08_L1TP_012047_20220916_20220922_02_T1_B5@1” to replace it with the actual image band. Repeat for the other instance of “NIR.”
-9. Next, highlight the first instance where it says “Red” and double-click on “LC08_L1TP_012047_20220916_20220922_02_T1_B4@1” to replace it with the actual image band. Repeat for the other instance of “Red.”
+8. Now, highlight the first instance where it says “NIR” and double-click on `LC08_L1TP_012047_20220916_20220922_02_T1_B5@1` to replace it with the actual image band. Repeat for the other instance of “NIR.”
+9. Next, highlight the first instance where it says “Red” and double-click on `LC08_L1TP_012047_20220916_20220922_02_T1_B4@1` to replace it with the actual image band. Repeat for the other instance of “Red.”
 <img align="center" src="../images/intro-rs-images/ex-2.4-complete-ndvi-expression.png"  vspace="10" width="600">
 
 10. Scroll down to the “Reference layer(s)” field. Click on “...” and check the box next to either the B5 band or the B4 band. Click “OK.”
 <img align="center" src="../images/intro-rs-images/ex-2.4-checked-ref-layer.png"  vspace="10" width="600">
 
-11. Click on “... > Save to File…” next to the “Output” field. Name the file “l8-sr-ndvi-negril-2022-09-16” and click on “Save.”
+11. Click on “... > Save to File…” next to the “Output” field. Save the file in the `outputs` directory, name the file `l8-sr-ndvi-negril-2022-09-16`, and click on “Save.”
 12. Click “Run.” Once the process has finished running, click “Close” to close the window. Save the project.
 <img align="center" src="../images/intro-rs-images/ex-2.4-ndvi-final.png"  vspace="10" width="600">
 
@@ -164,13 +164,14 @@ An image with the NDVI values of the entire raster has now been added to the can
 2. **Know your data**. While almost anything can be turned into data and encoded visually, knowing the context behind data is as important as understanding the data itself. This knowledge will also serve to verify that you have the best data to support your goal.
 3. **Put your audience first**. Data visualization is rarely one size fits all, and its message can be lost if it’s not customized for its audience. Thus, focus on visualizing what your audience needs to know.
 4. **Be media sensitive**. Considering how the visualization will be viewed will help you make sure your visualization reaches its audience.
-5. **Choose the right chart**. Know the strengths of each chart type and what key features of data they best visualize..
-6. **Chart smart**. The ability for a visualization to lead its audience to answers can also occasionally lead to the wrong answers. Data visualizations should not distort, mislead, or misrepresent..
+5. **Choose the right chart**. Know the strengths of each chart type and what key features of data they best visualize.
+6. **Chart smart**. The ability for a visualization to lead its audience to answers can also occasionally lead to the wrong answers. Data visualizations should not distort, mislead, or misrepresent.
 7. **Use labels wisely**. Give your audience context by including a simple and compelling title. Then, label axes so that they are easy to read and appropriate to the data they display. Minimize the use of legends.
-8. **Design to the point**. Over-designing makes important information harder to find, harder to remember, and easier to dismiss. The key to designing data visualizations is to be straightforward..
+8. **Design to the point**. Over-designing makes important information harder to find, harder to remember, and easier to dismiss. The key to designing data visualizations is to be straightforward.
 9. **Let the data speak**. The most important component of data visualization is the data. Use visual cues strategically to guide the audience and draw their attention, but let the data tell the story, not the design.
 10. **Feedback is a good thing**. Take time to fine-tune visualizations by engaging with stakeholders to gather feedback.
-*Source: The Database, trends and applications (https://www.dbta.com)*
+
+*Source: [Database: Trends and Applications](https://www.dbta.com).*
 
 ### Exercise 2.5 Customize the NDVI layer
 
@@ -210,6 +211,6 @@ Visual inspection is helpful for telling a story with data, but numbers can tell
 *Hint 2: Using the entire Jamaica boundary (jam_admbnda_adm0.shp), first clip the **negril_pa_shapefile.shp** in order to obtain the protected area only in land (without sea portion), and save the new shapefile as **negril_pa_shapefile_NoSea.shp**. Use this new shapefile to compare the NDVI values.*
 *Hint 3: The Zonal Statistics tool will come in handy in this exercise. Look for the Processing ToolBox→ Raster Analysis → Zonal statistics tool. You will be able to specify the statistics that you want (mean, max, min, etc)... then the results will be added in the attribute table of the shapefile layer used.*
 
-### Challenge 2: Calculator a Landsat 8-derived NDWI
+### Challenge 2: Calculate Landsat 8-derived NDWI
 
 The Normalized Difference Water Index (NDWI) is a well-known measure to estimate water content on the Earth Surface.  Use a similar process as we did for the NDVI exercise in order to obtain NDWI values.
