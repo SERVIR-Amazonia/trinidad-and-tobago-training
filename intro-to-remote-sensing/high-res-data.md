@@ -96,7 +96,7 @@ Now, toggle the layers on and off to compare the NDVI results between Landsat 8,
 
 ### Challenge 3: Quantify PlanetScope-derived NDVI.
 Use QGIS to find the mean and median NDVI values inside the protected areas within Jamaica and in the non-protected areas of Jamaica. Compare the values to see if there is a difference in vegetation levels between protected and non-protected areas. Do these values differ from the values calculated in Challenges 1 or 2?
-* *Hint 1: Follow the same process as Challenge 2 and 3.*
+* *Hint 1: Follow the same process as Challenge 1 and 2.*
 
 **Congratulations!** You completed the Introduction to Remote Sensing workshop. You can refer back to this material anytime you want throughout the learning series, and don’t forget to look through the Resources section to learn more about the material discussed in this lesson. Before you go, here is one final challenge problem:
 
