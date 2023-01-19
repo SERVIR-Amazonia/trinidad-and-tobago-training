@@ -207,9 +207,8 @@ This image is much easier to interpret compared to the grayscale image. Dependin
 ### Challenge 1: Quantify Landsat 8-derived NDVI
 
 Visual inspection is helpful for telling a story with data, but numbers can tell a story too. Use QGIS to find the mean and median NDVI value inside the Negril Environmental Protected Area and in the non-protected areas of western Jamaica. Compare the values to see if there is a difference in vegetation levels between protected and non-protected areas.
-*Hint 1: You will have to use the l8-sr-ndvi-negril-2022-09-16.tif, add the negril_pa_shapefile.shp negril-pa-shapefile.zip and the **non_protectedArea_savanna.shp** as two different layers in the project.*
-*Hint 2: Using the entire Jamaica boundary (jam_admbnda_adm0.shp), first clip the **negril_pa_shapefile.shp** in order to obtain the protected area only in land (without sea portion), and save the new shapefile as **negril_pa_shapefile_NoSea.shp**. Use this new shapefile to compare the NDVI values.*
-*Hint 3: The Zonal Statistics tool will come in handy in this exercise. Look for the Processing ToolBox→ Raster Analysis → Zonal statistics tool. You will be able to specify the statistics that you want (mean, max, min, etc)... then the results will be added in the attribute table of the shapefile layer used.*
+* *Hint 1: You will have to use the `l8-sr-ndvi-negril-2022-09-16.tif` as well as `negril_pa_shapefile_NoSea.shp` and `non_protectedArea_savanna.shp` in the project.*
+* *Hint 2: The Zonal Statistics tool will come in handy in this exercise. Look for the Processing ToolBox→ Raster Analysis → Zonal statistics tool. You will be able to specify the statistics that you want (mean, max, min, etc)... then the results will be added in the attribute table of the shapefile layer used.*
 
 ### Challenge 2: Calculate Landsat 8-derived NDWI
 
