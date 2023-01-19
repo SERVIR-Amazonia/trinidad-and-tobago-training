@@ -64,8 +64,8 @@ Figure 4. Gridded image indicating difference between high and low resolution. I
     * Moderate: 3-5 days
     * High: < 3 days
 
-## How Data is Stored
-**Storage depends on the data type.** There are four general types of passive remote sensing imagery: visible, infrared, multispectral, and hyperspectral Visible data is made up of pixels that fall within the red, green, or blue wavelengths. Those pixels are then stored in one of three corresponding red, green, or blue bands within a raster image. Infrared imagery expands upon visible imagery by including pixels within the infrared range of the spectrum that are stored in separate bands. Multispectral raster imagery is usually made up of 7-12 bands that include the visible bands and multiple infrared bands across the electromagnetic spectrum. Hyperspectral data contains the most amount of detail, as those raster images can be made up of hundreds of narrow bands across the electromagnetic spectrum.
+## Data Storage
+**Storage depends on the data type.** There are four general types of passive remote sensing imagery: visible, infrared, multispectral, and hyperspectral. Visible data is made up of pixels that fall within the red, green, or blue wavelengths. Those pixels are then stored in one of three corresponding red, green, or blue bands within a raster image. Infrared imagery expands upon visible imagery by including pixels within the infrared range of the spectrum that are stored in separate bands. Multispectral raster imagery is usually made up of 7-12 bands that include both the visible bands and multiple infrared bands across the electromagnetic spectrum. Hyperspectral data contains the most amount of detail, as those raster images can be made up of hundreds of narrow bands across the electromagnetic spectrum.
 
 <img align="center" src="../images//intro-rs-images/multispectral-vs-hyperspectral.png" hspace="15" vspace="10" width="600">
 
