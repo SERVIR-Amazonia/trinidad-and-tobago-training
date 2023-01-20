@@ -7,13 +7,14 @@ nav_order: 1
 
 # Introduction
 
-Welcome to an Introduction to GIS & Remote Sensing! This workshop will give an overview of remote sensing and explore some methods for accessing and analyzing remote sensing data. To start off, this section will cover a number of fundamental remote sensing concepts and provide a snapshot of key satellites and sensors to be aware of throughout the next few modules. 
+Welcome to an Introduction to Remote Sensing! This workshop will give an overview of remote sensing and explore some methods for accessing and analyzing remote sensing data. To start off, this section will cover a number of fundamental remote sensing concepts and provide a snapshot of key satellites and sensors to be aware of throughout the next few modules. 
 
 ## Pre-workshop Set-up
 1. [Install](https://www.qgis.org/en/site/forusers/download.html) QGIS if not already installed.
 2. Create an [Earth Explorer account](https://ers.cr.usgs.gov/register). 
 3. Create a [Planet NICFI account](https://www.planet.com/nicfi/#sign-up).
-4. [Download](https://drive.google.com/drive/folders/1p-ZAwhuVXRD-VzAujLk_IQ-gGmGq9ADQ?usp=share_link) and upzip the data folder for the lesson. Save the upzipped folder on your Desktop. Make sure the folder is named `intro-rs-data`. 
+4. Create a [Copernicus Open Access Hub account](https://scihub.copernicus.eu/dhus/#/self-registration)
+5. [Download](https://drive.google.com/drive/folders/1p-ZAwhuVXRD-VzAujLk_IQ-gGmGq9ADQ?usp=share_link) and upzip the data folder for the lesson. Save the upzipped folder on your Desktop. Make sure the folder is named `intro-rs-data`. 
 
 ## Objectives
 1. Understand how remote sensing satellite data is collected and stored.
