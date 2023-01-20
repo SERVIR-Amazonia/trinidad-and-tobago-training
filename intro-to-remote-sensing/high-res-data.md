@@ -45,7 +45,7 @@ This exercise will explore the effect of differing remote sensing data projectio
 3. Click on `Layer > Add Layer > Add Raster Layer...` and click on `...` next to the `Raster dataset(s)` field to browse and select a file. 
 4. Navigate to `intro-rs-data` and select `planet-analytical-monthly-09-2022.tif`. Click on the `Open` button and then click on `Add` to add the layer to the canvas. 
 5. **Inspect the image projection.** Toggle the layer on and off. What do you notice? The images don’t seem to be lining up quite right, most likely due to a difference in image projection. Let’s find out.
-    1. Right-click on 'l8-sr-tc-negril`. Hover over `Layer CRS`. Note the first item listed in grey – that is the layer’s projected coordinate reference system (CRS).
+    1. Right-click on `l8-sr-tc-negril`. Hover over `Layer CRS`. Note the first item listed in grey – that is the layer’s projected coordinate reference system (CRS).
     2. Now, repeat the process for `planet-analytical-monthly-09-2022`. The listed CRS should be different – but why do the layers align? QGIS automatically reprojects layers based on the project projection so that layers will appear aligned, but they cannot be used for any type of analysis. 
     3. Let’s visualize what it would look like if the layers were not automatically reprojected: right-click on `planet-analytical-monthly-09-2022`. Select `Set to EPSG:32618`. The layers should be completely misaligned!
 6. **Update the image projection.** In order to avoid the inconsistencies between data layers, we need to ensure that each layer is projected in the same way. 
