@@ -43,7 +43,11 @@ Navigate through the different lesson sections by using the menu on the lefthand
     </tr>
     <tr>
       <td>11:30 - 12:00</td>
-      <td>SAR data processing: challenges</td>
+      <td>
+        <ul>
+            <li>SAR data processing: Challenges</li>
+          </ul>
+      </td>
     </tr>
      <tr>
       <td>12:00 - 13:00</td>
