@@ -15,9 +15,9 @@ Download SNAP
 ASF account?
 
 ## Objectives
-Understand how radar remote sensing differs from optical remote sensing.
-List the advantages and disadvantages of radar remote sensing. 
-Learn key facts about different radar sensor types.
+1. Understand how radar remote sensing differs from optical remote sensing.
+2. List the advantages and disadvantages of radar remote sensing. 
+3. Learn key facts about different radar sensor types.
 
 ## What is RADAR?
 As a recap, remote sensing is the process of gaining information about an object or an area without directly being in contact with that object. Sensors take advantage of the electromagnetic radiation reflected or emitted from the Earth’s surface to monitor and map changes to the surface of the Earth over time. Thus far, we have worked with remote sensing data that uses energy in the visible and infrared portion of the electromagnetic spectrum. RADAR, which is actually an acronym that stands for Radio Detection and Ranging, uses energy that falls within the microwave portion of the spectrum. These longer energy wavelengths equip radar data with a number of advantages over optical remote sensing data that we will explore throughout this section.
@@ -25,19 +25,19 @@ As a recap, remote sensing is the process of gaining information about an object
 ### Pros and Cons of Radar
 Let’s start with the positive: what can radar achieve that optical remote sensing cannot?
 
-**“All-weather” monitoring.** Microwaves can penetrate through cloud cover, fog, and smoke, which makes radars a more reliable and consistent source of imagery in any given location. A majority of the globe experiences at least 50% cloud cover during a year, so this increased monitoring ability is massively helpful. This advantage also creates an opportunity for better disaster and wildfire management.
-**Day or night monitoring.** Radar doesn’t rely on energy from the sun to take its measurements, so imagery can be captured during the day or at night.
-**Vegetation and soil penetration.**  Microwaves can also penetrate through dense vegetation and soil, allowing the sensors to capture characteristics of the Earth that optical sensors cannot.
-**Minimal atmospheric effects.** Remember the many levels of processing optical remote sensing data must go through before it can be used? Radar data must also be pre-processed, but its longer wavelengths do not get affected by the same atmospheric conditions that can make optical imagery appear hazy or distorted.
-**Dielectric and structural sensitivity.** Radar data can pick up on the dielectric and structural properties of an object, which can make it easier to distinguish between liquid and frozen water, for instance.
+1. **“All-weather” monitoring.** Microwaves can penetrate through cloud cover, fog, and smoke, which makes radars a more reliable and consistent source of imagery in any given location. A majority of the globe experiences at least 50% cloud cover during a year, so this increased monitoring ability is massively helpful. This advantage also creates an opportunity for better disaster and wildfire management.
+2. **Day or night monitoring.** Radar doesn’t rely on energy from the sun to take its measurements, so imagery can be captured during the day or at night.
+3. **Vegetation and soil penetration.**  Microwaves can also penetrate through dense vegetation and soil, allowing the sensors to capture characteristics of the Earth that optical sensors cannot.
+4. **Minimal atmospheric effects.** Remember the many levels of processing optical remote sensing data must go through before it can be used? Radar data must also be pre-processed, but its longer wavelengths do not get affected by the same atmospheric conditions that can make optical imagery appear hazy or distorted.
+5. **Dielectric and structural sensitivity.** Radar data can pick up on the dielectric and structural properties of an object, which can make it easier to distinguish between liquid and frozen water, for instance.
 
 [INSERT IMAGE OF OPTICAL SMOKY VS RADAR CLEAR IMAGE] 
 
 These advantages are very powerful, though there are always multiple sides to consider when selecting the correct type of data for your research project. Let’s examine some of the cons of radar data.
 
-**Challenging interpretation.** Unlike optical imagery, which most people can intuitively interpret as it appears very similar to a photograph taken with one’s cell phone, radar imagery is not as easy to understand immediately. It contains information about energy outside of the visible light spectrum, and so it often requires more training for a user to understand what they are looking at in a radar image.
-**Speckling.** Radar images often appear grainier than optical imagery.
-**Topographical effects.** Topography has a greater effect on radar imagery than optical imagery, as the terrain can reflect the energy radars measure and thus distort the image. 
+1. **Challenging interpretation.** Unlike optical imagery, which most people can intuitively interpret as it appears very similar to a photograph taken with one’s cell phone, radar imagery is not as easy to understand immediately. It contains information about energy outside of the visible light spectrum, and so it often requires more training for a user to understand what they are looking at in a radar image.
+2. **Speckling.** Radar images often appear grainier than optical imagery.
+3. **Topographical effects.** Topography has a greater effect on radar imagery than optical imagery, as the terrain can reflect the energy radars measure and thus distort the image. 
 
 Given these advantages and disadvantages, let’s understand why they exist in the first place. The major driver behind these differences is the way the data is collected. 
 
@@ -57,10 +57,10 @@ Imaging radars are side-looking, which means they transmit energy at a 90 degree
 ### What do radars measure?
 
 **Radar components.** There are four primary parts of a radar system that allow it to collect information:
-**Transmitter.** This device outputs short bursts of microwave energy at regularly scheduled intervals. (The “active” part of active remote sensing!)
-**Antennae.** The antennae focuses the series of pulses from the radar into a beam that illuminates the surface at a right angle to the motion of the platform. 
-**Receiver.** The antennae receives the energy that is reflected, or *backscattered*, from the Earth’s surface. The time at which the energy is received by the antennae allows the system to pinpoint the location of the object it reflected off of.
-**Electronic processing system.** This system processes the backscattered signal to generate an image.
+1. **Transmitter.** This device outputs short bursts of microwave energy at regularly scheduled intervals. (The “active” part of active remote sensing!)
+2. **Antennae.** The antennae focuses the series of pulses from the radar into a beam that illuminates the surface at a right angle to the motion of the platform. 
+3. **Receiver.** The antennae receives the energy that is reflected, or *backscattered*, from the Earth’s surface. The time at which the energy is received by the antennae allows the system to pinpoint the location of the object it reflected off of.
+4. **Electronic processing system.** This system processes the backscattered signal to generate an image.
 
 In addition to the time at which the signal is received, which is referred to as the phase (a point in time in the position of the waveform) of the signal, radars also measure the amplitude (strength) of the reflected signal. Amplitude is called the *backscatter coefficient*, or $\sigma_{0}$, and is expressed as the fraction of the energy that is backscattered to the radar per unit target area. The value is measured in decibels (dB) and can range from around -25 dB (very little energy reflected back) to 1 dB (high amount of energy reflected back.
 
@@ -109,17 +109,18 @@ The larger the incidence angle, the greater the sensitivity to surface roughness
 The factors we discussed above are all radar properties that will affect the backscatter received by the radar. There are also surface properties that have an effect on the backscatter. The combination of these effects makes an impact on the data the sensor collects, and thus the data provides information on the following two surface parameters. 
 
 **Surface roughness.** Surface roughness is defined as the average height variations in the surface cover on the order of centimeters. This factor has the primary impact on the tones of a radar image and level of backscattering. Smooth surfaces, or surfaces where the variations in height are much smaller than the radar wavelength, appear darker in radar images while rough surfaces appear lighter. This difference is due to the type of **backscattering mechanism** that the type of surface triggers. There are four primary types of backscattering:
-**Specular reflection.** Smooth surfaces tend to reflect all of the energy away from the radar. These areas appear very dark in radar images. Ex: open water
-**Diffuse reflection.** Rough surfaces, where the level of roughness approaches the length of the microwave, start to reflect some of the energy back to the radar. These areas appear somewhat brighter. Ex: rocky open areas, grasslands.
-**Double bounce reflection.** This type of reflection occurs when energy bounces off a smoother surface and then bounces again on a nearby, vertical object so that most of the energy scatters back to the radar. These areas appear very bright. Ex: urban areas, inundation
-**Volume scattering.** This type of scattering occurs within a volume or medium. Energy bounces of a number of different elements within the medium to cause wide amounts of scattering, some of which returns to the radar. The brightness can vary, but is usually moderately bright. Ex: snowpack, forests.
+1. **Specular reflection.** Smooth surfaces tend to reflect all of the energy away from the radar. These areas appear very dark in radar images. Ex: open water
+2. **Diffuse reflection.** Rough surfaces, where the level of roughness approaches the length of the microwave, start to reflect some of the energy back to the radar. These areas appear somewhat brighter. Ex: rocky open areas, grasslands.
+3. **Double bounce reflection.** This type of reflection occurs when energy bounces off a smoother surface and then bounces again on a nearby, vertical object so that most of the energy scatters back to the radar. These areas appear very bright. Ex: urban areas, inundation
+4. **Volume scattering.** This type of scattering occurs within a volume or medium. Energy bounces of a number of different elements within the medium to cause wide amounts of scattering, some of which returns to the radar. The brightness can vary, but is usually moderately bright. Ex: snowpack, forests.
 
-[IMAGE backscattering mechanisms]
+[IMAGE backscattering mechanisms]  
 [IMAGE radar image highlighting different backscattering types]
 
 **Dielectric properties.** The dielectric properties of a material have a big effect on the surface’s ability to absorb or reflect microwaves – so much so that the magnitude of the backscatter is proportional to the dielectric constant of the surface. Liquid water has a much higher dielectric constant than other materials including frozen water (a dielectric constant of 80 compared to a range of 0-10), and so the presence or absence of water defines a surface’s dielectric properties. For the most part, surfaces with high dielectric constants have higher reflectivity and thus appear brighter than those with lower dielectric constants.
 
 ## Radar Instruments
+
 | Radar System    | Band | Wavelength (cm) | Spatial Resolution (m) | Temporal Resolution (days) | Timeframe                                | Provider  |
 |-----------------|------|-----------------|------------------------|----------------------------|------------------------------------------|-----------|
 | BIOMASS         | P    | ~69.0           |                        | 3                          | Launch 2024                              | ESA       |
@@ -129,4 +130,3 @@ The factors we discussed above are all radar properties that will affect the bac
 | Sentinel-1      | C    | ~5.6            | 25-800                 | 6                          | 2014 - present (1A), 2016 - present (1B) | ESA       |
 | Radarsat-2      | C    | ~5.6            | 3-100                  | 1                          | 2007 - present                           | CSA       |
 | TerraSAR-X      | X    | ~3.1            | 1-5m                   | 11-22 days                 | 2007 - present                           | ADS/DLR   |
-
