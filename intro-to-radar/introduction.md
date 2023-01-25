@@ -10,9 +10,7 @@ nav_order: 1
 Welcome to an Introduction to Synthetic Aperture Radar (SAR)! This workshop will give an overview of radar remote sensing with a particular focus on SAR imagery. It will explore some methods for accessing, opening, reading, and displaying SAR images and share techniques for processing and filtering these radar images. To start off, this section will cover a number of fundamental radar concepts and provide a snapshot of key sensor types.
 
 ## Pre-workshop set-up
-FILL IN HERE BASED ON WHAT WE NEED FOR EXAMPLE PROBLEMS
-Download SNAP
-ASF account?
+1. Create an [Earthdata account](https://urs.earthdata.nasa.gov/users/new).
 
 ## Objectives
 1. Understand how radar remote sensing differs from optical remote sensing.
