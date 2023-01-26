@@ -34,6 +34,7 @@ Let’s start with the positive: what can radar achieve that optical remote sens
 <img align="center" src="../images/intro-radar-images/radar-smoky-clear.gif"  vspace="10" width="600">
 Optical imagery (left) vs. radar imagery (right) of the Kliuchevskoi Volcano erupting. *Source: Michigan Tech Volcanology*
 
+
 These advantages are very powerful, though there are always multiple sides to consider when selecting the correct type of data for your research project. Let’s examine some of the cons of radar data.
 
 1. **Challenging interpretation.** Unlike optical imagery, which most people can intuitively interpret as it appears very similar to a photograph taken with one’s cell phone, radar imagery is not as easy to understand immediately. It contains information about energy outside of the visible light spectrum, and so it often requires more training for a user to understand what they are looking at in a radar image.
