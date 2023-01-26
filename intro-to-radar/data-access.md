@@ -19,7 +19,7 @@ NASA’s Earthdata portal allows you to search through its free and open source 
 5. Drag the map and zoom in to Amapá, Brazil (the northeastern most state of Brazil). 
 6. In the top panel on the right hand side, click on the point icon to `Search by spatial coordinate`. Select a point near the city Macapá.
 7. Select the granule with the following ID: `S1A_IW_GRDH_1SDV_20230120T090602_20230120T090627_046865_059EA0_7322`.
-8. *Do not complete this step. The data has been downloaded for you.* To download the file, press the download button next to the green `+` button. Click on the name of the zip file under the `Download Files` tab and let the download complete.
+8. To download the file, press the download button next to the green `+` button. Click on the name of the zip file under the `Download Files` tab and let the download complete. Move the zip file into the `intro-radar-data` folder.
 
 ## Alaska Satellite Facility DAAC
 The Earthdata portal also helps manage NASA’s Distributed Active Archive Centers (DAACs).The DAACs process, archive, document, and distribute data from NASA's past and current Earth-observing satellites and field measurement programs and often have particular types of data or applications associated with them. The DAAC for SAR data is hosted by the Alaska Satellite Facility (ASF). The ASF DAAC is located in the Geophysical Institute at the University of Alaska, Fairbanks and is supported by NASA to acquire, process, archive, and distribute SAR data from polar-orbiting satellite and airborne sensors to advance Earth science research. Most of the datasets available through the ASF DAAC are freely available and open for the public to download.
@@ -35,7 +35,7 @@ The ASF DAAC is not limited to data from NASA-led satellite missions. It contain
 4. Click `Search`.
 5. Select the first image result. Note that this is the same image as the one we found with the Earthdata search (you can check the granule IS). Feel free to explore the other images the search returned by scrolling through the results.
 6. In the right-hand `Scene Detail` panel, you can read about the metadata of the image, view the image in the image viewer, or download the image. Click on the icon that looks like an eye to `Open in Image Viewer`. 
-7. *Do not complete this step. The data has been downloaded for you.* Click on the `L1 Detected High-Res Dual-Pol (GRD-HD)` product. Download the image product file.
+7. *Do not complete this step. It is the same file you downloaded in the previous exercise.* Click on the `L1 Detected High-Res Dual-Pol (GRD-HD)` product. Download the image product file.
 
 ## Sentinel-1 File Naming
 The file names of Sentinel-1 data products follow a specific naming convention that provides information about the product and the acquisition conditions. The format of the Sentinel-1 file names is as follows:
