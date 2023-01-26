@@ -20,7 +20,7 @@ If we inspect the image we corrected in our earlier exercises, we can see pretty
     2. Open the `Colour Manipulation` panel. In the upper menu bar, select `View > Tool Windows > Colour Manipulation`. A panel should appear in the lower left corner of the screen. 
     3. In the `Editor` field, click `Sliders`. A histogram should automatically be generated.
     4. You should see two fairly well-defined peaks – the peak near the maximum value on the chart represents the land-based pixels (brighter pixels), while the peak near the minimum value represents the water pixels (darker pixels). 
-    5. Move the middle slider to identify the value that separates water from non-water pixels – somewhere between `18.5` and `18.25` (at the start of the non-water peak). 
+    5. Move the middle slider to identify the value that separates water from non-water pixels – somewhere between `18.25` and `18.5` (at the start of the non-water peak). 
 2. **Set a threshold to separate water and non-water pixels.** We will create a new band that sets any water pixel as `1`, and any non-water pixel as `0`. 
     1. In the upper menu bar, select `Raster > Band Maths…`
     2. In the `Name:` field, name the new band `water_nonwater`. 
