@@ -31,7 +31,7 @@ Let’s start with the positive: what can radar achieve that optical remote sens
 4. **Minimal atmospheric effects.** Remember the many levels of processing optical remote sensing data must go through before it can be used? Radar data must also be pre-processed, but its longer wavelengths do not get affected by the same atmospheric conditions that can make optical imagery appear hazy or distorted.
 5. **Dielectric and structural sensitivity.** Radar data can pick up on the dielectric and structural properties of an object, which can make it easier to distinguish between liquid and frozen water, for instance.
 
-[INSERT IMAGE OF OPTICAL SMOKY VS RADAR CLEAR IMAGE] 
+<img align="center" src="../images/intro-radar-images/radar-smoky-clear.gif"  vspace="10" width="600"> 
 
 These advantages are very powerful, though there are always multiple sides to consider when selecting the correct type of data for your research project. Let’s examine some of the cons of radar data.
 
@@ -47,12 +47,13 @@ This concept should sound familiar, as we briefly discussed it in the Introducti
 
 Optical sensors are called passive sensors because they rely solely on energy from an outside source (e.g, the sun) to capture their measurements. This reliance on outside energy sources limits these sensors by the effects of the atmosphere. Energy that is simply reflected from the surface of the Earth cannot penetrate things such as cloud cover or fog, and thus makes it difficult to gather data consistently in areas that experience this type of weather often.
 
-[IMAGE PASSIVE SENSING]
+<img align="center" src="../images/intro-radar-images/passive-rs.png"  vspace="10" width="600">
 
 Radar is a form of active remote sensing. These sensors provide their own artificial source of energy for illumination of the Earth’s surface, which can get through clouds, vegetation, and even soil depending on the type of signal they send down. Radars measure the energy that is reflected back from its own signal to generate an image of the surface of the Earth.
 
 Imaging radars are side-looking, which means they transmit energy at a 90 degree angle in order to differentiate between two objects on the ground. By transmitting energy at an angle, it allows energy to bounce off of objects on the ground and reach the radar at different times so that the two objects can be distinguished. 
-[IMAGE side looking radar]
+
+<img align="center" src="../images/intro-radar-images/side-looking-radar.png"  vspace="10" width="600">
 
 ### What do radars measure?
 
@@ -64,12 +65,10 @@ Imaging radars are side-looking, which means they transmit energy at a 90 degree
 
 In addition to the time at which the signal is received, which is referred to as the phase (a point in time in the position of the waveform) of the signal, radars also measure the amplitude (strength) of the reflected signal. Amplitude is called the *backscatter coefficient*, or $\sigma_{0}$, and is expressed as the fraction of the energy that is backscattered to the radar per unit target area. The value is measured in decibels (dB) and can range from around -25 dB (very little energy reflected back) to 1 dB (high amount of energy reflected back.
 
-[IMAGE radar energy scattering]
-
 ### What is SAR?
 Radars possess two types of resolution: (1) **Range (across track) resolution** defines the ability of the radar to distinguish between two targets perpendicular to the path of the sensor that are close in range. This type of resolution is determined by length of pulse sent out by the transmitter. (2) **Azimuth (along-track) resolution** defines the ability of the radar to distinguish between two objects parallel to the path of the sensor that are close together. This resolution is determined by the beam length, which is inversely proportional to the length of the antennae, or aperture. 
 
-[IMAGE radar resolutions]
+<img align="center" src="../images/intro-radar-images/sar-resolution.png"  vspace="10" width="600">
 
 A longer antennae, then, results in a narrower beam and thus finer resolution. Sending extremely long antennas out into space, however, is highly unrealistic. Instead, scientists leveraged the Doppler shift associated with the motion of the aircraft to simulate a very long antennae. This simulation creates a “synthetic aperture.” Synthetic aperture radar, or SAR, is able to generate higher resolution images compared to the actual length of the antennae. 
 
@@ -89,7 +88,7 @@ There are plenty of different characteristics that distinguish sensors from each
 | L    | 15.0 to 30.0    | agriculture, forestry, soil moisture     |
 | P    | 30.0 to 100.0   | biomass, soil moisture, penetration      |
 
-[IMAGE penetration depending on band]
+<img align="center" src="../images/intro-radar-images/band-penetration.png"  vspace="10" width="600">
 
 **Polarization.** Radar signals are polarized and usually denoted as **horizontal (H)**, or **vertical (V)**. These polarizations affect the way that the signal is both transmitted and received and the physical properties of an object that are detected. There are four typical polarization combinations:
 * HH: horizontal transmit, horizontal receive
@@ -97,11 +96,9 @@ There are plenty of different characteristics that distinguish sensors from each
 * HV: horizontal transmit, vertical receive
 * VH: vertical transmit, horizontal receive
 
-[ IMAGE polarization differences between scenes]
-
 **Incidence angle.** The final factor to consider is the incidence angle, &theta;, which is the angle between the direction of the radar beam and the plan perpendicular to the surface of the Earth.
 
-[IMAGE incidence angle]
+<img align="center" src="../images/intro-radar-images/incidence-angle.png"  vspace="10" width="600">
 
 The larger the incidence angle, the greater the sensitivity to surface roughness. These beams will be able to penetrate less deep than beams that have smaller incidence angles, and also result in lower levels of backscatter.
 
@@ -114,8 +111,7 @@ The factors we discussed above are all radar properties that will affect the bac
 3. **Double bounce reflection.** This type of reflection occurs when energy bounces off a smoother surface and then bounces again on a nearby, vertical object so that most of the energy scatters back to the radar. These areas appear very bright. Ex: urban areas, inundation
 4. **Volume scattering.** This type of scattering occurs within a volume or medium. Energy bounces of a number of different elements within the medium to cause wide amounts of scattering, some of which returns to the radar. The brightness can vary, but is usually moderately bright. Ex: snowpack, forests.
 
-[IMAGE backscattering mechanisms]  
-[IMAGE radar image highlighting different backscattering types]
+<img align="center" src="../images/intro-radar-images/backscattering-mechanism.png"  vspace="10" width="600">
 
 **Dielectric properties.** The dielectric properties of a material have a big effect on the surface’s ability to absorb or reflect microwaves – so much so that the magnitude of the backscatter is proportional to the dielectric constant of the surface. Liquid water has a much higher dielectric constant than other materials including frozen water (a dielectric constant of 80 compared to a range of 0-10), and so the presence or absence of water defines a surface’s dielectric properties. For the most part, surfaces with high dielectric constants have higher reflectivity and thus appear brighter than those with lower dielectric constants.
 
