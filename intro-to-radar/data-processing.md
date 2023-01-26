@@ -39,3 +39,71 @@ The data values collected by SAR systems can be distorted in two primary ways: g
 **Speckle.** This error is the result of random noise and interference from the radar waves that occurs within the pixel cell. It results in a grainy, almost salt-and-pepper image appearance. There are lots of different gray tones that may appear within a single, uniform surface as the result of speckling.  These variations must be filtered in order to improve the visual quality of the data and make it easier to identify features. Unfortunately, the correction method often used to reduce speckling reduces the resolution, so you must balance the visual quality of the image with the resolution of data.
 
 [IMAGE speckle]
+
+## Data Correction 
+Given these data distortions, how do we go about correcting them? There are a number of techniques a scientist can use to correct SAR data. In this section, we will be working with a **Sentinel-1 C-band SAR** image in the state of **Amapá, Brazil** for the date **January 20, 2023**. Note that the data we are using is of the product type `GRD`, or “ground range detected.” That means that the slant range geometric correction has already been performed by the data provider. You should use these types of images when you can to minimize the number of corrective steps you must perform.
+
+### Data Preprocessing with SNAP
+The European Space Agency (ESA) developed a Sentinel-1 toolbox that you can download and use to process and analyze radar images on their free, open-source software called the Sentinel Application Platform (SNAP). This toolbox allows users to perform, among other processes:
+* Calibration
+* Speckle noise filtering
+* Terrain correction
+* Mosaic production
+* Classification
+
+#### Exercise 2.1 Opening and Viewing SAR imagery in SNAP.
+Open the SNAP software. 
+1. Click `File > Open Product…` 
+2. Navigate to the `intro-radar-data` folder on your computer and select the file `S1A_IW_GRDH_1SDV_20230120T090602_20230120T090627_046865_059EA0_7322.zip`. **Do not unzip this file – SNAP will do it for you!** 
+3. Click `Open` to bring in the image file. You should now see the image listed in the `Product Explorer` panel.
+4. Click on the `+` next to the filename to look inside the file. You should see five directories listed:
+    1. `Metadata`: Contains detailed information about the image file, including polarization, latitude and longitude, paths, resolution, etc.
+    2. `Vector Data`
+    3. `Tie-Point Grids`: Includes interpolation of latitude and longitude, incidence angle, etc.
+    4. `Quicklooks`
+    5. `Bands`: The actual image data used to conduct data analysis. Contains the `Amplitude` and `Intensity` (which is amplitude squared).
+5. Click on the `+` next to the `Bands` directory. Now, double-click on the band named `Amplitude_VV`. 
+6. You can click on the `World View` tab in the lower left-hand panel to see a true-color visualization of the image you are looking at. Drag the globe and zoom in to the red square (the footprint of the image) to take a look. Notice that the image in your image viewer appears mirrored compared to the true color image on the globe – it appears inverted because it is oriented the same way it was acquired.
+7. **View RGB image.** Right-click on the file name in the `Product Explorer` panel. Select the `Open RGB Image Window` option. Leave the default options and click `OK`.
+8. **Inspect pixel values.**  Return to the original `Amplitude_VV` image. Click on the `Pixel Info` panel tab next to the `Product Explorer` panel. Move your cursor around the image – you can see information such as the longitude, latitude, amplitude, and intensity automatically show up in the window. 
+
+Well done! You have opened, viewed, and inspected a SAR image. But we can’t perform any analysis just yet – as you may have noticed, this image appears quite speckled and we haven’t performed all the required radiometric or geometric correction steps. Our current image is quite large, however, so we first need to take a subset of the image to perform the methods on to ensure the processing goes smoothly.
+
+#### Exercise 2.2 Pre-process SAR imagery.
+1. **Create an image subset.**
+    1. In the upper menu bar, select `Raster > Subset…`.
+    2. Set the following parameters:
+        1. **Scene start X:** `8775`
+        2. **Scene start Y:** `2230`
+        3. **Scene end X:** `23315`
+        4. **Scene end Y:** `14930`
+    3. Click `OK`.
+2. Return to the `Product Explorer` panel. You should see a new file listed that looks like `subset_0_of_[FILE NAME]`. Click on the `+` next to the file, expand the `Bands` folder, and double-click on `Amplitude_VV` to add the subset to the image viewer. Feel free to close the previous images we opened in the viewer to keep things organized.
+3. **Perform radiometric calibration.**
+    1. Click on the `subset` filename in the `Product Explorer` window to highlight the file. 
+    2. In the upper menu bar, select `Radar > Radiometric > Calibrate`.
+    3. Leave all of the default options as is, except for the directory. Set the directory as your `intro-radar-data` folder. 
+    4. Click `Run`. It may take a few seconds for the calibration to complete depending on the speed of your computer.
+    5. Once the process has completed, click `Close`. You should see a new file listed under the `Product Explorer` window – this is the calibrated image.
+    6. Add the `Sigma0_VV` band to the image viewer. This image should appear somewhat darker, as there have been multiple corrections made due to antennae pattern, signal strength, saturation, etc.
+4. **Reduce speckle.** To filter out the image speckling, we will use a technique called **multilook**. Multilook divides the radar beam into a number of “sub-beams”, each of which are a single “look” at the scene. The “looks” are summed and averaged together which will reduce the amount of speckle in the final image.
+    1. In the upper menu bar, go to `Radar > SAR Utilities > Multilooking`.
+    2. In the pop-up window, click on the `Processing Parameters` tab. Set the `Number of Range Looks` to `6`. Make sure the directory is set to your `intro-radar-data` folder.
+    3. Click `Run`. 
+    4. Click `Close`. Another new file should appear in the `Product Explorer` window.
+    5. Add the `Sigma0_VV` band to the image viewer. There is a big improvement between the original image and the new image!
+5. **Perform geometric calibration.** Although these images have already been adjusted to ground range rather than slant range, we still need to adjust for any displacement due to terrain. 
+    1. In the upper menu bar, go to `Radar > Geometric > Terrain Correction > Range-Doppler Terrain Correction`. 
+    2. Note that this process relies on a digital elevation model (DEM) to make the corrections. You may customize the DEM by clicking on the `Processing Parameters` and selecting any of the options in the `Digital Elevation Model` drop-down menu, or using your own if you have one. We will be sticking with the default options for this exercise. 
+    3. Click `Run`. This process may take quite a few seconds to complete.
+    4. Click `Close`.
+    5. Add the `Sigma0_VV` band to the image viewer. You should now see a mirror image that looks more in line with the true color image in the `World Viewer`. 
+6. **Convert sigma0 to dB.** Backscatter is conventionally represented in the units `dB`, which is a representation of the power of the signal. 
+    1. Right-click on the `Sigma0_VH` band of the most recently corrected version of our image. 
+    2. Select the `Linear to/from dB` option.
+    3. In the pop-up window, select `Yes`. 
+    4. Repeat steps a-c for the `Sigma0_VV` band.
+    5. Add both of the `db` bands to the image viewer and inspect the data.
+
+Nice work! You have now successfully pre-processed a radar image and made it ready for data analysis. Notice what a difference the correction steps made from the original downloaded image to the analysis-ready image. 
+
