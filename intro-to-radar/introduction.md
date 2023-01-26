@@ -11,7 +11,8 @@ Welcome to an Introduction to Synthetic Aperture Radar (SAR)! This workshop will
 
 ## Pre-workshop set-up
 1. Create an [Earthdata account](https://urs.earthdata.nasa.gov/users/new).
-2. Download [SNAP software](http://step.esa.int/main/download/snap-download/). Select the `Sentinel Toolboxes Main Download` for your device type.
+2. Download [SNAP software](http://step.esa.int/main/download/snap-download/). Select the `Sentinel Toolboxes Main Download` option for your device type.
+3. Create a folder called `intro-radar-data` on your Desktop.
 
 ## Objectives
 1. Understand how radar remote sensing differs from optical remote sensing.
