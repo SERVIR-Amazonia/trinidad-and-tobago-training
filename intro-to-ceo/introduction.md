@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Introduction
-parent: Introduction to Synthetic Aperture Radar (SAR)
+parent: Introduction to Collect Earth Online
 nav_order: 1
 ---
 
