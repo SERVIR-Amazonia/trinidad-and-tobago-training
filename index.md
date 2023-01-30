@@ -26,7 +26,7 @@ If you have any questions about the material, please submit a question below! We
 | 1               | Introduction to Remote Sensing                  | January 2023   | Virtual   | 
 | 2               | Introduction to SAR with QGIS                   | January 2023   | Virtual   |
 | 3               | Flood Mapping Using SAR in QGIS                 | February 2023  | Virtual   |
-| 4               | Map Validation with Collect Earth Online        | February 2023  | Virtual   |
+| 4               | Map Validation with Collect Earth Online        | March 2023  | Virtual   |
 | 5-6             | Introduction to Google Earth Engine             | March 2023     | In-person | 
 | 7               | Flood Mapping Using Multiple Sensors            | March 2023     | In-person |
 | 8               | Mangrove Mapping Using Multiple Sensors         | March 2023     | In-person |
