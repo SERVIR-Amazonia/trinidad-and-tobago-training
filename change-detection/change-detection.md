@@ -1,18 +1,18 @@
 ---
 layout: page
-title: Introduction to Collect Earth Online
-permalink: /intro-to-ceo
+title: Two Date Change Detection
+permalink: /change-detection
 has_children: True
-nav_order: 6
+nav_order: 11
 ---
 
-# Introduction to CEO
+# Two Date Change Detection
 
 Navigate through the different lesson sections by using the menu on the lefthand side or the table of contents below.
 
 ## Session Agenda
 
-**Date**: March 9, 2023  
-**Instructor:** Crystal Wespestad
+**Date**: March 24, 2023  
+**Instructor:** Kyle Woodward
 
 Coming soon...

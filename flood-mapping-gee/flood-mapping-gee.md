@@ -1,18 +1,18 @@
 ---
 layout: page
-title: Introduction to Collect Earth Online
-permalink: /intro-to-ceo
+title: Flood Mapping Using Multiple Sensors
+permalink: /flood-mapping-gee
 has_children: True
-nav_order: 6
+nav_order: 9
 ---
 
-# Introduction to CEO
+# Flood Mapping Using Multiple Sensors
 
 Navigate through the different lesson sections by using the menu on the lefthand side or the table of contents below.
 
 ## Session Agenda
 
-**Date**: March 9, 2023  
-**Instructor:** Crystal Wespestad
+**Date**: March 22, 2023  
+**Instructor:** Kyle Woodward
 
 Coming soon...

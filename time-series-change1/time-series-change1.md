@@ -1,18 +1,18 @@
 ---
 layout: page
-title: Introduction to Collect Earth Online
-permalink: /intro-to-ceo
+title: Time Series Change Detection 1
+permalink: /time-series-change1
 has_children: True
-nav_order: 6
+nav_order: 12
 ---
 
-# Introduction to CEO
+# Time Series Change Detection 1
 
 Navigate through the different lesson sections by using the menu on the lefthand side or the table of contents below.
 
 ## Session Agenda
 
-**Date**: March 9, 2023  
-**Instructor:** Crystal Wespestad
+**Date**: April 13, 2023  
+**Instructor:** TBD
 
 Coming soon...

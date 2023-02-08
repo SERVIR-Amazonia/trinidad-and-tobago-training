@@ -1,18 +1,16 @@
 ---
 layout: page
-title: Introduction to Collect Earth Online
-permalink: /intro-to-ceo
+title: "Flood Mapping Using SAR in QGIS"
+permalink: /flood-mapping-sar
 has_children: True
-nav_order: 6
+nav_order: 5
 ---
 
-# Introduction to CEO
-
+# Flood Mapping Using SAR in QGIS
 Navigate through the different lesson sections by using the menu on the lefthand side or the table of contents below.
 
 ## Session Agenda
-
-**Date**: March 9, 2023  
-**Instructor:** Crystal Wespestad
+**Date**: February 23, 2023  
+**Instructor:** José (Pepe) Ochoa Brito
 
 Coming soon...

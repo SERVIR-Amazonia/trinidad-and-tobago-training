@@ -21,18 +21,18 @@ If you have any questions about the material, please submit a question below! We
 
 ## Agenda
 
-| Instruction Day | Theme                                           | Timing         | Format    |
-|:----------------|:------------------------------------------------|:---------------|:----------|
-| 1               | Introduction to Remote Sensing                  | January 2023   | Virtual   | 
-| 2               | Introduction to SAR with QGIS                   | January 2023   | Virtual   |
-| 3               | Flood Mapping Using SAR in QGIS                 | February 2023  | Virtual   |
-| 4               | Map Validation with Collect Earth Online        | March 2023  | Virtual   |
-| 5-6             | Introduction to Google Earth Engine             | March 2023     | In-person | 
-| 7               | Flood Mapping Using Multiple Sensors            | March 2023     | In-person |
-| 8               | Mangrove Mapping Using Multiple Sensors         | March 2023     | In-person |
-| 9               | Two Date Change Detection                       | March 2023     | In-person |
-| 10-11           | Time Series Change Detection                    | April 2023     | Virtual   |
-| 12              | Capstone and Follow-up Support                  | April 2023     | Virtual   |
+| Instruction Day | Theme                                    | Timing              | Format    |
+|-----------------|------------------------------------------|---------------------|-----------|
+| 1               | Introduction to Remote Sensing           | January 19, 2023    | Virtual   |
+| 2               | Introduction to SAR with QGIS            | January 26, 2023    | Virtual   |
+| 3               | Flood Mapping Using SAR in QGIS          | February 23, 2023   | Virtual   |
+| 4               | Map Validation with Collect Earth Online | March 9, 2023       | Virtual   |
+| 5-6             | Introduction to Google Earth Engine      | March 20-21, 2023   | In-person |
+| 7               | Flood Mapping Using Multiple Sensors     | March 22, 2023      | In-person |
+| 8               | Mangrove Mapping Using Multiple Sensors  | March 23, 2023      | In-person |
+| 9               | Two Date Change Detection                | March 24, 2023      | In-person |
+| 10-11           | Time Series Change Detection             | April 13 & 20, 2023 | Virtual   |
+| 12              | Capstone and Follow-up Support           | April 27, 2023      | Virtual   |
 
 ## Feedback
 If you have any feedback from any of the workshops, please fill out the form below. It helps us improve future workshops!
