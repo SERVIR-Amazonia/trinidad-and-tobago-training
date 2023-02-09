@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Introduction
-parent: Introduction to Google Earth Engine 1
+parent: Introduction to Google Earth Engine
 nav_order: 1
 ---
 
