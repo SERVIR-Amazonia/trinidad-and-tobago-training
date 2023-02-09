@@ -13,6 +13,6 @@ Navigate through the different lesson sections by using the menu on the lefthand
 ## Session Agenda
 
 **Date**: April 13, 2023  
-**Instructor:** TBD
+**Instructor:** Kyle Woodward
 
 Coming soon...
