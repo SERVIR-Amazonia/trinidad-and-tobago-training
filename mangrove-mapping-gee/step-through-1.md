@@ -41,9 +41,9 @@ Map.addLayer(aoi, {}, 'AOI');
 
 # Preprocessing Image Collections 
 
-We always want to apply filters to `ImageCollections` as early in our workflow as we can to reduce the amount of effort the GEE servers will require. We already know that we want relatively cloud-free images, so we will apply a cloud cover filter. We also will be selecting a specific list of image bands and renaming them to something easy to read.
+We always want to apply filters to `ImageCollections` as early in our workflow as we can to reduce the amount of effort the GEE servers will require. We already know the area that we'd like to pull data for (our AOI), and that we want relatively cloud-free images, so we will apply a boundary and a cloud cover filter.
 
-Let's do that for the first Landsat mission, Landsat 4.
+Let's do that for our first Landat `ImageCollection`
 
 ```javascript
 //--------------------------------------------------------------
@@ -148,7 +148,7 @@ function calculateIndices(img){
 }
 ```
 
-Now let's apply the functions to each Landsat collection using `.map()` and see the result.
+Now let's apply the functions to every image in each Landsat collection using `.map()` and see the result.
 
 ```javascript
 // Apply pre-processing functions to each image collection.
