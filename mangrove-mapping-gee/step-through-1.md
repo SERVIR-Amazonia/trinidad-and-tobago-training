@@ -17,7 +17,7 @@ An area of interest can be uploaded from a local shapefile, drawn on the map, or
 
 <img align="center" src="../images/mangrove-mapping/faogaul.PNG" hspace="15" vspace="10" width="600">
 
-Click on the Table Schema tab. We notice there is a useful field named 'ADM1_NAME'. We will use this property to derive our AOI. We will focus in on the San Juan area and the mangrove area to its south.
+Click on the `Table Schema` tab. We notice there is a useful field named 'ADM1_NAME'. We will use this property to derive our AOI. We will focus in on the San Juan area and the mangrove area to its south.
 
 ```javascript
 //--------------------------------------------------------------
