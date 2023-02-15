@@ -214,4 +214,4 @@ print('Users Accuracy:', confusionMatrix.consumersAccuracy());
 
 <img align="center" src="../images/mangrove-mapping/AccuracyAssessment.PNG" hspace="15" vspace="10" width="600">
 
-Congratulations! You have setup a machine learning classifier for mangrove mapping using multiple sensors. 
+Congratulations! You have setup a Random Forest classifier for mangrove mapping using multiple Landsat sensors. 
