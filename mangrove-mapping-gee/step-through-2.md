@@ -7,9 +7,9 @@ nav_order: 3
 
 # Image Compositing
 
-We've now got an `ImageCollection` consisting of multiple Landsat missions that captured data in our desired date range. To train a mangrove classification model, we'll reduce the size of our input data by making a composite of the `ImageCollection`. Let's make a median composite for this demonstration and make clip it to our AOI.
+We've now got an `ImageCollection` consisting of multiple Landsat missions that captured data in our desired date range. To train a mangrove classification model, we'll reduce the size of our input data by making a composite of the `ImageCollection`. Let's make a median composite for this demonstration and clip it to our AOI.
 
-Note that at a given pixel in your composite, if every single image in your `ImageCollection` was masked in that location (due to preprocessing in our case), then the composite will also be masked there (noData). 
+*Note*: At a given pixel in your composite, if every single image in your `ImageCollection` was masked in that location (due to preprocessing in our case), then the composite will also be masked there. This can be remedied by more nuanced preprocessing algorithms and filters for the `ImageCollection`, but is beyond the scope of this demonstration.
 
 ```javascript
 //--------------------------------------------------------------
@@ -62,7 +62,7 @@ Export.image.toAsset({
 
 # Sample Data
 
-To train a mangrove classification model, we need presence/absence data on the locations of mangroves. There are several widely cited mangrove datasets out there now. The Giri et al 2011 is already in the GEE data catalog, it contains a mangrove extent map circa 2000.
+To train a mangrove classification model, we need presence/absence data on the locations of mangroves. There are several widely cited mangrove datasets out there now. The [Giri et al 2011 dataset](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1466-8238.2010.00584.x) is already in the GEE data catalog, it contains a mangrove extent map circa 2000.
 
 <img align="center" src="../images/mangrove-mapping/Giri2011.PNG" hspace="15" vspace="10" width="600">
 
