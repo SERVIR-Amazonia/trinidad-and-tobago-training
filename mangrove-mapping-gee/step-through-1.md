@@ -1,9 +1,11 @@
 ---
 layout: page
-title: Step-Through Pt 1
+title: Step-Through Part 1
 parent: Mangrove Mapping Using Multiple Sensors
 nav_order: 2
 ---
+
+# Step-Through Part 1
 
 # Overview 
 
@@ -13,11 +15,11 @@ Follow along by copying and pasting each code block in the lesson into your own 
 
 # Setting up Area of Interest
 
-An area of interest can be uploaded from a local shapefile, drawn on the map, or derived from a pre-existing dataset in the Earth Engine catalogue. Here we will use the Food and Agriculture Organization's Global Administrative Units Layer (FAO GAUL) dataset to derive our AOI. At the top of the code editor, type in the search bar 'FAO GAUL Level 1'. We see that it is a `FeatureCollection` containing Level 1 administrative boundaries globally.
+An area of interest can be uploaded from a local shapefile, drawn on the map, or derived from a pre-existing dataset in the Earth Engine catalogue. Here we will use the Food and Agriculture Organization's Global Administrative Units Layer (FAO GAUL) dataset to derive our AOI. At the top of the code editor, type in the search bar 'FAO GAUL Global First'. We see that it is a `FeatureCollection` containing Level 1 administrative boundaries globally.
 
 <img align="center" src="../images/mangrove-mapping/faogaul.PNG" hspace="15" vspace="10" width="600">
 
-Click on the Table Schema tab. We notice there is a useful field named 'ADM1_NAME'. We will use this property to derive our AOI. We will focus in on the San Juan area and the mangrove area to its south.
+Click on the `Table Schema` tab. We notice there is a useful field named 'ADM1_NAME'. We will use this property to derive our AOI. We will focus in on the San Juan area and the mangrove area to its south.
 
 ```javascript
 //--------------------------------------------------------------
@@ -41,9 +43,9 @@ Map.addLayer(aoi, {}, 'AOI');
 
 # Preprocessing Image Collections 
 
-We always want to apply filters to `ImageCollections` as early in our workflow as we can to reduce the amount of effort the GEE servers will require. We already know that we want relatively cloud-free images, so we will apply a cloud cover filter. We also will be selecting a specific list of image bands and renaming them to something easy to read.
+We always want to apply filters to `ImageCollections` as early in our workflow as we can to reduce the amount of effort the GEE servers will require. We already know the area that we'd like to pull data for (our AOI), and that we want relatively few clouds in our images, so we will apply a boundary and a cloud cover filter.
 
-Let's do that for the first Landsat mission, Landsat 4.
+Let's do that for our first Landat `ImageCollection`
 
 ```javascript
 //--------------------------------------------------------------
@@ -78,7 +80,7 @@ Checking in the Console, we see that `lt5` is an `ImageCollection` with over 40 
 
 <img align="center" src="../images/mangrove-mapping/print_lt5.PNG" hspace="15" vspace="10" width="600">
 
-*Tip*: Since there are differences in the amount and the order of bands on each Landsat mission, we use a `dictionary` (sensorBandDictLandsatTOA) and a `list` (bandNamesLandsatTOA) to standardize this information for us going forward using `select()` - it saves us quite a bit of typing when doing this for multiple collections. 
+*Tip*: Since there are differences in the amount and the order of bands on each Landsat mission, we use a dictionary (`sensorBandDictLandsatTOA`) and a list (`bandNamesLandsatTOA`) to standardize this information for us going forward using `select()` - it saves us quite a bit of typing when doing this for multiple collections. 
 
 Let's do the same thing for Landsat 7, 8, and 9.
 
@@ -148,7 +150,7 @@ function calculateIndices(img){
 }
 ```
 
-Now let's apply the functions to each Landsat collection using `.map()` and see the result.
+Now let's apply the functions to every image in each Landsat collection using `.map()` and see the result.
 
 ```javascript
 // Apply pre-processing functions to each image collection.
@@ -225,3 +227,4 @@ print(landsatFiltered)
 Map.addLayer(landsatFiltered,{},'Landsat Collection',false)
 ```
 
+Congratulations, you now have an `ImageCollection` consiting of data from multiple Landsat sensors for your area and date range of interest. Continue onto Step Through Part 2 to finish your workflow.
