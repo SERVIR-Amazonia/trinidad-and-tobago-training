@@ -104,7 +104,7 @@ var collectedPts = giriMangrovesTT.stratifiedSample({
   dropNulls:true, 
   tileScale:2, 
   geometries:true});
-
+print('Collected Points', collectedPts)
 // Optionally you can export and re-import it
 // Export.table.toAsset(referencePts,'mangroveSamples','projects/caribbean-trainings/assets/trinidad-tobago-2022/referencePoints_GiriMangroves_100ea')
 // var collectedPts = ee.FeatureCollection("projects/caribbean-trainings/assets/trinidad-tobago-2022/referencePoints_GiriMangroves_100ea")
