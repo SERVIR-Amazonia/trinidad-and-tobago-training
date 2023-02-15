@@ -78,7 +78,7 @@ Checking in the Console, we see that `lt5` is an `ImageCollection` with over 40 
 
 <img align="center" src="../images/mangrove-mapping/print_lt5.PNG" hspace="15" vspace="10" width="600">
 
-*Tip*: Since there are differences in the amount and the order of bands on each Landsat mission, we use a `dictionary` (sensorBandDictLandsatTOA) and a `list` (bandNamesLandsatTOA) to standardize this information for us going forward using `select()` - it saves us quite a bit of typing when doing this for multiple collections. 
+*Tip*: Since there are differences in the amount and the order of bands on each Landsat mission, we use a dictionary (`sensorBandDictLandsatTOA`) and a list (`bandNamesLandsatTOA`) to standardize this information for us going forward using `select()` - it saves us quite a bit of typing when doing this for multiple collections. 
 
 Let's do the same thing for Landsat 7, 8, and 9.
 
