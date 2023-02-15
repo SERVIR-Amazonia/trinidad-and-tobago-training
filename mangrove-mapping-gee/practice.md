@@ -9,11 +9,6 @@ nav_order: 4
 
 You've successfully written a remote sensing workflow to train a Random Forest classification model to map Mangrove presence with the Landsat archive. Now make it your own! There are several ways to tweak the original workflow right away to change the objective and make improvments. Here are a few ideas. 
 
-*Tip*: The Docs tab is your friend. If you see a function is being used in the script, find that function in the Docs to see what the required arguments are. It'll help you understand how to change the pre-existing functionality. 
-
-<img align="center" src="../images/mangrove-mapping/Docs.PNG" hspace="15" vspace="10" width="600">
-
-
 ## Area of Interest (AOI)
 
 We defined our AOI at the beginning of the script using FAO GAUL data. As discussed previously you can define an AOI in GEE in many other ways. Review Step-Through Part 1 section to get some ideas. 
@@ -31,3 +26,7 @@ The first is in the number of 'trees' in the Random Forest. You can change that 
 Beyond the model itself, we can also provide more and/or better reference data. The first improvement would be to increase the amount of total samples. Try a number between 200 and 500 per class. 
 
 To provide better quality reference data, we can look for another source of Mangrove presence/absence data, or make our own. Making your own will take time and expertise. However, take a look under the `projects/caribbean-training/_data/` asset folder for another source of presence/absence data. How could you replace the Giri et al 2011 data in the workflow with this other data source?
+
+*Tip*: The Docs tab is your friend. If you see a function is being used in the script, find that function in the Docs to see what the required arguments are. It'll help you understand how to change the pre-existing functionality. 
+
+<img align="center" src="../images/mangrove-mapping/Docs.PNG" hspace="15" vspace="10" width="600">
