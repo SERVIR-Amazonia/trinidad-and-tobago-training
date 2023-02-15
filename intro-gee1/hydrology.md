@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Exporting hydrologic datasets
-parent: Introduction to Google Earth Engine
+parent: Introduction to Google Earth Engine 1
 nav_order: 6
 ---
 

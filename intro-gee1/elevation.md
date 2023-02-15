@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Retrieving and visualizing elevation data
-parent: Introduction to Google Earth Engine
+parent: Introduction to Google Earth Engine 1
 nav_order: 5
 ---
 

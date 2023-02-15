@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Introduction to Google Earth Engine 1"
+title: Introduction to Google Earth Engine 1
 permalink: /intro-to-gee
 has_children: True
 nav_order: 7
