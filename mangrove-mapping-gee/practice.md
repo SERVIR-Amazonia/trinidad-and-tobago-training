@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Practice: Making Your Own Classification
+title: Practice Making Your Own Classification
 parent: Mangrove Mapping Using Multiple Sensors
 nav_order: 4
 ---
@@ -11,7 +11,7 @@ You've successfully written a remote sensing workflow to train a Random Forest c
 
 *Tip*: The Docs tab is your friend. If you see a function is being used in the script, find that function in the Docs to see what the required arguments are. It'll help you understand how to change the pre-existing functionality. 
 
-<img align="center" src="../images/mangrove-mapping/Docs.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/mangrove-mapping-gee/Docs.png" hspace="15" vspace="10" width="600">
 
 
 ## Area of Interest (AOI)
