@@ -41,7 +41,7 @@ Map.addLayer(aoi, {}, 'AOI');
 
 # Preprocessing Image Collections 
 
-We always want to apply filters to `ImageCollections` as early in our workflow as we can to reduce the amount of effort the GEE servers will require. We already know the area that we'd like to pull data for (our AOI), and that we want relatively cloud-free images, so we will apply a boundary and a cloud cover filter.
+We always want to apply filters to `ImageCollections` as early in our workflow as we can to reduce the amount of effort the GEE servers will require. We already know the area that we'd like to pull data for (our AOI), and that we want relatively few clouds in our images, so we will apply a boundary and a cloud cover filter.
 
 Let's do that for our first Landat `ImageCollection`
 
