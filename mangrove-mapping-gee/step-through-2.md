@@ -25,7 +25,7 @@ var composite = landsatFiltered.median().clip(aoi);
 Map.addLayer(composite, visParamPreProcessed, 'Median Composite');
 ```
 
-<img align="center" src="../images/mangrove-mapping/medianComposite.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/mangrove-mapping/medianComposite.PNG" hspace="15" vspace="10" width="600">
 
 At this point, sometimes it is a good idea to export the input data you have processed for your models. Importing pre-computed data products from a GEE asset will reduce the computational effort required to train and apply models in GEE. It is not necessary for this demonstration with such a small AOI, but bear that in mind for future work. If you decide to export your composite to a GEE asset, please change the `assetId` path to one of your own asset folders. 
 
@@ -64,7 +64,7 @@ Export.image.toAsset({
 
 To train a mangrove classification model, we need presence/absence data on the locations of mangroves. There are several widely cited mangrove datasets out there now. The Giri et al 2011 is already in the GEE data catalog, it contains a mangrove extent map circa 2000.
 
-<img align="center" src="../images/mangrove-mapping/Giri2011.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/mangrove-mapping/Giri2011.PNG" hspace="15" vspace="10" width="600">
 
 This dataset is an `ImageCollection` containing tiled raster data. Let's mosaic the tiles together, clip it to our AOI and check it out.
 
@@ -85,7 +85,7 @@ var giriMangrovesTT = ee.ImageCollection("LANDSAT/MANGROVE_FORESTS")
 Map.addLayer(giriMangrovesTT,{min:0,max:1},'Giri Mangrove Extent Map T&T',false)
 ```
 
-<img align="center" src="../images/mangrove-mapping/Giri2011Map.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/mangrove-mapping/Giri2011Map.PNG" hspace="15" vspace="10" width="600">
 
 Now that we have a presence/absence mangrove map, we can draw reference samples which will be used to train and validate our mangrove classification. First, lets generate a stratified sample of presence and absence points from the magrove presence/absence raster. We specify that we want 100 points of Mangrove and 100 points of Not Mangrove. 
 
@@ -122,7 +122,7 @@ var trainingPts = composite.sampleRegions({
 print('Training Points', trainingPts);
 ```
 
-<img align="center" src="../images/mangrove-mapping/trainingPts.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/mangrove-mapping/trainingPts.PNG" hspace="15" vspace="10" width="600">
 
 Each point within the `FeatureCollection` contains the value of the underlying pixel for every band in our Landsat composite image. Each band's name and value is stored as a property in the point feature. 
 
@@ -158,7 +158,7 @@ var RFclassification = composite
 Map.addLayer(RFclassification, {min: 0, max: 1, palette: colorPalette}, 'RF Classification');
 ```
 
-<img align="center" src="../images/mangrove-mapping/RFClassification.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/mangrove-mapping/RFClassification.PNG" hspace="15" vspace="10" width="600">
 
 How does it look? Let's quantify how well the classification did with an initial accuracy assessment. We will do this with the `trainingPts` `FeatureCollection`. We first split it out into 80% training points, 20% testing points.
 
@@ -211,6 +211,6 @@ print('Producers Accuracy:', confusionMatrix.producersAccuracy());
 print('Users Accuracy:', confusionMatrix.consumersAccuracy());
 ```
 
-<img align="center" src="../images/mangrove-mapping/AccuracyAssessment.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/mangrove-mapping/AccuracyAssessment.PNG" hspace="15" vspace="10" width="600">
 
 Congratulations! You have setup a machine learning classifier for mangrove mapping using multiple sensors. 

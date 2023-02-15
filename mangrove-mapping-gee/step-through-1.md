@@ -15,7 +15,7 @@ Follow along by copying and pasting each code block in the lesson into your own 
 
 An area of interest can be uploaded from a local shapefile, drawn on the map, or derived from a pre-existing dataset in the Earth Engine catalogue. Here we will use the Food and Agriculture Organization's Global Administrative Units Layer (FAO GAUL) dataset to derive our AOI. At the top of the code editor, type in the search bar 'FAO GAUL Level 1'. We see that it is a `FeatureCollection` containing Level 1 administrative boundaries globally.
 
-<img align="center" src="../images/mangrove-mapping-gee/faogaul.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/mangrove-mapping/faogaul.PNG" hspace="15" vspace="10" width="600">
 
 Click on the Table Schema tab. We notice there is a useful field named 'ADM1_NAME'. We will use this property to derive our AOI. We will focus in on the San Juan area and the mangrove area to its south.
 
@@ -37,7 +37,7 @@ Map.centerObject(aoi, 12);
 Map.addLayer(aoi, {}, 'AOI');
 ```
 
-<img align="center" src="../images/mangrove-mapping-gee/SanJuanAOI.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/mangrove-mapping/SanJuanAOI.PNG" hspace="15" vspace="10" width="600">
 
 # Preprocessing Image Collections 
 
@@ -76,7 +76,7 @@ print(lt5)
 ```
 Checking in the Console, we see that `lt5` is an `ImageCollection` with over 40 images in it. 
 
-<img align="center" src="../images/mangrove-mapping-gee/print_lt5.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/mangrove-mapping/print_lt5.PNG" hspace="15" vspace="10" width="600">
 
 *Tip*: Since there are differences in the amount and the order of bands on each Landsat mission, we use a `dictionary` (sensorBandDictLandsatTOA) and a `list` (bandNamesLandsatTOA) to standardize this information for us going forward using `select()` - it saves us quite a bit of typing when doing this for multiple collections. 
 
@@ -104,7 +104,7 @@ var lc9 = ee.ImageCollection('LANDSAT/LC09/C02/T1_TOA')
 
 Next, we want to apply some functions to each Landsat scene in a collection. In the first function, we will mask clouds and cloud shadows using the `QA_PIXEL` band that is included in every Landsat scene. The `QA_PIXEL` band is a bitmask generated in the Landsat processing center before it is distributed to the end-user. It has a lot of useful information contained in it. 
 
-<img align="center" src="../images/mangrove-mapping-gee/QA_PIXEL.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/mangrove-mapping/QA_PIXEL.PNG" hspace="15" vspace="10" width="600">
 
 We use the cloud and cloud shadow bits for this function.
 
@@ -198,7 +198,7 @@ Map.addLayer(firstPreProcessed,
             'First pre-processed image');
 ```
 
-<img align="center" src="../images/mangrove-mapping-gee/nonProcessedPreProcessed.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/mangrove-mapping/nonProcessedPreProcessed.PNG" hspace="15" vspace="10" width="600">
 
 Toggle between the two image layers to see the result of the cloud masking. You can `Inspect` each image on the map to see that the preprocessed image has a different set of spectral bands than the non-processed image.
 
