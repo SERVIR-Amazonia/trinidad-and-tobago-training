@@ -13,7 +13,7 @@ Follow along by copying and pasting each code block in the lesson into your own 
 
 # Setting up Area of Interest
 
-An area of interest can be uploaded from a local shapefile, drawn on the map, or derived from a pre-existing dataset in the Earth Engine catalogue. Here we will use the Food and Agriculture Organization's Global Administrative Units Layer (FAO GAUL) dataset to derive our AOI. At the top of the code editor, type in the search bar 'FAO GAUL Level 1'. We see that it is a `FeatureCollection` containing Level 1 administrative boundaries globally.
+An area of interest can be uploaded from a local shapefile, drawn on the map, or derived from a pre-existing dataset in the Earth Engine catalogue. Here we will use the Food and Agriculture Organization's Global Administrative Units Layer (FAO GAUL) dataset to derive our AOI. At the top of the code editor, type in the search bar 'FAO GAUL Global First'. We see that it is a `FeatureCollection` containing Level 1 administrative boundaries globally.
 
 <img align="center" src="../images/mangrove-mapping/faogaul.PNG" hspace="15" vspace="10" width="600">
 
