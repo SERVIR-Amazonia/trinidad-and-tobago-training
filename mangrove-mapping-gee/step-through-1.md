@@ -1,9 +1,11 @@
 ---
 layout: page
-title: Step-Through Pt 1
+title: Step-Through Part 1
 parent: Mangrove Mapping Using Multiple Sensors
 nav_order: 2
 ---
+
+# Step-Through Part 1
 
 # Overview 
 
