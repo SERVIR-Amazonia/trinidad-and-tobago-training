@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Satellite images in GEE - Browsing & pre-processing
-parent: Introduction to Google Earth Engine
+parent: Introduction to Google Earth Engine 1
 nav_order: 2
 ---
 
