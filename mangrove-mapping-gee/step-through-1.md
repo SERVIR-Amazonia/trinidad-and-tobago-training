@@ -225,3 +225,4 @@ print(landsatFiltered)
 Map.addLayer(landsatFiltered,{},'Landsat Collection',false)
 ```
 
+Congratulations, you now have an `ImageCollection` consiting of data from multiple Landsat sensors for your area and date range of interest. Continue onto Step Through Part 2 to finish your workflow.
