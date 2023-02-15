@@ -5,6 +5,8 @@ parent: Mangrove Mapping Using Multiple Sensors
 nav_order: 4
 ---
 
+# Practice Session
+
 # Overview
 
 You've successfully written a remote sensing workflow to train a Random Forest classification model to map Mangrove presence with the Landsat archive. Now make it your own! There are several ways to tweak the original workflow right away to change the objective and make improvments. Here are a few ideas. 
@@ -23,7 +25,9 @@ There are several ways we could make our RF model more robust...
 
 The first is in the number of 'trees' in the Random Forest. You can change that in the `ee.Classifier.smileRandomForest()` function and observe whether any of the accuracy metrics have improved. 
 
-Beyond the model itself, we can also provide more and/or better reference data. The first improvement would be to increase the amount of total samples. Try a number between 200 and 500 per class. 
+## Sample Data
+
+Beyond the model structure itself, we can also provide more and/or better reference data to the model. The first improvement would be to increase the amount of total samples. Try a number between 200 and 500 per class. 
 
 To provide better quality reference data, we can look for another source of Mangrove presence/absence data, or make our own. Making your own will take time and expertise. However, take a look under the `projects/caribbean-training/_data/` asset folder for another source of presence/absence data. How could you replace the Giri et al 2011 data in the workflow with this other data source?
 
