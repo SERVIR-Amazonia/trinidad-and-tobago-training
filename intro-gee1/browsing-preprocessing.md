@@ -29,7 +29,7 @@ Figure 5. Catalog search bar showing Landsat datasets.
 
 Figure 6. Landsat 8 description.
 
-Lets hit the ‘Import’ button, and change the name of the collection to ‘*landsat8_sr*’. Now let's download the boundary shapefile of Guyana. We are going to upload this file into the Assets section to have our country boundary available. First you can add a new project pressing the *ADD A PROJECT* button within the Assets section:
+Lets hit the ‘Import’ button, and change the name of the collection to ‘*landsat8_sr*’. Now let's download the boundary shapefile of Trinidad. We are going to upload this file into the Assets section to have our country boundary available. First you can add a new project pressing the *ADD A PROJECT* button within the Assets section:
 
 <img align="center" src="../images/intro-gee-images/07_newpro.png" hspace="15" vspace="10" width="300">
 
@@ -41,13 +41,11 @@ You can provide a name or id for the new cloud project,and then press ‘Select�
 
 Figure 8. Cloud project set-up window.
 
-Now press the *New* button and select the *Shape files* options within the *Table Upload* section.
+Now press the *New* button and select the *Shape files* options within the *Table Upload* section. When selecting the shapefile, you will need to ensure all its accompanying files are included (it will give you an error), or you can provide a zipped file containing all the necessary files.
 
 <img align="center" src="../images/intro-gee-images/09_newshape.png" hspace="15" vspace="10" width="600">
 
 Figure 9. Uploading a new shapefile into the Assets.
-
-When selecting the shapefile, make sure to select all of its components, but ignore the *qpj* file. For example, avoid errors like “The file named "guyana_boundary.qpj" does not have a correct extension” or “the shapefile must be accompanied by ‘dbf”
 
 <img align="center" src="../images/intro-gee-images/10_newShapefile pro.png" hspace="15" vspace="10" width="600">
 
@@ -59,7 +57,7 @@ The two-arrows icon permits us to refresh the view in case you don’t see the u
 
 Figure 11. Shapefile loaded.
 
-Click on ‘*Import*’ and change the name to *guyana_bou*. Now let’s work filtering our current image collection over three aspects: temporal, spatial, and spectral.
+Click on ‘*Import*’ and change the name to *trinidad_bou*. Now let’s work filtering our current image collection over three aspects: temporal, spatial, and spectral.
 
 <img align="center" src="../images/intro-gee-images/12_type.png" hspace="15" vspace="10" width="300">
 
@@ -75,12 +73,12 @@ Figure 13. Keyboard shortcut
 
 Figure 14. Available functions listed.
 
-The following code selects 3 months of Landsat 8 imagery over Guyana territory. Immediately we apply a scale factor.
+The following code selects 3 months of Landsat 8 imagery over Trinidad territory. Immediately we apply a scale factor.
 
 ```javascript
 landsat8_sr = landsat8_sr
             	.filterDate('2022-10-01', '2022-12-31')
-            	.filterBounds(guyana_bou)
+            	.filterBounds(trinidad_bou)
 
 // Applies scaling factors needed for Landsat collection 02
 function applyScaleFactors(image) {
@@ -92,7 +90,8 @@ function applyScaleFactors(image) {
 
 
 landsat8_sr = landsat8_sr.map(applyScaleFactors);
-We can also select only the required bands, e.g. excluding the first band of coastal aerosol.  The visualization setting must be described.
+// We can also select only the required bands, e.g. excluding the first band of coastal aerosol.  
+// The visualization setting must be described.
 
 var visualization = {
   bands: ['SR_B4', 'SR_B3', 'SR_B2'],
@@ -100,15 +99,17 @@ var visualization = {
   max: 0.3,
 };
 
-Map.centerObject(guyana_bou, 6)
+Map.centerObject(trinidad_bou, 6)
 
-Now we visualize the layers created using the 
-Map.addLayer(guyana_bou, {}, 'guyana', 0)
+// Now we visualize the layers created using the 
+Map.addLayer(trinidad_bou, {}, 'trinidad', 0)
 Map.addLayer(landsat8_sr, visualization, 'True Color (432)');
 ```
 
 <img align="center" src="../images/intro-gee-images/15_land.png" hspace="15" vspace="10" width="600">
 
-Figure 15. True color Landsat 8 collection 2 mosaic for Guyana.
+Figure 15. True color Landsat 8 collection 2 mosaic for Trinidad.
 
-We have added the layer of surface reflectance (SR) values for 3 months to visualize. You can check the code link at [https://code.earthengine.google.com/c242421f3cc5229e8e24bd019b8f6ceb](https://code.earthengine.google.com/c242421f3cc5229e8e24bd019b8f6ceb).
+We have added the layer of surface reflectance (SR) values for 3 months to visualize. 
+
+Checkpoint code link: [https://code.earthengine.google.com/8a13eeda6b9dfe906a948e2ab7e61234](https://code.earthengine.google.com/8a13eeda6b9dfe906a948e2ab7e61234).
