@@ -77,15 +77,15 @@ The following code selects 3 months of Landsat 8 imagery over Trinidad territory
 
 ```javascript
 landsat8_sr = landsat8_sr
-            	.filterDate('2022-10-01', '2022-12-31')
-            	.filterBounds(trinidad_bou)
+.filterDate('2022-10-01', '2022-12-31')
+.filterBounds(trinidad_bou)
 
 // Applies scaling factors needed for Landsat collection 02
 function applyScaleFactors(image) {
   var opticalBands = image.select('SR_B.').multiply(0.0000275).add(-0.2);
   var thermalBands = image.select('ST_B.*').multiply(0.00341802).add(149.0);
   return image.addBands(opticalBands, null, true)
-          	.addBands(thermalBands, null, true);
+  .addBands(thermalBands, null, true);
 }
 
 
@@ -108,8 +108,8 @@ Map.addLayer(landsat8_sr, visualization, 'True Color (432)');
 
 <img align="center" src="../images/intro-gee-images/15_land.png" hspace="15" vspace="10" width="600">
 
-Figure 15. True color Landsat 8 collection 2 mosaic for Trinidad.
+Figure 15. True color Landsat 8 collection 2 images for Trinidad.
 
 We have added the layer of surface reflectance (SR) values for 3 months to visualize. 
 
-Checkpoint code link: [https://code.earthengine.google.com/8a13eeda6b9dfe906a948e2ab7e61234](https://code.earthengine.google.com/8a13eeda6b9dfe906a948e2ab7e61234).
+Checkpoint code link: [https://code.earthengine.google.com/fa817765ef2a972f21e71ae1e577cfdd](https://code.earthengine.google.com/fa817765ef2a972f21e71ae1e577cfdd).
