@@ -22,7 +22,7 @@ Let’s import it and name it as rivers, and apply the spatial and temporal filt
 ```javascript
 /* ***** River information ********* */
 var flowingRivers = ee.Image().byte().paint(rivers, 'RIV_ORD', 2)
-              	.clip(guyana_bou);
+              	.clip(trinidad_bou);
 
 var riverVisParams = {
   min: 1,
@@ -38,28 +38,28 @@ Map.addLayer(rivers, null, 'FeatureCollection', false);
 
 <img align="center" src="../images/intro-gee-images/37_rivers_clip.png" hspace="15" vspace="10" width="300">
 
-Figure 37. HydroSHEDS clipped layer showing the river network in Guyana.
+Figure 37. HydroSHEDS clipped layer showing the river network in Trinidad.
 
-The layer named as ‘Feature collection’ contains every single item of the dataset such as small tributaries and minor rivers. Now let’s do a zoom at 10 km scale over the capital city. We are able to see the scale of visualization by using the scale bar in the lower right corner as it is circled and pointed out in Figure 38.  Let’s leave only the hydrosheds and true color sentinel layers activated.
+The layer named as ‘Feature collection’ contains every single item of the dataset such as small tributaries and minor rivers. Now let’s do a zoom at 500 m scale over the capital city. We are able to see the scale of visualization by using the scale bar in the lower right corner as it is circled and pointed out in Figure 38.  Let’s leave only the hydrosheds and true color sentinel layers activated.
 
 <img align="center" src="../images/intro-gee-images/38_river_sem.png" hspace="15" vspace="10" width="600">
 
 Figure 38. Rivers over Sentinel 2A mosaic can show the geographical match of the layers
 
-For now we can deactivate the layer of Landsat and cloud mask by adding a parameter in the last spot of parameters for the function *addLayer*. We can use 0 or false as valid values.
+*Tip*: You can deactivate the drawing of any layer you add by using `false` or `0` in the 4th argument place of `Map.addLayer()`.
 
 ```javascript
 Map.addLayer(cloud_mask, {}, 'cloud mask', false);
 Map.addLayer(l8_sr_cloud_masked.median(), visual_lan, 'image cloud masked', 0);
 ```
 
-Now let’s export this dataset using the function *Export*. Something very important is to keep the visor panel large enough for our intended to be exported region or study area. The larger your study region the longer will be the Export request task. One additional step you could do is to draw a polygon of a smaller area of interest within the Guyana territory.  You can check this optional step in the general script link.
+Now let’s export this dataset using the function *Export*. Something very important is to keep the visor panel large enough for our intended to be exported region or study area. The larger your study region the longer will be the Export request task. One additional step you could do is to draw a polygon of a smaller area of interest within the Trinidad territory.  You can check this optional step in the general script link.
 
 ```javascript
 Export.image.toDrive(
 {
   image: flowingRivers,
-  description: 'flowingRiversGuyana',
+  description: 'flowingRiversTrinidad',
   folder:'training_servir_amazonia',    
   maxPixels:1e13
   }
@@ -83,7 +83,7 @@ We might find errors like this *“Error: Pixel type not supported: Type\<Long>\
 Export.image.toDrive(
 {
   image: ee.Image(flowingRivers).toDouble(),
-  description: 'flowingRiversGuyana',
+  description: 'flowingRiversTrinidad',
   folder:'training_servir_amazonia',    
   maxPixels:1e13
   }
@@ -102,7 +102,7 @@ The task might take around 14 minutes to complete.
 
 Figure 42. Task manager
 
-In order to fund our exported products we have to go to the Google Drive site that belongs to the same gmail account used to log in into GEE
+In order to find our exported products we have to go to the Google Drive site that belongs to the same gmail account used to log in into GEE
 
 <img align="center" src="../images/intro-gee-images/43_drive.png" hspace="15" vspace="10" width="300">
 
@@ -120,13 +120,13 @@ Once the exportation has finished we can download the data and upload it in othe
 
 Figure 45. HydroShed River network raster loaded in QGIS.
 
-Script link: [https://code.earthengine.google.com/1115def3cb8e14a3a772e03ebaa19aa7](https://code.earthengine.google.com/1115def3cb8e14a3a772e03ebaa19aa7).
+Code Checkpoint: [https://code.earthengine.google.com/2786692492cfca2f6357bb28dc96977c](https://code.earthengine.google.com/2786692492cfca2f6357bb28dc96977c).
 
 ## Challenge 1: Working with derived water indexes
 
-Create a NDWI index using the Landsat 8 dataset for a period from January  2020 to June 2022 for a specific bioregion of Guyana.
+Create a NDWI index using the Landsat 8 dataset for a period from January  2020 to June 2022 for a specific bioregion of Trinidad.
 
-*Hint 1: Use the Docs panel to look for existent scripts that already have done that.*
+*Hint 1: There are good example scripts in the 'Examples' folder of the Scripts panel. look for existent scripts that already have done something similar.*
 
 *Hint 2: Make use of the Cloud-Based Remote Sensing with Google Earth Engine: Fundamentals and Applications book (https://eefabook.org) to find help.*
 
