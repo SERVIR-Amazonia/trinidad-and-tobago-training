@@ -35,13 +35,13 @@ Then we apply the cloud masking function ‘maskS2clouds’ to the sentinel data
 
 ```javascript
 var s2_sr_med = sentinel2_sr
-  	.filterDate('2022-07-01', '2022-12-31')
-  	.filterBounds(guyana_bou)
+  	.filterDate('2022-01-01', '2022-06-30')
+  	.filterBounds(trinidad_bou)
   	.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20))
   	.map(maskS2clouds)
   	.median()
   	.select('B2','B3','B4','B5', 'B6', 'B7', 'B8', 'B8A', 'B11', 'B12')  // B 'B2', G 'B3', R 'B4', NIR 'B8'
-  	.clip(guyana_bou);
+  	.clip(trinidad_bou);
 
 // visualization sentinel 2
 var visual_sen = {  //{bands: ['B4', 'B3','B2'], min: 0, max: 2000, gamma: 11}
@@ -54,7 +54,7 @@ Map.addLayer(s2_sr_med,  visual_sen, "true color sentinel", 1)
 
 The true color layer of the Sentinel 2A dataset median estimate is shown in Figure.
 
-<img align="center" src="../images/intro-gee-images/22_senmosaic.png" hspace="15" vspace="10" width="300">
+<img align="center" src="../images/intro-gee-images/22_senmosaic.png" hspace="15" vspace="10" width="600">
 
 Figure 22. True color of median estimate for Sentinel time series from 01-2022 to 06-2022
 
@@ -65,3 +65,5 @@ The image from 2022 shows the presence of whitish pixels that correspond to lowe
 Figure 23. Comparing different levels of cloud tolerance
 
 The obstacle of cloudiness presence is major in the tropics. If you test this cloud masking procedure in other higher latitude regions then you might find less cloudy scenes. The tiles missing (gaps) correspond to images that did not pass the cloud percentage filter.
+
+Code Checkpoint: [https://code.earthengine.google.com/490c6c7503f1737ab88ff65f7869a312](https://code.earthengine.google.com/490c6c7503f1737ab88ff65f7869a312)
