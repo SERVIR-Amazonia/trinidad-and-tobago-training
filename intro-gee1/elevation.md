@@ -42,23 +42,22 @@ var elevationVis = {
 Map.addLayer(elevation, elevationVis, 'Elevation');
 ```
 
-Now let’s analyze the terrain height at some specific locations. The country of Guyana consists of four main geographic regions: the interior savanna (Rupununi Savannah), the low coastal plain (North Atlantic Ocean), a hilly sand and clay zone across the entire territory, and the highlands with mountain chains. Within the Pakaraima Mountains we find the Mount Roraima peak with 2,772 meters (9,094 ft) of elevation.
+Now let’s analyze the terrain height at some specific locations. Trinidad is traversed by three distinct mountain ranges that are a continuation of the Venezuelan coastal cordillera. The Northern Range, an outlier of the Andes Mountains of Venezuela, consists of rugged hills that parallel the coast. This range rises into two peaks. The highest, El Cerro del Aripo, is 940 metres (3,084 ft) high; the other, El Tucuche, reaches 936 metres (3,071 ft). 
 
-<img align="center" src="../images/intro-gee-images/27_pakaraima.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee-images/27_ElCerroDelAripo.png" hspace="15" vspace="10" width="600">
 
-Figure 27. The Pakaraima mountains, Guyana. Source: Wikipedia
+Figure 27. El Cerro Del Aripo, Trinidad. [Source](http://cstrinidadandtobago.weebly.com/el-cerro-del-aripo.html)
 
 ```javascript
-// Around Pakaraima mountains and Mount Roraima lat + 5.26°, lon -60.76°
-var p01 = ee.Geometry.Point(-60.76, 5.26)
+// Around El Cerro Del Aripo Mtn
+var p01 = ee.Geometry.Point(-61.24, 10.73)
 
-Map.addLayer(p01, {}, 'Mount Roraima');
-/****  	****   	****/
+Map.addLayer(p01, {}, 'point');
 ```
 
 <img align="center" src="../images/intro-gee-images/28_elev_mount.png" hspace="15" vspace="10" width="600">
 
-Figure 28. DEM layer and the location over Pakaraima mountains chain
+Figure 28. DEM layer and the location over El Cerro Del Aripo mountain
 
 Black and gray colors correspond to lowlands and plains, while white and bright pixels correspond to highlands and mountain peaks. We are going to use the Inspector tool.  Click on it, and then we click on the point we added in order to see the elevation value we have there.
 
@@ -72,7 +71,7 @@ Hence, the values from all the add layers will be visible for the specified geog
 
 Figure 30. Location values
 
-In the Inspector panel we will see the values for the layers we have added by code, either activated or deactivated. First, we can identify low surface reflectance values from the Sentinel layer. Second, we can observe that the elevation at this location is 885 meters.  This zone harbors the greatest terrain heights like for example the Pakaraima mountains. Let’s do a quick exercise of visualization. The default view of the map visor 
+In the Inspector panel we will see the values for the layers we have added by code, either activated or deactivated. First, we can identify low surface reflectance values from the Sentinel layer. Second, we can observe that the elevation at this location is 901 meters. Let’s do a quick exercise of visualization. The default view of the map visor 
 
 <img align="center" src="../images/intro-gee-images/31_mode.png" hspace="15" vspace="10" width="300">
 
@@ -95,3 +94,5 @@ Figure 33. Map terrain view
 Figure 34. Terrain view
 
 We can easily recognize our point of reference located at the 900 m contour line.
+
+Code Checkpoint: [https://code.earthengine.google.com/71a5f9026b25d26591967114e1e36cb0](https://code.earthengine.google.com/71a5f9026b25d26591967114e1e36cb0)
