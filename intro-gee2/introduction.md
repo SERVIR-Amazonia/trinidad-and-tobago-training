@@ -17,7 +17,8 @@ Welcome to an Introduction to Google Earth Engine (GEE)! This workshop will give
 
 ## Requirements
 
-You will need in advance to have a GEE account approved. Go the GEE website and sign up for a new user account: [https://earthengine.google.com/signup/](https://earthengine.google.com/signup/).
+1. You will need in advance to have a GEE account approved. Go the GEE website and sign up for a new user account: [https://earthengine.google.com/signup/](https://earthengine.google.com/signup/).
+2. Download the [data](https://drive.google.com/drive/folders/1Aov0j6ASs6eQVel4EeiiZrGaDRhq5WGQ?usp=share_link) used in this training: 
 
 <img align="center" src="../images/intro-gee-images/01_signup.png" hspace="15" vspace="10" width="600">
 
@@ -50,7 +51,3 @@ Learning how to code JavaScript is not complicated.  The online code-editor allo
 - *function*: to create a new function that performs a specific task
 - *map*: to apply a function over an image collection
 - *clip*: to shape a raster or vector layer by a geometry or polygon
-
-## Data and Script for this training
-
-- [Data used](https://drive.google.com/drive/folders/1Aov0j6ASs6eQVel4EeiiZrGaDRhq5WGQ?usp=share_link)
