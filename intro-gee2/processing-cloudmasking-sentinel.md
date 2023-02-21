@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Processing and cloud masking Sentinel
-parent: Introduction to Google Earth Engine 1
+parent: Introduction to Google Earth Engine 2
 nav_order: 4
 ---
 
