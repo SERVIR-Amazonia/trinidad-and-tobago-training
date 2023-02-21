@@ -27,7 +27,7 @@ print(first_image);
 
 In the **Console** panel, you may need to click the expander arrows to show the information. You should be able to read that this image consists of 19 different bands. For each band, the metadata lists four properties, but for now let’s simply note that the first property is a name or label for the band enclosed in quotation marks. For example, the name of the first band is “SR_B1”.
 
-<img align="center" src="..images/intro-gee1-images/17first-image.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/17first-image.png" hspace="15" vspace="10" width="600">
 
 A satellite sensor like Landsat 5 measures the magnitude of radiation in different portions of the electromagnetic spectrum. The first six bands in our image ("SR_B1" through "SR_B7") contain measurements for six different portions of the spectrum. The first three bands measure visible portions of the spectrum, or quantities of blue, green, and red light. The other three bands measure infrared portions of the spectrum that are not visible to the human eye. 
 
@@ -70,7 +70,7 @@ Can you recognize any features in the image? By comparing it to the standard Goo
 
 Let’s explore this image with the **Inspector** tool. When you click on the **Inspector** tab on the right side of the Code Editor, your cursor should now look like crosshairs. When you click on a location in the image, the **Inspector** panel will report data for that location under three categories as follows:   
 
-<img align="center" src="..images/intro-gee1-images/18inspector.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/18inspector.png" hspace="15" vspace="10" width="600">
 
 `Point`: data about the location on the map. This includes the geographic location (longitude and latitude) and some data about the map display (zoom level and scale). 
 
@@ -108,7 +108,7 @@ Map.addLayer(
 
 In the code above, notice that we included two additional parameters to the `Map.addLayer` call. One parameter controls whether or not the layer is shown on the screen when the layer is drawn. It may be either 1 (shown) or 0 (not shown). The other parameter defines the opacity of the layer, or your ability to “see through” the map layer. The opacity value can range between 0 (transparent) and 1 (opaque). 
 
-<img align="center" src="..images/intro-gee1-images/19layer3.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/19layer3.png" hspace="15" vspace="10" width="600">
 
 Do you see how these new parameters influence the map layer displays? For Layer 2, we set the shown parameter as 0. For Layer 3, we set the opacity parameter as 0. As a result, neither layer is visible to us when we first run the code. We can make each layer visible with controls in the Layers manager checklist on the map (at top right). Expand this list and you should see the names that we gave each layer when we added them to the map. Each name sits between a checkbox and an opacity slider. To make Layer 2 visible, click the checkbox. To make Layer 3 visible, move the opacity slider to the right. 
 

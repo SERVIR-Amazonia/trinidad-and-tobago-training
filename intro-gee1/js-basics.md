@@ -40,7 +40,7 @@ print(cities);
 
 If you look at the output in the **Console**, you will see “List” with an expander arrow (▹) next to it. Clicking on the arrow will expand the list and show you its content. You will notice that along with the four items in the list, there is a number next to each value. This is the index of each item. It allows you to refer to each item in the list using a numeric value that indicates its position in the list.
 
-<img align="center" src="..images/intro-gee1-images/08list.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/08list.png" hspace="15" vspace="10" width="600">
 
 **Objects**
 Lists allow you to store multiple values in a single container variable. While useful, it is not appropriate to store structured data. It is helpful to be able to refer to each item with its name rather than its position. Objects in JavaScript allow you to store key-value pairs, where each value can be referred to by its key. You can create a dictionary using the curly braces `{}`. The code below creates an object called `cityData` with some information about San Francisco. 
@@ -58,7 +58,7 @@ print(cityData);
 
 The object will be printed in the **Console**. You can see that instead of a numeric index, each item has a label. This is known as the key and can be used to retrieve the value of an item.
 
-<img align="center" src="..images/intro-gee1-images/09dict.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/09dict.png" hspace="15" vspace="10" width="600">
 
 **Functions**
 While using Earth Engine, you will need to define your own functions. Functions take user inputs, use them to carry out some computation, and send an output back. Functions allow you to group a set of operations together and repeat the same operations with different parameters without having to rewrite them every time. Functions are defined using the function keyword. The code below defines a function called greet that takes an input called name and returns a greeting with Hello prefixed to it. Note that we can call the function with different input and it generates different outputs with the same code.
@@ -71,7 +71,7 @@ print(greet('World'));
 print(greet('Readers'));
 ```
 
-<img align="center" src="..images/intro-gee1-images/10greet.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/10greet.png" hspace="15" vspace="10" width="600">
 
 **Comments**
 While writing code, it is useful to add a bit of text to explain the code or leave a note for yourself. It is a good programming practice to always add comments in the code explaining each step. In JavaScript, you can prefix any line with two forward slashes // to make it a comment. The text in the comment will be ignored by the interpreter and will not be executed.
@@ -82,7 +82,7 @@ While writing code, it is useful to add a bit of text to explain the code or lea
 
 The Code Editor also provides a shortcut—Ctrl + / on Windows, Cmd + / on Mac—to comment or uncomment multiple lines at a time. You can select multiple lines and press the key combination to make them all comments. Press again to reverse the operation. This is helpful when debugging code to stop certain parts of the script from being executed.
 
-<img align="center" src="..images/intro-gee1-images/11comment.png" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/11comment.png" hspace="15" vspace="10" width="600">
 
 Congratulations! You have learned enough JavaScript to be able to use the Earth Engine API. In the next section, you will see how to access and execute Earth Engine API functions using JavaScript.
 
