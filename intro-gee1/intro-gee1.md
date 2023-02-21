@@ -14,6 +14,8 @@ Navigate through the different lesson sections by using the menu on the lefthand
 **Date**: March 20, 2023
 **Instructor(s):** Kyle Woodward
 
+**CHANGE AGENDA ONCE CONTENT IS IN**
+
 |      Time     |                                                                                                       Topics                                                                                                      |
 |:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | 09:00 – 09:45 |                                  Welcome and set-up check<br>What is Google Earth Engine, demonstration of the interface, benefits from a cloud-based geospatial coding platform                                  |
