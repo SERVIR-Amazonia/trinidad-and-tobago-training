@@ -54,4 +54,3 @@ Learning how to code JavaScript is not complicated.  The online code-editor allo
 ## Data and Script for this training
 
 - [Data used](https://drive.google.com/drive/folders/1Aov0j6ASs6eQVel4EeiiZrGaDRhq5WGQ?usp=share_link)
-- [Complete GEE script](https://code.earthengine.google.com/987c9d0f5b3d3ef0fd632072fba4f5f2)
