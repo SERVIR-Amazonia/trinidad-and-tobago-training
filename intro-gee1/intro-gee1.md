@@ -21,4 +21,4 @@ Navigate through the different lesson sections by using the menu on the lefthand
 | 11:00 - 11:15   |                                Coffee Break                                 |
 | 11:15 – 12:00 |                           Accessing Images in GEE
 | 12:00 – 13:00 |                                 Lunch                                   |
-| 13:00 – 15:00  |            Morning recap<br>Exploring Image Collections<br>Challenge   |
+| 13:00 – 15:00  |            Morning recap<br>Exploring Image Collections<br>Challenge - Gather Relevant Data    |
