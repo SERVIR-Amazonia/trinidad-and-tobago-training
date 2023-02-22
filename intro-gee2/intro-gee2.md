@@ -16,9 +16,9 @@ Navigate through the different lesson sections by using the menu on the lefthand
 
 |      Time     |                                                                                                       Topics                                                                                                      |
 |:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| 09:00 – 09:45 |                                  Welcome and set-up check<br>What is Google Earth Engine, demonstration of the interface, benefits from a cloud-based geospatial coding platform                                  |
-| 9:45 – 11:00  |          Google Earth Engine workspace and catalog<br>Introduction to JavaScript (JS): coding paradigm, declaration of variables<br>Analyzing programming structure: main JS reserved words and commands          |
-| 11:00 – 11:15 |                                                                                                    Coffee break                                                                                                   |
-| 11:15 – 12:00 |                           Practice Session:<br>- Satellite images in GEE: Browsing & pre-processing<br>- Retrieving & visualizing Landsat 8, Sentinel 2 and elevation products (NASADEM)                          |
+| 09:00 – 09:45 |    Welcome and setup check<br> Yesterday Review, Q&A |
+| 9:45 – 11:00  |    Satellite images in GEE: Browsing & pre-processing<br>Processing & cloud masking Landsat                                                              |
+|11:00–11:15 | Coffee Break                                                                                 
+| 11:15 – 12:00 |  Processing and cloud masking Sentinel<br>Retrieving & visualizing elevation products                          |
 | 12:00 – 13:00 | Lunch                                                                                                                                                                                                             |
-| 13:00 –15:00  | Morning recap<br>Temporal and spatial (clipping) filtering of composites:<br>- Cloud masking, cloud removal<br>Assets: new assets & loading of image collections, vectorial, tables (tiff, shapefiles, csv, etc.) |
+| 13:00 –15:00  | Morning recap<br>Exporting Hydrologic Datasets<br>Challenge: Preprocess, Export, Import

@@ -489,7 +489,3 @@ Uncheck the population layer and zoom in to examine the patterns of topography. 
 <img align="center" src="../images/intro-gee1-images/43nasadem.PNG" hspace="15" vspace="10" width="600">
 
 Take a moment to look through all of the different layers that we have explored so far. You can open your scripts one at a time or in different tabs, or even by copying the code into one single script. Turn the layers on and off, pan around, and zoom in and out accordingly to visualize the different datasets on the map. 
-
-**Assignment** 
-
-Explore the Earth Engine Data Catalog, and find a dataset that is near your location. To do this, you can type keywords into the search bar, located above the Earth Engine code. Import a dataset into your workspace and filter the dataset to a single image. Then, print the information of the image into the **Console** and add the image to the map, either using three selected bands or a custom palette for one band.

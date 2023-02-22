@@ -14,13 +14,11 @@ Navigate through the different lesson sections by using the menu on the lefthand
 **Date**: March 20, 2023
 **Instructor(s):** Kyle Woodward
 
-**CHANGE AGENDA ONCE CONTENT IS IN**
-
 |      Time     |                                                                                                       Topics                                                                                                      |
 |:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| 09:00 – 09:45 |                                  Welcome and set-up check<br>What is Google Earth Engine, demonstration of the interface, benefits from a cloud-based geospatial coding platform                                  |
-| 9:45 – 11:00  |          Google Earth Engine workspace and catalog<br>Introduction to JavaScript (JS): coding paradigm, declaration of variables<br>Analyzing programming structure: main JS reserved words and commands          |
-| 11:00 – 11:15 |                                                                                                    Coffee break                                                                                                   |
-| 11:15 – 12:00 |                           Practice Session:<br>- Satellite images in GEE: Browsing & pre-processing<br>- Retrieving & visualizing Landsat 8, Sentinel 2 and elevation products (NASADEM)                          |
-| 12:00 – 13:00 | Lunch                                                                                                                                                                                                             |
-| 13:00 –15:00  | Morning recap<br>Temporal and spatial (clipping) filtering of composites:<br>- Cloud masking, cloud removal<br>Assets: new assets & loading of image collections, vectorial, tables (tiff, shapefiles, csv, etc.) |
+| 09:00 – 09:45 |                                  Introductions<br>Setup Check           |
+| 09:45 – 11:00  |Navigating in the Code Editor<br>JavaScript Basics<br>Earth Engine API Basics                                                                                |
+| 11:00 - 11:15   |                                Coffee Break                                 |
+| 11:15 – 12:00 |                           Accessing Images in GEE
+| 12:00 – 13:00 |                                 Lunch                                   |
+| 13:00 – 15:00  |            Morning recap<br>Exploring Image Collections<br>Challenge   |

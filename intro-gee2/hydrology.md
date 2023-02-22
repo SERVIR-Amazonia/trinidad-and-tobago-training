@@ -121,15 +121,3 @@ Once the exportation has finished we can download the data and upload it in othe
 Figure 45. HydroShed River network raster loaded in QGIS.
 
 Code Checkpoint: [https://code.earthengine.google.com/2786692492cfca2f6357bb28dc96977c](https://code.earthengine.google.com/2786692492cfca2f6357bb28dc96977c).
-
-## Challenge 1: Working with derived water indexes
-
-Create a NDWI index using the Landsat 8 dataset for a period from January  2020 to June 2022 for a specific bioregion of Trinidad.
-
-*Hint 1: There are good example scripts in the 'Examples' folder of the Scripts panel. look for existent scripts that already have done something similar.*
-
-*Hint 2: Make use of the Cloud-Based Remote Sensing with Google Earth Engine: Fundamentals and Applications book (https://eefabook.org) to find help.*
-
-## Challenge 2: Researching about Earth Engine applications
-
-Develop a short research about the Google Earth Engine Mangrove Mapping Methodology tool.  Try to see how it works, what type of machine learning approach it uses, and analyze part of its code.
