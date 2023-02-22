@@ -43,9 +43,10 @@ If you look at the output in the **Console**, you will see “List” with an ex
 <img align="center" src="../images/intro-gee1-images/08list.png" hspace="15" vspace="10" width="600">
 
 **Objects**
+
 Lists allow you to store multiple values in a single container variable. While useful, it is not appropriate to store structured data. It is helpful to be able to refer to each item with its name rather than its position. Objects in JavaScript allow you to store key-value pairs, where each value can be referred to by its key. You can create a dictionary using the curly braces `{}`. The code below creates an object called `cityData` with some information about San Francisco. 
 
-Note a few important things about the JavaScript syntax here. First, we can use multiple lines to define the object. Only when we put in the semicolon (;) is the command considered complete. This helps format the code to make it more readable. Also note the choice of the variable name cityData. The variable contains two words. The first word is in lowercase, and the first letter of the second word is capitalized. This type of naming scheme of joining multiple words into a single variable name is called “camel case.” While it is not mandatory to name your variables using this scheme, it is considered a good practice to follow. Functions and parameters in the Earth Engine API follow this convention, so your code will be much more readable if you follow it too.
+Note a few important things about the JavaScript syntax here. First, we can use multiple lines to define the object. Only when we put in the semicolon (`;`) is the command considered complete. This helps format the code to make it more readable. Also note the choice of the variable name `cityData`. The variable contains two words. The first word is in lowercase, and the first letter of the second word is capitalized. This type of naming scheme of joining multiple words into a single variable name is called “camel case.” While it is not mandatory to name your variables using this scheme, it is considered a good practice to follow. Functions and parameters in the Earth Engine API follow this convention, so your code will be much more readable if you follow it too.
 
 ```javascript
 var cityData = {
@@ -61,7 +62,8 @@ The object will be printed in the **Console**. You can see that instead of a num
 <img align="center" src="../images/intro-gee1-images/09dict.png" hspace="15" vspace="10" width="600">
 
 **Functions**
-While using Earth Engine, you will need to define your own functions. Functions take user inputs, use them to carry out some computation, and send an output back. Functions allow you to group a set of operations together and repeat the same operations with different parameters without having to rewrite them every time. Functions are defined using the function keyword. The code below defines a function called greet that takes an input called name and returns a greeting with Hello prefixed to it. Note that we can call the function with different input and it generates different outputs with the same code.
+
+While using Earth Engine, you will need to define your own functions. Functions take user inputs, use them to carry out some computation, and send an output back. Functions allow you to group a set of operations together and repeat the same operations with different parameters without having to rewrite them every time. Functions are defined using the function keyword. The code below defines a function called greet that takes an input called `name` and returns a greeting with 'Hello' prefixed to it. Note that we can call the function with different input and it generates different outputs with the same code.
 
 ```javascript
 var greet = function(name) {
@@ -74,6 +76,7 @@ print(greet('Readers'));
 <img align="center" src="../images/intro-gee1-images/10greet.png" hspace="15" vspace="10" width="600">
 
 **Comments**
+
 While writing code, it is useful to add a bit of text to explain the code or leave a note for yourself. It is a good programming practice to always add comments in the code explaining each step. In JavaScript, you can prefix any line with two forward slashes // to make it a comment. The text in the comment will be ignored by the interpreter and will not be executed.
 
 ```javascript
@@ -86,4 +89,4 @@ The Code Editor also provides a shortcut—Ctrl + / on Windows, Cmd + / on Mac�
 
 Congratulations! You have learned enough JavaScript to be able to use the Earth Engine API. In the next section, you will see how to access and execute Earth Engine API functions using JavaScript.
 
-Code Checkpoint: https://code.earthengine.google.com/5cdf0c9ec866b170a344f6b7314a5d15
+Code Checkpoint: https://code.earthengine.google.com/27a3e63f23fae0285111602312872fe4

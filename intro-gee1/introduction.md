@@ -9,7 +9,7 @@ nav_order: 1
 
 In order to use Earth Engine well, you will need to develop basic skills in remote sensing and programming. The programming language in our Earth Engine tutorials is JavaScript, and you will begin by learning how to manipulate variables using it. With that base, you’ll learn about viewing individual satellite images, viewing collections of images in Earth Engine, and how common remote sensing terms are referenced and used in Earth Engine. 
 
-*The material for this module was adapted from the EEFA book chapter F1*
+*The material for this module was adapted from the EEFA book chapter F1, [https://www.eefabook.org/](https://www.eefabook.org/)*
 
 ## Objectives 
 1. Successfully navigate within Earth Engine's Code Editor interface

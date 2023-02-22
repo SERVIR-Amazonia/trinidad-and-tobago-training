@@ -2,7 +2,7 @@
 layout: page
 title: Accessing Images in Earth Engine
 parent: Introduction to Google Earth Engine 1
-nav_order: 7
+nav_order: 6
 ---
 
 # Overview
@@ -15,6 +15,7 @@ You saw some of the basic ways to interact with an individual `ee.Image` in the 
 In this module, we will show you how to view and work with Image Collections' most basic attributes, and use these skills to view some of the major types of Image Collections in Earth Engine. This chapter will give a brief tour of the Earth Engine Data Catalog, which contains decades of satellite imagery and much more. We will view some of the different types of data sets in the following sections, including climate and weather data, digital elevation models and other terrain data, land cover, cropland, satellite imagery, and others.
 
 **View an Image Collection**
+
 The Landsat program from NASA and the United States Geological Survey (USGS) has launched a sequence of Earth observation satellites, named Landsat 1, 2, etc. Landsats have been returning images since 1972, making that collection of images the longest continuous satellite-based observation of the Earth's surface. We will now view images and basic information about one of the image collections that is still growing: collections of scenes taken by the Operational Land Imager aboard Landsat 8, which was launched in 2013. Copy and paste the following code into the center panel and click **Run**. While the enormous image catalog is accessed, it could take a couple of minutes to see the result in the Map area. You may note individual “scenes” being drawn, which equate to the way that the Landsat program partitions Earth into “paths” and “rows.” If it takes more than a couple of minutes to see the images, try zooming in to a specific area to speed up the process.
 
 ```javascript
@@ -47,24 +48,26 @@ Map.addLayer(landsat8,
 
 <img align="center" src="../images/intro-gee1-images/25imgcoll.PNG" hspace="15" vspace="10" width="600">
 
-Notice the high amount of cloud cover, and the “layered” look. Zoom out if needed. This is because Earth Engine is drawing each of the images that make up the `ImageCollection` one on top of the other. The striped look is the result of how the satellite collects imagery. The overlaps between images and the individual nature of the images mean that these are not quite ready for analysis; we will address this issue in future chapters.
+Notice the high amount of cloud cover, and the “layered” look. Zoom in or out if needed. This is because Earth Engine is drawing each of the images that make up the `ImageCollection` one on top of the other. The striped look is the result of how the satellite collects imagery. The overlaps between images and the individual nature of the images mean that these are not quite ready for analysis; we will address this issue in future chapters.
 
 Now examine the printed size on the **Console**. It will indicate that there are more than a million images in the dataset. If you return to this lab in the future, the number will be even larger, since this active collection is continually growing as the satellite gathers more imagery. For the same reason, the above figure might look slightly different on your map because of this.
 
 <img align="center" src="../images/intro-gee1-images/26print.PNG" hspace="15" vspace="10" width="600">
 
-Note that printing the `ImageCollection` returned an error message, because calling print on an `ImageCollection` will write the name of every image in the collection to the **Console**. This is the result of an intentional safeguard within Earth Engine. We don’t want to see a million image names printed to the **Console**! 
+Note that printing the `ImageCollection` returned an error message, because calling print on an `ImageCollection` will print each image (and its metadata) in the collection to the **Console**. This is the result of an intentional safeguard within Earth Engine. We don’t want to see a million image names printed to the **Console**! 
 
 <img align="center" src="../images/intro-gee1-images/27error.PNG" hspace="15" vspace="10" width="600">
 
 Code Checkpoint: https://code.earthengine.google.com/3ab7f5b969df4dc5c9d7656b54d7db75
 
-Edit your code to comment out the last two code commands you have written. This will remove the call to Map.addLayer that drew every image, and will remove the print statement that demanded more than 5000 elements. This will speed up your code in subsequent sections. As described previously, placing two forward slashes (`//`) at the beginning of a line will make it into a comment, and any commands on that line will not be executed.
+Edit your code to comment out the last two code commands you have written. This will remove the call to `Map.addLayer` that drew every image, and will remove the `print` statement that demanded more than 5000 elements. This will speed up your code in subsequent sections. As described previously, placing two forward slashes (`//`) at the beginning of a line will make it into a comment, and any commands on that line will not be executed.
 
 **Filtering Image Collections**
+
 The `ImageCollection` data type in Earth Engine has multiple approaches to filtering, which helps to pinpoint the exact images you want to view or analyze from the larger collection.
 
 **Filter by Date**
+
 One of the filters is `filterDate`, which allows us to narrow down the date range of the `ImageCollection`. Copy the following code to the center panel (paste it after the previous code you had):
 
 ```javascript
@@ -95,7 +98,7 @@ Now look at the size of the winter Landsat 8 collection. The number is significa
 
 **Filter by Location**
 
-A second frequently used filtering tool is `filterBounds`. This filter is based on a location—for example, a point, polygon, or other geometry. Copy and paste the code below to filter and add to the map the winter images from the Landsat 8 Image Collection to a point in Valencia, Trinidad. Note below the `Map.addLayer` function to add the `pointMN` to the map with an empty dictionary `{}` for the `visParams` argument. This only means that we are not specifying visualization parameters for this element, and it is being added to the map with the default parameters.
+A second frequently used filtering tool is `filterBounds`. This filter is based on a location—for example, a point, polygon, or other geometry. Copy and paste the code below to filter and add to the map the winter images from the Landsat 8 Image Collection to a point in Valencia, Trinidad. Note below the `Map.addLayer` function to add the `point` to the map with an empty dictionary `{}` for the `visParams` argument. This only means that we are not specifying visualization parameters for this element, and it is being added to the map with the default parameters.
 
 ```javascript
 // Create an Earth Engine Point object.
@@ -204,6 +207,7 @@ Compare this image with the raw Landsat 8 images from the previous section. Zoom
 Code Checkpoint: https://code.earthengine.google.com/4416a15713f826bed4c475f73e78c1a6
 
 **Section 3. Pre-Made Composites**
+
 Pre-made composites take individual images from image collections across a set area or time period and assemble them into a single layer. This can be done for many different datasets, including satellite images (e.g., MODIS, Landsat, Sentinel), climatological information, forest or vegetation information, and more.
 
 For example, image collections may have multiple images in one location, as we saw in our “filter by location” example above. Some of the images might have a lot of cloud cover or other atmospheric artifacts that make the imagery quality poor. Other images might be very high quality, because they were taken on sunny days when the satellite was flying directly overhead. The compositing process takes all of these different images, picks the best ones, and then stitches them together into a single layer. The compositing period can differ for different datasets and goals; for example, you may encounter daily, monthly, and/or yearly composites. To do this manually is more advanced; however, with the pre-made composites available in Earth Engine, some of that complex work has been done for you.
@@ -239,7 +243,7 @@ var modisVis = {
 Map.addLayer(modisDailyRecent, modisVis, 'MODIS Daily Composite');
 ```
 
-Uncheck the other layer (“Landsat 8 SR”), zoom out (e.g., country-scale) and pan around the image (Fig. F1.2.9). Notice how there are no clouds in the image, but there are some pixels with no data (Fig. F1.2.10). These are persistently cloudy areas that have no clear pixels in the particular period chosen. 
+Uncheck the other layer (“Landsat 8 SR”), zoom out (e.g., country-scale) and pan around the image. Notice how there are no clouds in the image, but there are some pixels with no data. These are persistently cloudy areas that have no clear pixels in the particular period chosen. 
 
 <img align="center" src="../images/intro-gee1-images/33modis-truecolor.PNG" hspace="15" vspace="10" width="600">
 
@@ -310,6 +314,7 @@ Notice the different levels of methane over the African continent.
 <img align="center" src="../images/intro-gee1-images/36methane.PNG" hspace="15" vspace="10" width="600">
 
 **Weather and Climate Data**
+
 Many weather and climate datasets are available in Earth Engine. One of these is the European Center for Medium-Range Weather Forecast Reanalysis (ERA5) dataset used by Sulova and Jokar (2021). Copy and paste the code below to add the January 2018 monthly data to the map. 
 
 ```javascript
@@ -464,6 +469,7 @@ Pan around the image. What happens when you change the minimum and maximum value
 <img align="center" src="../images/intro-gee1-images/42popInspect.PNG" hspace="15" vspace="10" width="600">
 
 **Digital Elevation Models**
+
 Digital elevation models (DEMs) use airborne and satellite instruments to estimate the elevation of each location. Earth Engine has both local and global DEMs available. One of the global DEMs available is the NASADEM dataset, a DEM produced from a NASA mission. Copy and paste the code below to import the dataset and visualize the elevation band.
 
 ```javascript
