@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Accessing Images in Earth Engine
+title: Exploring Image Collections
 parent: Introduction to Google Earth Engine 1
 nav_order: 6
 ---
