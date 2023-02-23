@@ -16,7 +16,7 @@ Navigate through the different lesson sections by using the menu on the lefthand
 
 |      Time     |                                                                                                       Topics                                                                                                      |
 |:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| 09:00 – 09:45 |                                  Introductions<br>Setup Check           |
+| 09:00 – 09:45 |                                  Welcome<br>Setup Check<br>Intro to Google Earth Engine           |
 | 09:45 – 11:00  |Navigating in the Code Editor<br>JavaScript Basics<br>Earth Engine API Basics                                                                                |
 | 11:00 - 11:15   |                                Coffee Break                                 |
 | 11:15 – 12:00 |                           Accessing Images in GEE
