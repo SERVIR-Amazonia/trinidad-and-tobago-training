@@ -3,19 +3,17 @@ layout: page
 title: Introduction to Collect Earth Online
 permalink: /intro-to-ceo
 has_children: True
-nav_order: 5
+nav_order: 6
 ---
 
 # Introduction to CEO
 
-# Introduction to Synthetic Aperture Radar (SAR)
 Navigate through the different lesson sections by using the menu on the lefthand side or the table of contents below.
 
 ## Session Agenda
+
 **Date**: March 9, 2023  
 **Instructor:** Crystal Wespestad
-
-*REVISE AGENDA LATER*
 
 <table>
   <tbody>
