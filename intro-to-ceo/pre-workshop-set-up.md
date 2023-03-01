@@ -5,7 +5,7 @@ parent: Introduction to Collect Earth Online
 nav_order: 1
 ---
 
-## Pre-Workshop Set Up
+# Pre-Workshop Set Up
 1. Create a [CEO account](https://app.collect.earth/register). Remember the email address you used to make this account.
 2. If your organization already has a CEO Institution, request to join that institution. We will also cover this step in the workshop, and make an institution if your organization does not have one.
 3. Install [Google Earth Pro](https://support.google.com/earth/answer/21955?hl=en)

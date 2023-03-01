@@ -35,5 +35,5 @@ When creating a project an admin user will start on a page that looks like this.
 ## As an Interpreter: What You Will Find Inside a CEO Project?
 You can begin collecting data under any published project by clicking on the button with that project’s name in your institutions project page. Multiple users can collect in the same project at the same time, as they will automatically be directed to different plots within the project.
 
-This is an example of what a collector will see at each sample interpretation.
+This is an example of what a data collector will see at each sample interpretation.
 <img align="center" src="../images/intro-CEO-images/3D_interpreters.png"  vspace="10" width="400"> 

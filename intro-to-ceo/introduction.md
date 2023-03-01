@@ -2,17 +2,15 @@
 layout: page
 title: Introduction
 parent: Introduction to Collect Earth Online
-nav_order: 1
+nav_order: 2
 ---
 
 # Introduction
 Welcome to an Introduction to Collect Earth Online (CEO)! This workshop will give an overview of CEO and how to use it for data collection.  To start off, this section will cover ...
 
 ## Pre-workshop set-up
-1. Create a [CEO account](https://app.collect.earth/register). Remember the email address you used to make this account.
-2. If your organization already has a CEO Institution, request to join that institution. We will also cover this step in the workshop, and make an institution if your organization does not have one.
-3. Install [Google Earth Pro](https://support.google.com/earth/answer/21955?hl=en)
-4. Create a [Google Earth Engine (GEE) account](https://earthengine.google.com/new_signup/) (Optional)
+Make sure you have joined the CEO institution for this workshop **“Trinidad and Tobago Geospatial Workshop”**. See further details on the pre-workshop set up page. [Pre-Workshop Set Up](../intro-to-ceo/pre-workshop-set-up.md)
+
 
 ## Objectives
 1. Understand the uses and benefits of CEO.
@@ -47,12 +45,18 @@ Collect Earth Online (CEO) is available at https://collect.earth/.
 * Integrated with land cover classification and area estimation tools such as SEPAL and GEE
 * Sample data can be used for area estimation required by REDD+ and similar initiatives
 
+## Example Applications of CEO
+* Map validation, reference data for accuracy calculations
+* Reference data for model calibration
+* Unbiased area and uncertainty estimation
+* Monitoring reporting and verification
+* Verification for near-real time monitoring models
 
 
-## Super Fast Tour of How CEO is Used
+## Quick Tour of How CEO is Used
 
 1. **Create a personalized project**: Select imagery options and choose your area of interest, sampling design, and questions to ask.
-<img align="middle" src="../images/intro-CEO-images/1B_ProjectCreationOverviewPage.png"  vspace="10" width="2000"> 
+<img align="middle" src="../images/intro-CEO-images/1B_ProjectCreationOverviewPage.png"  vspace="10" width="1200"> 
 
 2. **Collaborate**: Work with colleagues in your organization or with community scientists from around the world — the cloud makes collaboration easy. You can also use CEo to organize the work load for your team, assigning proportions of the samples to team member, and specifying how many samples need to be reviewed by more than one person.
 
@@ -67,4 +71,4 @@ Collect Earth Online (CEO) is available at https://collect.earth/.
 <img src="../images/intro-CEO-images/1F_ForestOrNonforestPlot.png" vspace="10" width="250"> 
 <img align="middle" src="../images/intro-CEO-images/1G_NDFIforestloss.png"  vspace="10" width="500">
 </p>
-
+ 
