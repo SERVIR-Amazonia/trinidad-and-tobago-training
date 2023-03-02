@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Pre-Workshop Set Up
-parent: Creating a CEO project
+title: Creating a CEO project
+parent: Introduction to Collect Earth Online
 nav_order: 4
 ---
 
