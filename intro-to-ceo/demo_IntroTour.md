@@ -8,7 +8,7 @@ nav_order: 3
 # Hands On Demonstration - Introductory Tour of CEO 
 
 ## General Help
->If you ever need help with your work in CEO a good place to start is with the 'Support' and 'Blog' pages linked at the top of the CEO website. Tutorials are provided for project creation and interpretation 
+>If you ever need help with your work in CEO a good place to start is with the `Support` and `Blog` pages linked at the top of the CEO website. Tutorials are provided for project creation and interpretation 
 
 ## Institution Homepage
 The Projects homepage of your institution will contain a list of your group’s projects. Completed projects will be outlined in green, partially completed in yellow, and those without any collected data in red. On the left the projects’ privacy levels will be indicated.
@@ -24,9 +24,9 @@ If you are an administrator of your institution you will also see more buttons t
 <img align="center" src="../images/intro-CEO-images/3B_InstitutionHomePage.png"  vspace="10" width="700"> 
 
 
-If you click on the 'Imagery' button near the top of the institution page you will see a list of imagery that is built-in to CEO, including MapBox and Planet NICFI data, and any other imagery that has been added to your institution. CEO provides two easy ways to add your own imagery to your projects. The first is by connecting your own imagery via Web Map Service (WMS) or Web Map Tile Service (WMTS), and the second is by connecting your imagery hosted in Google Earth Engine (GEE). More details on how to add your own imagery are available in this [CEO Blog](https://blog.collect.earth/index.php/2022/04/21/connecting-gee-raster-data/) and the [Project Creation Manual](https://www.collect.earth/ceo-guides/#:~:text=Institution%20%26%20Project%20Creation%20Manual%20(English)).
+If you click on the `Imagery` button near the top of the institution page you will see a list of imagery that is built-in to CEO, including MapBox and Planet NICFI data, and any other imagery that has been added to your institution. CEO provides two easy ways to add your own imagery to your projects. The first is by connecting your own imagery via Web Map Service (WMS) or Web Map Tile Service (WMTS), and the second is by connecting your imagery hosted in Google Earth Engine (GEE). More details on how to add your own imagery are available in this [CEO Blog](https://blog.collect.earth/index.php/2022/04/21/connecting-gee-raster-data/) and the [Project Creation Manual](https://www.collect.earth/ceo-guides/#:~:text=Institution%20%26%20Project%20Creation%20Manual%20(English)).
 
-Under the 'Users' tab will be a full list of all email addresses that are a part of your CEO institution. These users will have different permissions based on their status as an Admin or a Member of the institution. You can add more CEO users to your institution from this page.
+Under the `Users` tab will be a full list of all email addresses that are a part of your CEO institution. These users will have different permissions based on their status as an Admin or a Member of the institution. You can add more CEO users to your institution from this page.
 
 ## As an Admin User: What You Will Find Inside a CEO Project?
 When creating a project an admin user will start on a page that looks like this.

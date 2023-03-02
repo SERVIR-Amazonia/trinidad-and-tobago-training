@@ -21,7 +21,7 @@ Before you start making a project take a look at what imagery is established for
 >* **Asset ID**: The Asset ID for your image asset. Will have a format similar to: USDA/NAIP/DOQQ/n_4207309_se_18_1_20090525
 >* **Visualization Parameters (JSON format)**: Any visualization parameters for your layer. For example, {"bands":["R","G","B"],"min":90,"max":210}
 >* If you want to add this imagery source to all of your institution’s projects, check the box next to Add Imagery to All Projects When Saving.
-?6. When all fields are filled out, click on 'Add New Imagery'.
+?6. When all fields are filled out, click on `Add New Imagery`.
 
 ><img align="center" src="../images/intro-CEO-images/5A.png"  vspace="10" width="250"> 
 
@@ -74,8 +74,8 @@ If you want to add this imagery source to all of your institution’s projects, 
     <img src="..//images/intro-CEO-images/5H_PlotConfidence.png" vspace="10" width="250"> 
     <img src="../images/intro-CEO-images/4C_plotconfidence.png" vspace="10" width="150"> 
     </p>
-    - The fourth option is **Auto-launch Geo-Dash**. This will automatically open the Geo-Dash interface in a new window or new tab when the data collector navigates to a new plot. Unchecking this option means that data collectors will need to click on the Geo-Dash icon under 'External Tools' in the 'Data Collection' interface.
-5. Click 'Next' when you are finished.
+    - The fourth option is **Auto-launch Geo-Dash**. This will automatically open the Geo-Dash interface in a new window or new tab when the data collector navigates to a new plot. Unchecking this option means that data collectors will need to click on the Geo-Dash icon under `External Tools` in the 'Data Collection' interface.
+5. Click `Next` when you are finished.
 <p>&nbsp;</p>
 
 ### Imagery Selection
@@ -100,7 +100,7 @@ If you want to add this imagery source to all of your institution’s projects, 
         - Hold the SHIFT-key down and draw a box to zoom in.
         - The coordinate boxes will populate once the box is drawn and you let your mouse key go. Coordinates are displayed in lat/long using WGS84 EPSG:4326.
     - You can also manually enter your Boundary Coordinates into the boxes provided.
-    - The third approach is to upload a project boundary shapefile. To use this option, click on the 'Upload project boundary' button. Navigate to your file, and click 'Open' . Your shapefile should be a zipped folder with the requisite shapefile component pieces (.shp, .prj, etc.). Once you click open, you should see the File: text populate with your file name and your project boundary appear in the Collection Map Preview pane.
+    - The third approach is to upload a project boundary shapefile. To use this option, click on `Upload project boundary`. Navigate to your file, and click `Open` . Your shapefile should be a zipped folder with the requisite shapefile component pieces (.shp, .prj, etc.). Once you click open, you should see the File: text populate with your file name and your project boundary appear in the Collection Map Preview pane.
         - *Note, if you have multi-part polygons each one will be assigned the number of plots indicated. This is indicated in the green text.*
         - This is different from using the SHP File option for the Spatial Distribution, where each point or polygon in your shape file will be a different Plot, which can contain one or more sample points that will be interpreted by one individual.
 3. Given your selections for the details of the auto generated distribution, such as plot number, plot spacing, and plot width, CEO will provide an estimate of how many plots will be generated for your project based on your sampling design.
@@ -225,5 +225,5 @@ Creating a CEO project from a template is the same as the previous section excep
 10. Make any adjustments you need to the CEO project as needed.
     - Upload any new Plot and Sample Design files. – For this workshop, try using the pre-prepared plot design CSV file exported from GEE on both the Plot Design and Sample Design tabs.
     - If you adjust any survey questions or survey question answers make sure you click the Save icon next to each change you make.
-11. When finished, click 'Create Project' and then 'Publish Project'.
+11. When finished, click `Create Project` and then `Publish Project`.
 

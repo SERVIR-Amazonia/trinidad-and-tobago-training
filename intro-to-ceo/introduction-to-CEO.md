@@ -10,8 +10,7 @@ nav_order: 6
 
 Navigate through the different lesson sections by using the menu on the lefthand side or the table of contents below.
 
-## Session Agenda
-
+## Session Agenda  
 **Date**: March 9, 2023  
 **Instructor:** Crystal Wespestad
 
@@ -50,8 +49,6 @@ Navigate through the different lesson sections by using the menu on the lefthand
             <li>Creating an interpretation key</li>
             <li>QA/QC options for multiple interpretation or expert review and for reviewing interpretations</li>
          </ul>
-      </td>
-    </tr>
     <tr>
       <td>11:00 - 11:15</td>
       <td>Coffee break</td>
