@@ -205,3 +205,28 @@ We have created an extensive how-to and troubleshooting guide for adding GEE Ima
 4. If everything is correct, click Create Project. You will need to accept CEO’s terms and conditions. If you notice a mistake, click Continue Editing to fix it.
 5. After you click Create Project, a pop-up window will ask ‘Do you REALLY want to create this project?’ Click OK.
 6. Once you are totally satisfied with your project and do not think any more changes will be needed. You can click [Publish Project]. Only a few project edits are possible once it has been published. Official data collection is now possible.
+
+## Tutorial for Creating a CEO Project Using a Template
+Creating a CEO project from a template is the same as the previous section except many or all of the pieces will be pre-filled and you only need to make your desired alterations. For example, maybe you made a mistake in the creation of a project and just want to duplicate it so you can alter a few survey questions. Or maybe you were happy with a previous project and want to use the exact same format but collect data for a new set of plots.
+
+1. Login to your CEO account. If you are already the administrator, navigate to your institution’s landing page by typing in the institution’s name and then clicking on the Visit button.
+2. If you are not an admin, you will need to request admin privileges from others in your team that are registered as admin for your CEO institution. Only admins can make CEO projects.
+3. When you are on the institution’s page, on the Projects tab, you can click on the “Create New Project” button to make a new project. It is located at the top of the page, followed by the list of existing projects belonging to the institution. 
+4. To use a template, under the Project Overview section you can use the drop down menu under ‘Select Template’ to see all of the projects owned by your institution. You can click the ‘Show Public Projects’ option if you are looking for a public project created by another institution. 
+5. You can use the ‘Template Filter’ to search using a key word or project ID for either public projects or your institution’s projects.
+
+    <img align="center" src="../images/intro-CEO-images/6A_template.png"  vspace="10" width="400"> 
+
+6. Once you have selected a project click [Load] and all parts of that project will auto-fill into your new project. See example below where a public project with the partial keywork of “temp” in its title was selected and loaded.
+
+    <img align="center" src="../images/intro-CEO-images/6B_loadedtemplate.png"  vspace="10" width="400"> 
+7. If you select the ‘Copy Template Plots and Samples’ option the point and sample locations will be pre-loaded. Uncheck this if you want to upload your own new plot locations.
+    - For this workshop, uncheck this option so you can try uploading the pre-prepared CSV file from the GEE stratified random sampling script.
+8. If you select the ‘Copy Template Widgets’ then the Geo-Dash widgets will be copied. Uncheck this if you want a blank Geo-Dash.
+    - You can also load a Geo-Dash template from another project when you get to the [Configure Geo-Dash] on the final project review page, or even after it is published.
+9. Make sure you update the name and description of the project so you can distinguish if from the one which you are copying.
+10. Make any adjustments you need to the CEO project as needed.
+    - Upload any new Plot and Sample Design files. – For this workshop, try using the pre-prepared plot design CSV file exported from GEE on both the Plot Design and Sample Design tabs.
+    - If you adjust any survey questions or survey question answers make sure you click the Save icon next to each change you make.
+11. When finished, click 'Create Project' and then 'Publish Project'.
+
