@@ -16,14 +16,17 @@ Welcome to Two Date Change Detection! This workshop contains multiple hands on G
 2. Click this link to accept the trinidad-tobago GEE script repository - https://code.earthengine.google.com/?accept_repo=users/kwoodward/trinidad-tobago
 
 
+
 ## Objectives
-1. Calculating several well-cited spectral index formulas
+1. Calculating spectral indices to extract patterns
 2. Creating a two-image difference to help locate areas of change
 3. Producing a change map and classifying changes using thresholding
 
 **Introduction to Theory**
 
 Change detection is the process of assessing how landscape conditions are changing by looking at differences in images acquired at different times. This can be used to quantify changes in forest cover—such as those following a volcanic eruption, logging activity, or wildfire—or when crops are harvested (Fig. F4.4.1). For example, using time-series change detection methods, Hansen et al. (2013) quantified annual changes in forest loss and regrowth. Change detection mapping is important for observing, monitoring, and quantifying changes in landscapes over time. Key questions that can be answered using these techniques include identifying whether a change has occurred, measuring the area or the spatial extent of the region undergoing change, characterizing the nature of the change, and measuring the pattern (configuration or composition) of the change (MacLeod and Congalton 1998).
+
+<img align="center" src="../images/change-detection/06referenceImg.PNG" hspace="15" vspace="10" width="600">
 
 Many change detection techniques use the same basic premise: that most changes on the landscape result in spectral values that differ between pre-event and post-event images. The challenge can be to separate the real changes of interest—those due to activities on the landscape—from noise in the spectral signal, which can be caused by seasonal variation and phenology, image misregistration, clouds and shadows, radiometric inconsistencies, variability in illumination (e.g., sun angle, sensor position), and atmospheric effects.
 
