@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Introduction
-parent: Water Change Detection
+title: Water Change Detection
+parent: Two Date Change Detection
 nav_order: 2
 ---
 

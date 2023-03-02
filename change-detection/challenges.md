@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Challenges - Customize Your Change Detection
-parent: Water Change Detection
+parent: Two Date Change Detection
 nav_order: 3
 ---
 
