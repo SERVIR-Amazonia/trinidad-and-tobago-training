@@ -109,8 +109,9 @@ Map.addLayer(ndwiPre, ndwiVis, 'ndwiPre')
 Map.addLayer(ndwiPost, ndwiVis, 'ndwiPost')
 ```
 
+<img align="center" src="../images/change-detection/03ndwi.PNG" hspace="15" vspace="10" width="600">
 
-Code Checkpoint: https://code.earthengine.google.com/86fe582319f5f854beef9c927bc7384c
+Code Checkpoint: https://code.earthengine.google.com/6d7cd66a18feb361a558c5bd34c355e4
 
 **Section 4. Single Date Transformation**
 
@@ -118,7 +119,7 @@ Next, we will examine the changes that have occurred, as seen when comparing two
 
 Subtract the pre-event image from the post-event image using the subtract function. Add the two-date change image to the map with the specialized Fabio Crameri batlow color ramp (Crameri et al. 2020). This color ramp is an example of a color combination specifically designed to be readable by colorblind and color-deficient viewers. Being cognizant of your cartographic choices is an important part of making a good change map.
 
-The color ramp has dark blues for the lowest values, greens and oranges in the midrange, and pink for the highest values. We used ndwiPre subtracted from ndwiPost to identify changes in each pixel. Since NDWI values are higher when water is present, areas that are negative in the change image will represent pixels that were higher in the ndwiPre image than in the ndwiPost image. Conversely, positive differences mean that an area gained water. 
+The color ramp has dark blues for the lowest values, greens and oranges in the midrange, and pink for the highest values. We used `ndwiPre` subtracted from `ndwiPost` to identify changes in each pixel. Since NDWI values are higher when water is present, areas that are negative in the change image will represent pixels that were higher in the `ndwiPre` image than in the `ndwiPost` image. Conversely, positive differences mean that an area gained water. 
 
 ```js
 // 2-date change.
@@ -136,9 +137,9 @@ var visParams = {
 Map.addLayer(diff, visParams, 'change');
 ```
 
-**Question 1.** Try to interpret the resulting image before reading on. What patterns of change can you identify? Can you find areas that look like water loss or gain?
+<img align="center" src="../images/change-detection/04change.PNG" hspace="15" vspace="10" width="600">
 
-**insert image**
+**Question 1.** Try to interpret the resulting image before reading on. What patterns of change can you identify? Can you find areas that look like water loss or gain?
 
 **Section 5. Classifying Change**
 
@@ -169,21 +170,12 @@ Map.addLayer(diffClassified.selfMask(),
     'change classified by threshold');
 ```
 
-**insert image**
+<img align="center" src="../images/change-detection/05classified.PNG" hspace="15" vspace="10" width="600">
 
-**Code Checkpoint**
+Code Checkpoint: https://code.earthengine.google.com/cf66e57fa8fb25d55d1c0bd72ae6f2f6
 
 **Synthesis**
 
-Evaluating any maps you create, including change detection maps, is essential to determining whether the method you have selected is appropriate for informing land management and decision-making (Stehman and Czaplewski 1998), or whether you need to iterate on the mapping process to improve the final results. Maps generally, and change maps specifically, will always have errors. This is due to a suite of factors, such as the geometric registration between images, the calibration between images, the data resolution (e.g., temporal, spectral, radiometric) compared to the characteristics of the activity of interest, the complexity of the landscape of the study region (topography, atmospheric conditions, etc.), and the classification techniques employed (Lu et al. 2004). This means that similar studies can present different, sometimes controversial, conclusions about landscape dynamics (e.g., Cohen et al. 2017). In order to be useful for decision-making, a change detection mapping effort should provide the user with an understanding of the strengths and weaknesses of the product, such as by presenting omission and commission error rates. The quantification of classification quality is presented in Chap. F2.2.
-
-**Assignment 1.** Try using a different index, such as NDVI or a Tasseled Cap Transformation, to run the change detection steps, and compare the results with those obtained from using NDWI.
-
-**Assignment 2.** Experiment with adjusting the thresholdLoss and thresholdGain values.
-
-**Assignment 3.** Use what you have learned in the classification chapter (Chap. F2.1) to run a supervised classification on the difference layer (or layers, if you have created additional ones). Hint: To complete a supervised classification, you would need reference examples of both the stable and change classes of interest to train the classifier.
-
-**Assignment 4.** Think about how things like clouds and cloud shadows could affect the results of change detection. What do you think the two-date differencing method would pick up for images in the same year in different seasons?
-
+Evaluating any maps you create, including change detection maps, is essential to determining whether the method you have selected is appropriate for informing land management and decision-making (Stehman and Czaplewski 1998), or whether you need to iterate on the mapping process to improve the final results. Maps generally, and change maps specifically, will always have errors. This is due to a suite of factors, such as the geometric registration between images, the calibration between images, the data resolution (e.g., temporal, spectral, radiometric) compared to the characteristics of the activity of interest, the complexity of the landscape of the study region (topography, atmospheric conditions, etc.), and the classification techniques employed (Lu et al. 2004). This means that similar studies can present different, sometimes controversial, conclusions about landscape dynamics (e.g., Cohen et al. 2017). In order to be useful for decision-making, a change detection mapping effort should provide the user with an understanding of the strengths and weaknesses of the product, such as by presenting omission and commission error rates. The quantification of classification quality is presented in EEFA book Chap. F2.2.
 
 
