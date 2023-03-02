@@ -84,7 +84,7 @@ Navigate through the different lesson sections by using the menu on the lefthand
             <li>Interpretation practice</li>
             <li>Practicing interpretation review - discuss points of difficulty</li>
             <li>Discussion on how to utilize CEO for your work</li>
-          </ul>
+         </ul>
       </td>
     </tr>
   </tbody>
