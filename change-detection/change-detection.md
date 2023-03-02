@@ -15,4 +15,11 @@ Navigate through the different lesson sections by using the menu on the lefthand
 **Date**: March 24, 2023  
 **Instructor:** Kyle Woodward
 
-Coming soon...
+|      Time     |                                                                                                       Topics                                                                                                                                     |
+|:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| 09:00 – 09:30 |                                  Previous Session Recap, Q&A                                 |
+| 9:30 – 11:00  |          Surface Water Change Detection with Landsat                                    |
+| 11:00 – 11:15 |                                                Coffee break                                                              |
+| 11:15 – 12:00 |                                       Surface Water Change Detection with Landsat cont.                                                     |
+| 12:00 – 13:00 |                                                  Lunch                                                                   |
+| 13:00 –15:00  |                                Challenges: Customize and Improve Your Change Detection Algorithm<br>Daily Recap                                       |
