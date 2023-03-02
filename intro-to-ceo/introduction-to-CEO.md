@@ -81,7 +81,7 @@ Navigate through the different lesson sections by using the menu on the lefthand
       <td>14:15 - 15:00</td>
       <td>
         <ul>
-            <li>Interpretation practice</li>
+            <li>Hands on - Interpretation practice</li>
             <li>Practicing interpretation review - discuss points of difficulty</li>
             <li>Discussion on how to utilize CEO for your work</li>
          </ul>
