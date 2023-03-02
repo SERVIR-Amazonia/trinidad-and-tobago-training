@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Interpretation Best Practices
-parent: Introduction to Stratified Random Sampling
+parent: Introduction to Collect Earth Online
 nav_order: 7
 ---
 

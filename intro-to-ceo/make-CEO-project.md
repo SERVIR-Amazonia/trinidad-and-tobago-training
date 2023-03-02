@@ -2,7 +2,7 @@
 layout: page
 title: Creating a CEO project
 parent: Introduction to Collect Earth Online
-nav_order: 4
+nav_order: 5
 ---
 
 # Hands On Demonstration - Creating a CEO project
