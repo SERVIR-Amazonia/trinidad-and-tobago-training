@@ -36,10 +36,9 @@ You can edit the elements of your institution later. If you ever decide to delet
 2. If you are logged in, this list is broken into two: Your Affiliations and Other Institutions. Your Affiliations are institutions to which you belong.
 3. Search for your institution’s name — for this workshop use the pre-created institution of “Trinidad and Tobago Geospatial Workshop”
 4. Next to each institution’s name is a [VISIT] button. Clicking on this will open the Institution page. 
-
 <img align="center" src="../images/intro-CEO-images/2A_visitCEOinstitution.png"  vspace="10" width="250"> 
 
-5. Click on the User’s button and click the Request Membership button if you have not already joined the institution.
+5. Click on the User’s button and click the Request Membership button if you have not already joined the institution.  
 <img align="center" src="../images/intro-CEO-images/2B_requestInstitutionMembership.png"  vspace="10" width="500"> 
 
 6. An admin user can then convert all new users from Member to Admin
