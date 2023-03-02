@@ -2,7 +2,7 @@
 layout: page
 title: Interpretation Best Practices
 parent: Introduction to Stratified Random Sampling
-nav_order: 4
+nav_order: 7
 ---
 
 # Recommended Interpretation Best Practices
