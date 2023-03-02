@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Demo - Introductory Tour of CEO 
+title: Introductory Tour of CEO 
 parent: Introduction to Collect Earth Online
 nav_order: 3
 ---

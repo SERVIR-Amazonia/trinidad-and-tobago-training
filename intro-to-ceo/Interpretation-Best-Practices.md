@@ -2,7 +2,7 @@
 layout: page
 title: Interpretation Best Practices
 parent: Introduction to Collect Earth Online
-nav_order: 7
+nav_order: 8
 ---
 
 # Recommended Interpretation Best Practices

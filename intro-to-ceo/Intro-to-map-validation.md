@@ -2,7 +2,7 @@
 layout: page
 title: Introduction to Map Validation
 parent: Introduction to Collect Earth Online
-nav_order: 6
+nav_order: 7
 ---
 
 # Introduction to Map Validation - Confusion Matrix

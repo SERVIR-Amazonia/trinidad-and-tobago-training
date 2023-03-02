@@ -2,7 +2,7 @@
 layout: page
 title: Creating a CEO project
 parent: Introduction to Collect Earth Online
-nav_order: 5
+nav_order: 6
 ---
 
 # Hands On Demonstration - Creating a CEO project
@@ -40,9 +40,6 @@ If you are unfamiliar with GEE, directions for uploading your own image assets t
 If you want to add this imagery source to all of your institution’s projects, check the box next to Add Imagery to All Projects When Saving.
 >* When all fields are filled out, click on [Add New Imagery].
 >* Note that to display the GEEImageCollection, CEO uses the “mean” reducer in Earth Engine. This takes the mean of any images in the image collection during the time period specified.
-
-<p>&nbsp;</p>
-We have created an extensive how-to and troubleshooting guide for adding GEE Image Assets and Image Collection Assets to CEO. It is available in CEO’s blog  [heree](https://blog.collect.earth/index.php/2022/04/21/connecting-gee-raster-data/).  
 
 <p>&nbsp;</p>
 

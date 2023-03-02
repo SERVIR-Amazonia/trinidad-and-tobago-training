@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Practice and Discussion
-parent: Introduction to Stratified Random Sampling
-nav_order: 4
+parent: Introduction to Collect Earth Online
+nav_order: 9
 ---
 
 # Interpretation Practice and Group Discussion

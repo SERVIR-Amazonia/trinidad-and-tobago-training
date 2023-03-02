@@ -2,7 +2,7 @@
 layout: page
 title: Pre-Workshop Set Up
 parent: Introduction to Collect Earth Online
-nav_order: 1
+nav_order: 2
 ---
 
 # Pre-Workshop Set Up
