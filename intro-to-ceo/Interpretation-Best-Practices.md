@@ -63,13 +63,13 @@ Below is a more detailed recommendations for a step-by-step interpretation proce
     - Scan through historical imagery in Google Earth Pro and/or the Imagery Options again, cross referencing the dates you noted from the time series graphs to see if a change is evident in the imagery.
     - If your images are unclear or not available at the exact event time in which you are interested, use context clues to make your decision.
         - E.g. If you think a deforestation event happened because of a drop in the NDFI graph, but no image is available in Google Earth Pro until 3 years later, then look for young recovering growth, or evidence nearby of human-caused deforestation such as logging roads or other clearings.
-7. In the survey question where you can leave notes, provide information on your reasoning and/or points of confusion in the short answer box and click ‘Save’. Include anything you might want to remember later to justify your reasoning if another interpreter disagreed.
+7. In the survey question where you can leave notes, provide information on your reasoning and/or points of confusion in the short answer box and click ‘Save’. Include anything you might want to remember later to justify your reasoning if another interpreter disagreed.  
 <img align="center" src="../images/intro-CEO-images/8I_surveyquestions.png"  vspace="10" width="300">
 
 8. If available, be sure to indicate in the slider your level of confidence in your answers, so those with low confidence can be reviewed by the group or another interpreter.
 <img align="center" src="../images/intro-CEO-images/4C_plotconfidence.png"  vspace="10" width="200">
 
-9. Click 'Save' at the end of all the questions, making all the numbered boxes have turned blue to signify you have completed them. You can then proceed to another point for interpretation.
+9. Click `Save` at the end of all the questions, making all the numbered boxes have turned blue to signify you have completed them. You can then proceed to another point for interpretation.
 10. You should only click [Flag Plot] if the sample point is for some reason unusable. Any answers you provided for this plot will not be saved.
-11. If you want to go back to a previously analyzed plot to adjust your answers, change the “Navigate through” option at the top right of the screen from “Unanalyzed plots” to “My analyzed plots” and go to the desired plot number.
-<img align="center" src="../iimages/intro-CEO-images/8J_reviewnavigate.png"  vspace="10" width="200">
+11. If you want to go back to a previously analyzed plot to adjust your answers, change the “Navigate through” option at the top right of the screen from “Unanalyzed plots” to “My analyzed plots” and go to the desired plot number.  
+<img align="center" src="../images/intro-CEO-images/8J_reviewnavigate.png"  vspace="10" width="200">
