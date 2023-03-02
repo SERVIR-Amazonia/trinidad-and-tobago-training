@@ -7,7 +7,7 @@ nav_order: 1
 
 # Introduction
 
-Welcome to Flood Mapping Using Multiple Sensors! This workshop contains multiple hands on Google Earth Engine case studies. We will cover **blah blah**
+Welcome to Flood Mapping Using Multiple Sensors! This workshop contains multiple hands on Google Earth Engine case studies. We will cover the use spectral indices for surface water extraction, and a flooded land cover classification workflow. 
 
 ## Pre-workshop Set-up
 1. Ensure you are logged into your Google Earth Engine account.
