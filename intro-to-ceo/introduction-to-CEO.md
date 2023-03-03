@@ -89,3 +89,13 @@ Navigate through the different lesson sections by using the menu on the lefthand
     </tr>
   </tbody>
 </table>
+
+# Resources 
+Material for this overview was gathered and modified from:
+
+* https://www.collect.earth/
+* https://www.collect.earth/ceo-guides/#:~:text=Data%20Collection%20Manual%20(English)
+* https://www.collect.earth/ceo-guides/#:~:text=Institution%20%26%20Project%20Creation%20Manual%20(English)
+* https://blog.collect.earth/index.php/2022/04/21/connecting-gee-raster-data/
+* https://www.collect.earth/ceo-guides/#:~:text=Project%20Development%20Theory
+* https://pro.arcgis.com/en/pro-app/latest/help/analysis/image-analyst/interpret-sar-data-for-flood-mapping.htm
