@@ -1,15 +1,13 @@
 ---
 layout: page
-title: Practice Making Your Own Classification
+title: Challenges - Make Your Own Model, Make Improvements
 parent: Mangrove Mapping Using Multiple Sensors
 nav_order: 4
 ---
 
-# Practice Session
-
 # Overview
 
-You've successfully written a remote sensing workflow to train a Random Forest classification model to map Mangrove presence with the Landsat archive. Now make it your own! There are several ways to tweak the original workflow right away to change the objective and make improvments. Here are a few ideas. 
+You've successfully written a remote sensing workflow to train a Random Forest classification model to map Mangrove presence with the Landsat archive. Now make it your own! There are several ways to tweak the original workflow right away to change the objective and make improvments. Here are a few ideas. Collaborate with your colleagues and your instructors. Happy Coding!
 
 ## Area of Interest (AOI)
 
