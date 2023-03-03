@@ -87,10 +87,11 @@ Navigate through the different lesson sections by using the menu on the lefthand
          </ul>
       </td>
     </tr>
+    </tr>
   </tbody>
 </table>
 
-# Resources 
+# Sources 
 Material for this overview was gathered and modified from:
 
 * https://www.collect.earth/
