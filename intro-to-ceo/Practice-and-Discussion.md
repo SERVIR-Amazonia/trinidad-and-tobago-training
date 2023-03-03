@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Practice and Discussion
-parent: Introduction to Stratified Random Sampling
-nav_order: 4
+parent: Introduction to Collect Earth Online
+nav_order: 9
 ---
 
 # Interpretation Practice and Group Discussion
@@ -16,3 +16,5 @@ In the remaining time of the workshop we can do some practice interpretations an
 * How will CEO be useful to you?
 * What tools/data would be helpful to include in your project?
 
+## General Help
+>If you ever need help with your work in CEO a good place to start is with the `Support` and `Blog` pages linked at the top of the CEO website. Tutorials are provided for project creation and interpretation

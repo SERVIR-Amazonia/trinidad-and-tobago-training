@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Pre-Workshop Set Up
+title: Designing/Planning a CEO Project and Data Collection Protocols
 parent: Introduction to Collect Earth Online
 nav_order: 4
 ---
 
-# CEO Project and Data Collection Planning
+# Designing/Planning a CEO Project and Data Collection Protocols
 
 ## General Project Planning Procedure
 *The following project planning guidelines are available with more detail in this [Project Development Manual for Collect Earth Online](https://www.collect.earth/ceo-guides/#:~:text=Project%20Development%20Theory), which is linked under the CEO website’s Help page.*
@@ -44,6 +44,7 @@ Being able to identify land cover types using remote sensing data and time serie
 
 Additionally, the development of the key itself encourages discussion and critical thinking about how the interpretation will be done. If the interpretation process is repeated at a later date, in order for the key to be useful it should be reviewed, updated as needed to reference newly available information, and used to train new interpreters.
 
+> We are not spending much time on the topic of developing an Interpretation Key during this workshop, but this step is **VERY IMPORTANT** and time should be taken to do this well. Collaboratively develop this resource so it is useful to your team and can be **repeatedly referenced and improved** throughout your data collection.
 
 ## Planning QA/QC in CEo 
 Remember these built-in CEO tools for quality control. Will you use one or a combination of these tools? 
