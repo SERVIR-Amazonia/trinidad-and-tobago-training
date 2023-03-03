@@ -27,7 +27,7 @@ Navigate through the different lesson sections by using the menu on the lefthand
 
 
 
-# Sources 
+## Sources 
 Material for this overview was gathered and modified from:
 
 * https://www.collect.earth/
