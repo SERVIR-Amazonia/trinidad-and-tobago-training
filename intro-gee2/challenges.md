@@ -1,13 +1,15 @@
 ---
 layout: page
-title: Challenge - Preprocess, Export, Import
+title: Challenges - Preprocess, Export, Import
 parent: Introduction to Google Earth Engine 2
 nav_order: 7
 ---
 
-# Challenge
+# Overview
 
-**Task 1: Create Normalized Difference Water Index**
+Complete the two challenge tasks in order. Collaborate with colleagues and your instructors. Happy Coding!
+
+## Task 1: Create Normalized Difference Water Index
 
 Create a NDWI index using the Landsat 8 dataset for a period from January  2020 to June 2022 for a specific region of Trinidad and Tobago.
 
@@ -15,7 +17,7 @@ Create a NDWI index using the Landsat 8 dataset for a period from January  2020 
 
 *Hint 2: Make use of the Cloud-Based Remote Sensing with Google Earth Engine: Fundamentals and Applications book (https://eefabook.org) to find help.*
 
-**Task 2: Export then Import the NDWI image**
+## Task 2: Export then Import the NDWI image
 
 Export the NDWI index image at a resolution of between 30 and 100 meters in the Coordinate Reference System 'EPSG:3857'. Export it to an EE asset, then re-import the uploaded EE image, and display it in the code editor.
 
