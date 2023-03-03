@@ -18,3 +18,9 @@ In the remaining time of the workshop we can do some practice interpretations an
 
 ## General Help
 >If you ever need help with your work in CEO a good place to start is with the `Support` and `Blog` pages linked at the top of the CEO website. Tutorials are provided for project creation and interpretation
+
+## Workshop Survey
+Please take time before leaving to fill out this quick survey about the workshop today. Thank you!
+
+
+https://forms.gle/8Jdm1aybL9sqzNEw6

@@ -6,7 +6,9 @@ nav_order: 1
 ---
 
 # Introduction
-Welcome to an Introduction to Collect Earth Online (CEO)! This workshop will give an overview of CEO and how to use it for data collection.  To start off, this section will cover ...
+Welcome to an Introduction to Collect Earth Online (CEO)! This workshop will give an overview of CEO and how to use it for data collection.  
+
+*Note, this workshop will be recorded for later reference*
 
 ## Pre-workshop set-up
 Make sure you have joined the CEO institution for this workshop **“Trinidad and Tobago Geospatial Workshop”**. See further details on the pre-workshop set up page. [Pre-Workshop Set Up](../intro-to-ceo/pre-workshop-set-up.md)
