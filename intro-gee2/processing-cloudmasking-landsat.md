@@ -7,6 +7,8 @@ nav_order: 3
 
 # Processing and cloud masking of composites over Landsat data
 
+*Keep the script from Browsing & Preprocessing open, we will continue on.*
+
 This exercise will demonstrate how to create a cloud-cloud shadow mask using Earth Engine over Landsat imagery. We use the quality assessment (QA) pixel band to create a cloud and shadow mask. Bits 3 and 4 are cloud and cloud shadow, respectively. We define a function which always includes the ***return*** command to provide the resultant product.
 
 ```javascript
@@ -53,14 +55,15 @@ function cloudShadowMask(image) {
 Through the command `.map()` we apply the function to the Landsat dataset. We define the visualization parameters: the basic values to be specified are the bands to occupy the blue, green and red channels, plus min and max reflectance value, which will depend on the range of values. Here you have to take in account that Landsat collection 2 values are factored per 10000 by default, with a common max value of 3000.  Values higher than 3000 usually fall in the category of cloudy areas, saturated values or outliers derived from radiometric errors of the sensor.
 
 ```javascript
-var landsat8_sr_masked = landsat8_sr.map(cloudShadowMask)
+var landsat8_sr_cloud_masked = landsat8_sr.map(cloudShadowMask)
 // visualization Landsat 8 collection 2
 var visual_lan = {
   bands: ['SR_B4', 'SR_B3', 'SR_B2'],
   min: 0.0,
   max: 0.3,
 };
-Map.addLayer(landsat8_sr_masked, visual_lan , 'Cloud masked Landsat')
+
+Map.addLayer(landsat8_sr_cloud_masked, visual_lan , 'Cloud masked Landsat')
 ```
 
 <img align="center" src="../images/intro-gee-images/17_cloudmask.png" hspace="15" vspace="10" width="600">
@@ -78,9 +81,10 @@ Figure 18. Cloud masked Landsat mosaic.
 However we need to compute a value representing the series of SR values.  This is called a composite. Usually a statistic as the median works well for composites. Additionally we can clip the image to frame it to the Trinidad boundary
 
 ```javascript
-var l8_sr_med = l8_sr_cloud_masked.median()
-    	.select('SR_B2','SR_B3','SR_B4','SR_B5', 'SR_B6', 'SR_B7')
-  	. clip(trinidad_bou)
+var l8_sr_med = landsat8_sr_cloud_masked.median()
+.select('SR_B2','SR_B3','SR_B4','SR_B5', 'SR_B6', 'SR_B7')
+.clip(trinidad_bou)
+
 Map.addLayer(l8_sr_med, visual_lan, 'True Color Landsat Median');
 ```
 
@@ -88,7 +92,9 @@ Map.addLayer(l8_sr_med, visual_lan, 'True Color Landsat Median');
 
 Figure 19. Computed temporal median of a Landsat-8 collection, plus clipped.
 
-We can analyze and compare some very cloudy areas after they have been cloud-masked. For this checkpoint you can go the link at [https://code.earthengine.google.com/9d27d076172e49c4afdc3197e546ed86](https://code.earthengine.google.com/9d27d076172e49c4afdc3197e546ed86).
+We can analyze and compare some very cloudy areas after they have been cloud-masked. 
+
+Code Checkpoint: [https://code.earthengine.google.com/6bdd9c06609f4fcd9c374a99624058a2](https://code.earthengine.google.com/6bdd9c06609f4fcd9c374a99624058a2).
 
 <img align="center" src="../images/intro-gee-images/20_compare.png" hspace="15" vspace="10" width="600">
 

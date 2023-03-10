@@ -8,6 +8,8 @@ nav_order: 6
 # Overview
 In this module we will learn about Earth Engine's `ImageCollection` data structure, how to manipulate them, and we will explore some great `ImageCollection` datasets in the Earth Engine data catalog.
 
+_Create a new script to follow along with the code in this lesson._
+
 **Section 1. Image Collections: An Organized Set of Images**
 
 You saw some of the basic ways to interact with an individual `ee.Image` in the section *Accessing Images*. However, depending on how long a remote sensing platform has been in operation, there may be thousands or millions of images collected of Earth. In Earth Engine, these are organized into an `ImageCollection`, a specialized data type that has specific operations available in the Earth Engine API. Like individual images, they can be viewed with `Map.addLayer`.
@@ -37,6 +39,7 @@ print(landsat8);
 
 // Add the Landsat 8 dataset to the map as a mosaic. The collection is 
 // already chronologically sorted, so the most recent pixel is displayed.
+
 Map.addLayer(landsat8,
     {
         bands: ['B4', 'B3', 'B2'],
@@ -52,13 +55,13 @@ Notice the high amount of cloud cover, and the “layered” look. Zoom in or ou
 
 Now examine the printed size on the **Console**. It will indicate that there are more than a million images in the dataset. If you return to this lab in the future, the number will be even larger, since this active collection is continually growing as the satellite gathers more imagery. For the same reason, the above figure might look slightly different on your map because of this.
 
-<img align="center" src="../images/intro-gee1-images/26print.PNG" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/26print.png" hspace="15" vspace="10" width="600">
 
 Note that printing the `ImageCollection` returned an error message, because calling print on an `ImageCollection` will print each image (and its metadata) in the collection to the **Console**. This is the result of an intentional safeguard within Earth Engine. We don’t want to see a million image names printed to the **Console**! 
 
-<img align="center" src="../images/intro-gee1-images/27error.PNG" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/27error.png" hspace="15" vspace="10" width="600">
 
-Code Checkpoint: https://code.earthengine.google.com/3ab7f5b969df4dc5c9d7656b54d7db75
+Code Checkpoint: [https://code.earthengine.google.com/3ab7f5b969df4dc5c9d7656b54d7db75](https://code.earthengine.google.com/3ab7f5b969df4dc5c9d7656b54d7db75)
 
 Edit your code to comment out the last two code commands you have written. This will remove the call to `Map.addLayer` that drew every image, and will remove the `print` statement that demanded more than 5000 elements. This will speed up your code in subsequent sections. As described previously, placing two forward slashes (`//`) at the beginning of a line will make it into a comment, and any commands on that line will not be executed.
 
@@ -148,7 +151,7 @@ The first command takes our stack of location-filtered images and selects the fi
 
 <img align="center" src="../images/intro-gee1-images/30landsatFirst.PNG" hspace="15" vspace="10" width="600">
 
-Code Checkpoint: https://code.earthengine.google.com/85d55259a7a071179a3b27010f00b01e
+Code Checkpoint: [https://code.earthengine.google.com/85d55259a7a071179a3b27010f00b01e](https://code.earthengine.google.com/85d55259a7a071179a3b27010f00b01e)
 
 Now that we have the tools to examine different image collections, we will explore other datasets. Save your script for your own future use. Then, refresh the Code Editor to begin with a new script for the next section.
 
@@ -182,7 +185,7 @@ var landsat8SRimage = landsat8SR.filterDate('2014-03-18',
 print('Landsat 8 Surface Reflectance image', landsat8SRimage);
 ```
 
-<img align="center" src="../images/intro-gee1-images/31sr-img.PNG" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/31sr-img.png" hspace="15" vspace="10" width="600">
 
 Copy and paste the code below to add this image to the map with adjusted R,G, and B bands in the “bands” parameter for true-color display 
 
@@ -200,11 +203,11 @@ Map.addLayer(landsat8SRimage,
     'Landsat 8 SR');
 ```
 
-<img align="center" src="../images/intro-gee1-images/32sf.PNG" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/32sf.png" hspace="15" vspace="10" width="600">
 
 Compare this image with the raw Landsat 8 images from the previous section. Zoom in and out and pan the screen as needed. What do you notice? Save your script but don’t start a new one—we will keep adding code to this script.
 
-Code Checkpoint: https://code.earthengine.google.com/4416a15713f826bed4c475f73e78c1a6
+Code Checkpoint: [https://code.earthengine.google.com/d790b1d04c9fe517ea5e5686ffff0ae7](https://code.earthengine.google.com/d790b1d04c9fe517ea5e5686ffff0ae7)
 
 **Section 3. Pre-Made Composites**
 
@@ -243,7 +246,7 @@ var modisVis = {
 Map.addLayer(modisDailyRecent, modisVis, 'MODIS Daily Composite');
 ```
 
-Uncheck the other layer (“Landsat 8 SR”), zoom out (e.g., country-scale) and pan around the image. Notice how there are no clouds in the image, but there are some pixels with no data. These are persistently cloudy areas that have no clear pixels in the particular period chosen. 
+Uncheck the other layers, zoom out (e.g., country-scale) and pan around to your area of interest. Notice how there are no clouds in the image, but there are some pixels with no data. These are persistently cloudy areas that have no clear pixels in the particular period chosen. 
 
 <img align="center" src="../images/intro-gee1-images/33modis-truecolor.PNG" hspace="15" vspace="10" width="600">
 
@@ -266,9 +269,9 @@ Map.addLayer(modisMonthlyRecent, {}, 'MODIS Monthly Burn');
 
 Uncheck the other layers, and then pan and zoom around the map. Areas that have burned in the past month will show up as red. Can you see where fires burned areas of California, USA? In Southern and Central Africa? Northern Australia?
 
-<img align="center" src="../images/intro-gee1-images/35modisfire.PNG" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/35modisfire.png" hspace="15" vspace="10" width="600">
 
-Code Checkpoint: https://code.earthengine.google.com/7888f0afa9d0209a240982b949b4f5d2
+Code Checkpoint: [https://code.earthengine.google.com/388bc5d08727009285eb7f00d547dd22](https://code.earthengine.google.com/388bc5d08727009285eb7f00d547dd22)
 
 **Section 4. Other Satellite Products**
 
@@ -311,7 +314,7 @@ Map.addLayer(methane2018, methaneVis, 'Methane');
 
 Notice the different levels of methane over the African continent.
 
-<img align="center" src="../images/intro-gee1-images/36methane.PNG" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/36methane.png" hspace="15" vspace="10" width="600">
 
 **Weather and Climate Data**
 
@@ -338,9 +341,9 @@ Map.addLayer(era5MonthlyTemp,
 
 Examine some of the temperatures in this image by using the **Inspector** tool. Pan and zoom out if needed. The units are in Kelvin, which is Celsius plus 273.15 degrees. 
 
-<img align="center" src="../images/intro-gee1-images/37temp.PNG" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/37temp.png" hspace="15" vspace="10" width="600">
 
-Code Checkpoint: https://code.earthengine.google.com/6b0dc36d8516b41f2746b51b0659ff36
+Code Checkpoint: [https://code.earthengine.google.com/f5c2aa849889df83657d7f917ea2553b](https://code.earthengine.google.com/f5c2aa849889df83657d7f917ea2553b)
 
 **Section 5. Pre-Classified Land Use and Land Cover**
 
@@ -371,7 +374,7 @@ Map.addLayer(worldCover, {
 
 Examine the WorldCover land cover classification. Compare it with some of the satellite imagery we have explored in previous sections. 
 
-<img align="center" src="../images/intro-gee1-images/38landcover.PNG" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/38landcover.png" hspace="15" vspace="10" width="600">
 
 **Global Forest Change**
 
@@ -396,7 +399,7 @@ Map.addLayer(globalForest, treeCoverViz, 'Hansen 2000 Tree Cover');
 
 Notice how areas with high tree cover (e.g., the Amazon) are greener and areas with low tree cover are darker. In case you see an error on the **Console** such as “Cannot read properties of null,” don’t worry. Sometimes Earth Engine will show these transient errors, but they won’t affect the script in any way.
 
-<img align="center" src="../images/intro-gee1-images/39hansen.PNG" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/39hansen.png" hspace="15" vspace="10" width="600">
 
 Copy and paste the code below to visualize the tree cover loss over the past 20 years.
 
@@ -415,11 +418,9 @@ Map.addLayer(globalForest, treeLossYearViz, '2000-2020 Year of Loss');
 
 Leave the previous 2000 tree cover layer checked and analyze the loss layer on top of it—yellow, orange, and red areas. Pan and zoom around the map. Where has there been recent forest loss (which is shown in red)?
 
-<img align="center" src="../images/intro-gee1-images/40hansenloss.PNG" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/40hansenloss.png" hspace="15" vspace="10" width="600">
 
-Code Checkpoint: https://code.earthengine.google.com/f600785f9b0f68a8c95533029b3bbb4e
-
-Save your script and start a new one.
+Code Checkpoint: [https://code.earthengine.google.com/0afa124b2f86eff88a497eca9bafd834](https://code.earthengine.google.com/0afa124b2f86eff88a497eca9bafd834)
 
 **Section 6. Other Datasets**
 
@@ -464,9 +465,9 @@ Map.addLayer(griddedPopulation,
 
 Pan around the image. What happens when you change the minimum and maximum values in the visualization? The minimum and maximum values represent the range of values of the dataset. Identify a location of interest to you—maybe an area near your current location, or your hometown. If you click on the **Inspector** tab, you should be able to find the population count.
 
-<img align="center" src="../images/intro-gee1-images/41pop.PNG" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/41pop.png" hspace="15" vspace="10" width="600">
 
-<img align="center" src="../images/intro-gee1-images/42popInspect.PNG" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/42popInspect.png" hspace="15" vspace="10" width="600">
 
 **Digital Elevation Models**
 
@@ -486,6 +487,8 @@ Map.addLayer(nasaDEM, {
 
 Uncheck the population layer and zoom in to examine the patterns of topography. Can you see where a mountain range is located? Where is a river located? Try changing the minimum and maximum in order to make these features more visible. Save your script.
 
-<img align="center" src="../images/intro-gee1-images/43nasadem.PNG" hspace="15" vspace="10" width="600">
+<img align="center" src="../images/intro-gee1-images/43nasadem.png" hspace="15" vspace="10" width="600">
+
+Code Checkpoint: [https://code.earthengine.google.com/d4b88c84ae5d9051f76981fea38ae6c3](https://code.earthengine.google.com/d4b88c84ae5d9051f76981fea38ae6c3)
 
 Take a moment to look through all of the different layers that we have explored so far. You can open your scripts one at a time or in different tabs, or even by copying the code into one single script. Turn the layers on and off, pan around, and zoom in and out accordingly to visualize the different datasets on the map. 

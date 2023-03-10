@@ -9,7 +9,7 @@ nav_order: 2
 
 # Overview 
 
-In this workflow, we will create an archive of Landsat imagery from Landsat missions 4 through 9, filter the image archive down to a desired time period of interest, then use the data to classify mangrove presence using a Random Forest classification model. 
+In this workflow, we will create an archive of Landsat imagery from Landsat missions 5 through 9, filter the image archive down to a desired time period of interest, then use the data to classify mangrove presence using a Random Forest classification model. 
 
 Follow along by copying and pasting each code block in the lesson into your own blank script. At the end you will have the entire workflow saved to a script file on your own GEE account.
 
