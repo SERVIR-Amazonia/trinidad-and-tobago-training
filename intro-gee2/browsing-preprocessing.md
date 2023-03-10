@@ -29,7 +29,7 @@ Figure 5. Catalog search bar showing Landsat datasets.
 
 Figure 6. Landsat 8 description.
 
-Lets hit the ‘Import’ button, and change the name of the collection to ‘*landsat8_sr*’. 
+Lets hit the ‘Import’ button, and at the top of your script, change the name of the imported collection to ‘*landsat8_sr*’. 
 
 Now let's download the boundary shapefile of Trinidad. We are going to upload this file into the Assets section to have our country boundary available. Download the file `TrinidadTobago.zip` from the shared Google Drive [data folder](https://drive.google.com/drive/folders/1Aov0j6ASs6eQVel4EeiiZrGaDRhq5WGQ?usp=share_link). 
 
@@ -107,7 +107,7 @@ var visualization = {
   max: 0.3,
 };
 
-Map.centerObject(trinidad_bou, 6)
+Map.centerObject(trinidad_bou, 8)
 
 // Now we visualize the layers created using the 
 Map.addLayer(trinidad_bou, {}, 'trinidad', 0)
@@ -120,4 +120,4 @@ Figure 15. True color Landsat 8 collection 2 images for Trinidad.
 
 We have added the layer of surface reflectance (SR) values for 3 months to visualize. 
 
-Checkpoint code link: [https://code.earthengine.google.com/fa817765ef2a972f21e71ae1e577cfdd](https://code.earthengine.google.com/fa817765ef2a972f21e71ae1e577cfdd).
+Checkpoint code link: [https://code.earthengine.google.com/01d7eb9aac22c8f5092e86956f76e1a1](https://code.earthengine.google.com/01d7eb9aac22c8f5092e86956f76e1a1).
