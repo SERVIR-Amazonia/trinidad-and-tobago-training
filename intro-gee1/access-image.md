@@ -8,6 +8,8 @@ nav_order: 5
 # Overview
 In this module you will learn how to access and explore images in Earth Engine's data catalog, visualize images using color composites, and practice interpreting satellite images using their spectral information.
 
+_Create a new script to follow along with the code in this lesson._
+
 **Accessing an Image**
 
 To begin, you will construct an image with the Code Editor.
@@ -114,7 +116,7 @@ Do you see how these new parameters influence the map layer displays? For Layer 
 
 By manipulating these controls, you should notice that these layers are displayed as a stack, meaning one on top of the other. For example, set the opacity for each layer to be 1 by pushing the opacity sliders all the way to the right. Then make sure each box is checked next to each layer so that all the layers are shown. Now you can identify which layer is on top of the stack by checking and unchecking each layer. If a layer is on top of another, unchecking the top layer will reveal the layer underneath. If a layer is under another layer in the stack, then unchecking the bottom layer will not alter the display (because the top layer will remain visible). If you try this on our stack, you should see that the list order reflects the stack order, meaning that the layer at the top of the layer list appears on the top of the stack. Now compare the order of the layers in the list to the sequence of operations in your script. What layer did your script add first and where does this appear in the layering order on the map? 
 
-Code Checkpoint: https://code.earthengine.google.com/7cc6018541d665812d63be0a77040490
+Code Checkpoint: [https://code.earthengine.google.com/7cc6018541d665812d63be0a77040490](https://code.earthengine.google.com/7cc6018541d665812d63be0a77040490)
 
 **True-Color Composites**
 
@@ -184,4 +186,4 @@ To compare the two false-color composites, zoom into the area shown in the two p
 
 <img align="center" src="../images/intro-gee1-images/24compare.png" hspace="15" vspace="10" width="600">
 
-Code Checkpoint: https://code.earthengine.google.com/022a47a4bdce895f830eceac85693313
+Code Checkpoint: [https://code.earthengine.google.com/022a47a4bdce895f830eceac85693313](https://code.earthengine.google.com/022a47a4bdce895f830eceac85693313)
