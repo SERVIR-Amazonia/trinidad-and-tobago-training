@@ -7,13 +7,15 @@ nav_order: 5
 
 # Retrieving and visualizing elevation data
 
+*Keep the previous script open from 'Processing & Cloud Masking Sentinel', we will continue in this section*
+
 This exercise will walk us to the use of the NASADEM elevation dataset. Let’s remember that each product description in the GEE catalog usually brings a small portion of code to exemplify how to use it. We look for the product:
 
 <img align="center" src="../images/intro-gee-images/24_nasadem.png" hspace="15" vspace="10" width="600">
 
 Figure 24. NASA Digital Elevation Model (DEM) listed options
 
-The first product listed must be imported, and change the name to *nasadem*.
+The first product listed must be imported, and change the name to '*nasadem*'.
 
 <img align="center" src="../images/intro-gee-images/25_nasadem_desc.png" hspace="15" vspace="10" width="600">
 
@@ -26,10 +28,10 @@ It’s always important to skim over the dataset product details, such as time a
 Figure 26. Product added
 
 ```javascript
-/**** 	NASA Digital Elevation Model (DEM)  ****/
+//	NASA Digital Elevation Model (DEM)  
 var elevation = nasadem.select('elevation');
 // Set elevation <= 0 as transparent and add to the map.
-elevation = elevation.updateMask(elevation.gt(0)).clip(guyana_bou)
+elevation = elevation.updateMask(elevation.gt(0)).clip(trinidad_bou);
 
 
 // Set elevation visualization properties.
@@ -37,7 +39,6 @@ var elevationVis = {
   min: 0,
   max: 2000,
 };
-/****  	****   	****/
 
 Map.addLayer(elevation, elevationVis, 'Elevation');
 ```
@@ -52,7 +53,7 @@ Figure 27. El Cerro Del Aripo, Trinidad. [Source](http://cstrinidadandtobago.wee
 // Around El Cerro Del Aripo Mtn
 var p01 = ee.Geometry.Point(-61.24, 10.73)
 
-Map.addLayer(p01, {}, 'point');
+Map.addLayer(p01, {color:'red'}, 'point');
 ```
 
 <img align="center" src="../images/intro-gee-images/28_elev_mount.png" hspace="15" vspace="10" width="600">
@@ -95,4 +96,4 @@ Figure 34. Terrain view
 
 We can easily recognize our point of reference located at the 900 m contour line.
 
-Code Checkpoint: [https://code.earthengine.google.com/71a5f9026b25d26591967114e1e36cb0](https://code.earthengine.google.com/71a5f9026b25d26591967114e1e36cb0)
+Code Checkpoint: [https://code.earthengine.google.com/01e2c9c450bcffc966a2330e6bd5edae](https://code.earthengine.google.com/01e2c9c450bcffc966a2330e6bd5edae)

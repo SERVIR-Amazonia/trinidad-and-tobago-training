@@ -7,6 +7,8 @@ nav_order: 6
 
 # Exporting hydrologic datasets
 
+*Keep the previous script open from 'Retrieving and Visualizing Elevation Data', we will continue in this section*
+
 In this exercise we learn how to export a dataset with appropriate parametrization in order to be loaded and utilized in another platform.  There exist plenty of water resources data collections available in the GEE catalog, however we will look for river information. The World WildLife Fund (WWF) has developed the HydroSHEDS Free Flowing Rivers Network in partnership with the U.S. Geological Survey, the International Centre for Tropical Agriculture, The Nature Conservancy, and the Center for Environmental Systems Research of the University of Kassel, Germany. This dataset provides hydrographic data at regional and global scales including information of river networks, watershed boundaries, drainage directions, and flow accumulations. Let’s type in the catalog search bar ‘flowing rivers’:
 
 <img align="center" src="../images/intro-gee-images/35rivers.png" hspace="15" vspace="10" width="600">
@@ -20,9 +22,9 @@ Figure 36. HydroSHEDS Free Flowing Rivers Network description.
 Let’s import it and name it as rivers, and apply the spatial and temporal filters.  It’s important to notice this information corresponds to February 2000 as it can be read in the description. 
 
 ```javascript
-/* ***** River information ********* */
+//River information
 var flowingRivers = ee.Image().byte().paint(rivers, 'RIV_ORD', 2)
-              	.clip(trinidad_bou);
+.clip(trinidad_bou);
 
 var riverVisParams = {
   min: 1,
@@ -30,17 +32,15 @@ var riverVisParams = {
   palette: ['08519c', '3182bd', '6baed6', 'bdd7e7', 'eff3ff']
 };
 
-/****  	****   	****/
-
 Map.addLayer(flowingRivers, riverVisParams, 'Free flowing rivers');
-Map.addLayer(rivers, null, 'FeatureCollection', false);
+Map.addLayer(rivers, null, 'Rivers FeatureCollection', false);
 ```
 
 <img align="center" src="../images/intro-gee-images/37_rivers_clip.png" hspace="15" vspace="10" width="300">
 
 Figure 37. HydroSHEDS clipped layer showing the river network in Trinidad.
 
-The layer named as ‘Feature collection’ contains every single item of the dataset such as small tributaries and minor rivers. Now let’s do a zoom at 500 m scale over the capital city. We are able to see the scale of visualization by using the scale bar in the lower right corner as it is circled and pointed out in Figure 38.  Let’s leave only the hydrosheds and true color sentinel layers activated.
+The layer named as ‘Rivers Feature Collection’ contains every single item of the dataset such as small tributaries and minor rivers. Now let’s do a zoom at 500 m scale over the capital city. We are able to see the scale of visualization by using the scale bar in the lower right corner as it is circled and pointed out in Figure 38.  Let’s leave only the hydrosheds and true color sentinel layers activated.
 
 <img align="center" src="../images/intro-gee-images/38_river_sem.png" hspace="15" vspace="10" width="600">
 
@@ -120,4 +120,4 @@ Once the exportation has finished we can download the data and upload it in othe
 
 Figure 45. HydroShed River network raster loaded in QGIS.
 
-Code Checkpoint: [https://code.earthengine.google.com/2786692492cfca2f6357bb28dc96977c](https://code.earthengine.google.com/2786692492cfca2f6357bb28dc96977c).
+Code Checkpoint: [https://code.earthengine.google.com/e8ad7cb2972338fa3edc3d0dfeab429d](https://code.earthengine.google.com/e8ad7cb2972338fa3edc3d0dfeab429d).

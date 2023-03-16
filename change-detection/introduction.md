@@ -13,9 +13,7 @@ Welcome to Two Date Change Detection! This workshop contains multiple hands on G
 
 ## Pre-workshop Set-up
 1. Ensure you are logged into your Google Earth Engine account.
-2. Click this link to accept the trinidad-tobago GEE script repository - https://code.earthengine.google.com/?accept_repo=users/kwoodward/trinidad-tobago
-
-
+2. Click this link to accept the trinidad-tobago GEE script repository - [https://code.earthengine.google.com/?accept_repo=users/kwoodward/trinidad-tobago](https://code.earthengine.google.com/?accept_repo=users/kwoodward/trinidad-tobago)
 
 ## Objectives
 1. Calculating spectral indices to extract patterns

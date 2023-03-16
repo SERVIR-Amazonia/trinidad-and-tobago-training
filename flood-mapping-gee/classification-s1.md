@@ -6,6 +6,9 @@ nav_order: 3
 ---
 
 # Overview
+
+*Create a new script named *
+
 In this session we will classify flooded land covers from Sentinel1 SAR scenes. We will focus in on specific SAR scenes collected during 'normal' conditions, and after a major flooding event. 
 
 **Classification Workflow**
@@ -115,7 +118,7 @@ Now that we have reference polygons for our four map classes, we will merge thei
 var newFc = openWater.merge(floodedVegetation).merge(urban).merge(forest);
 ```
 
-Code Checkpoint: https://code.earthengine.google.com/a7839ea408e0f48d1cc3c73b9baba12f
+Code Checkpoint: [https://code.earthengine.google.com/a7839ea408e0f48d1cc3c73b9baba12f](https://code.earthengine.google.com/a7839ea408e0f48d1cc3c73b9baba12f)
 
 Next, we will use the merged `FeatureCollection` of reference polygons to extract the SAR backscatter pixel values for each landcover. The polygons within the `newFc` `FeatureCollection` are overlaid on the image, and each pixel is converted to a point containing the image's pixel values and the other properties inherited from the polygon (in our case 'landcover' property). After you run this, note in the **Console** the total size of reference points we now have to train and validate our map. 
 
@@ -217,7 +220,7 @@ print('Users Accuracy [Testing Set]:', confusionMatrix.consumersAccuracy());
 
 An Overall Accuracy (OA) above 90% is quite good, but note that it is the average of all class-specific accuracies. In our case, the OA is inflated by a very high Open Water class accuracy, effectively masking the much lower accuracies of the other classes.
 
-For this methodology to hold up to scientific scrutiny, we would also want to collect a completely independent set of validation points outside this exercise to assess the resulting map with. Since this is just a demonstration we will move on. 
+For this methodology to hold up to scientific scrutiny, we would also want to collect a completely independent set of validation points outside this exercise to assess the resulting map with. A platform like [Collect Earth Online](https://www.collect.earth/) is great for this application. Since this is just a demonstration we will move on. 
 
 **Deploy Classifier to new Observations**
 
@@ -236,16 +239,3 @@ Map.addLayer(newObsClassified,classVis,'new Observation Classification')
 <img align="center" src="../images/flood-mapping-gee/17newObsClassif.PNG" hspace="15" vspace="10" width="600">
 
 A pre-trained model such as this one could be useful in deriving insights from new satellite observations quickly. Flood monitoring applications like [HydraFloods](https://hydrafloods-servir.adpc.net/) works this way, with just a few more bells and whistles. 
-
-**Optional Challenges**
-
-**Challenge 1**
-Spend a little more time collecting more reference polygons (maybe even refining existing ones). Can we boost our class-specific accuracies?
-
-**Challenge 2** 
-Refine the map stratification - can you come up with other map classes that would be useful instead of the one provided? 
-
-**Challenge 3**
-Using your trained classifier, classify several SAR observations in succession for a short time period in an area you are familiar with. See if you can visualize a pattern in open water or flooded vegetation. 
-
-*Tip*: Remember `.map()`? This would be a great use for it. The last block of code could easily be converted into a function with which to map over another S1 SAR collection.

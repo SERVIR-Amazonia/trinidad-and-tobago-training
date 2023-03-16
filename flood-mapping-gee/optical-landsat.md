@@ -9,7 +9,7 @@ nav_order: 2
 
 In this case study you will develop a tool that maps areas inundated by water for different years based on Landsat 5, 7 and 8.
 
- this training session was adapted from SERVIR Mekong Case Study 2 - Surface Water Mapping [https://docs.google.com/document/d/1uyFCMNi1mhiMvwEwFiqOflyUL__uKb7jwwsSLES3hQo/edit](https://docs.google.com/document/d/1uyFCMNi1mhiMvwEwFiqOflyUL__uKb7jwwsSLES3hQo/edit)
+ This training session was adapted from [SERVIR Mekong Case Study 2 - Surface Water Mapping](https://docs.google.com/document/d/1uyFCMNi1mhiMvwEwFiqOflyUL__uKb7jwwsSLES3hQo/edit)
 
 ## Theory
 
@@ -18,6 +18,7 @@ High-resolution measurements of the distribution and dynamics of surface water a
 **Import Landsat Data**
 
 First, create a new script in your script repository, name it 'WaterMapping-Landsat'. 
+
 Open the script and lets import Landsat 5, 7, and 8 Top of Atmosphere (TOA) reflectance `ImageCollections`. In the **Search** bar at the top, type 'Landsat TOA', you will find multiple datasets. 
 
 <img align="center" src="../images/flood-mapping-gee/01toa.PNG" hspace="15" vspace="10" width="600">
@@ -26,7 +27,7 @@ Click on 'USGS Landsat 8 Collection 2 Tier 1 TOA Reflectance' and in the pop-up 
 
 <img align="center" src="../images/flood-mapping-gee/02import.PNG" hspace="15" vspace="10" width="600">
 
-Name the imported `ImageCollection` 'L8'. Now do the same for Landsat 7 TOA, and Landsat 5 TOA `ImageCollections`
+Name the imported `ImageCollection` 'l8'. Now do the same for Landsat 7 TOA, and Landsat 5 TOA `ImageCollections`, naming them 'l7' and 'l5' respectively.
 
 <img align="center" src="../images/flood-mapping-gee/03script-imports.PNG" hspace="15" vspace="10" width="600">
 
@@ -42,13 +43,13 @@ We only want to focus on our country. Therefore we use the 'ADM0_NAME' property 
 
 ```javascript
 // Derive an Area of Interest 
-var countryName = 'Trinidad and Tobago'
+var countryName = 'Trinidad and Tobago';
 
-var countries = ee.FeatureCollection("FAO/GAUL/2015/level0")
+var countries = ee.FeatureCollection("FAO/GAUL/2015/level0");
 var aoi = countries.filter(
   ee.Filter.eq('ADM0_NAME', countryName));
 
-Map.addLayer(aoi,{},'AOI')
+Map.addLayer(aoi,{},'AOI');
 ```
 
 Select Landsat 8 images within the specified time range and region. Print the size of the resulting filtered `ImageCollection`
@@ -58,7 +59,7 @@ Select Landsat 8 images within the specified time range and region. Print the si
 var l8images = L8.filterDate(startdate, enddate)
     .filterBounds(aoi);
     
-print('Number of Landsat 8 images from filter',l8images.size())    
+print('Number of Landsat 8 images from filter',l8images.size());    
 ```
 
 Make a function to mask the clouds (adjust the threshold if necessary). 
@@ -78,21 +79,21 @@ var cloudFunction = function(image){
 Optionally, lets figure out what the function is doing by applying the function's logic to the first image in the Landsat 8 collection. Paste this code block into your script, un-comment the lines, and hit **Run**. 
 
 ```javascript
-// // how does the function work? 
+// how does the function work? 
 // // compute the function for the first image outside of function definition
-// Map.addLayer(l8images.first(),{},'l8images.first()')
+// Map.addLayer(l8images.first(),{},'l8images.first()');
 // var score = ee.Algorithms.Landsat.simpleCloudScore(l8images.first()).select('cloud');
 // var cloudy = score.gt(cloudThresh);
 // var cloudmask = cloudy.not();
 // var output = l8images.first().updateMask(cloudmask);
-// Map.addLayer(score,{},'score')
-// Map.addLayer(cloudy,{},'cloudy')
-// Map.addLayer(cloudmask,{},'cloudmask')
+// Map.addLayer(score,{},'score');
+// Map.addLayer(cloudy,{},'cloudy');
+// Map.addLayer(cloudmask,{},'cloudmask');
 // Map.addLayer(output,{
 //     min: 0, 
 //     max: 0.5,
 //     bands: ['B4', 'B3', 'B2'] // what bands should you use for true color?
-//   }, 'output')
+//   }, 'output');
 ```
 Comment-out the above code block again to remove it from your analysis.
 
@@ -115,11 +116,11 @@ Map.addLayer(l8CloudMasked.median().clip(aoi), {
   }, 'Landsat 8 True color');
 ```
 
-Lookup the band designations of Landsat 5, 7 and 8 and note the green and NIR bands for Landsat 8. Use the **Search** bar at the top like before to lookup each collection. Alternatively, if the given dataset is already imported you can  click on your imports at the top of your script (see Figure 3 above).
+Lookup the band designations of Landsat 8. Use the **Search** bar at the top like before to lookup each collection. Alternatively, if the given dataset is already imported you can  click on your imports at the top of your script (see Figure 3 above).
 
 Now we are going to calculate the Normalized Difference Water Index (NDWI) using the Landsat 8 images.  NDWI can be used to identify areas covered with water and is given by:
 
-$NDWI = (Green-NIR) / (Green+NIR)$
+<img align="center" src="../images/flood-mapping-gee/ndwiFormula.PNG" hspace="15" vspace="10" width="600">
 
 We make a function that calculates the NDWI for each image in a collection.  The function needs the Green and NIR bands from the equation above to be named 'green' and 'nir'.  NDWI is added as a band to each image.
 
@@ -166,21 +167,22 @@ Zoom into an area you are familiar with. Click the **Inspector** tab then click 
 
 <img align="center" src="../images/flood-mapping-gee/05inspect.PNG" hspace="15" vspace="10" width="600">
 
-Code Checkpoint: https://code.earthengine.google.com/91f81233cd646c5283ab1f34866398a0
+Code Checkpoint: [https://code.earthengine.google.com/5a541d54b3b1a0310bd061e874dee6d3](https://code.earthengine.google.com/5a541d54b3b1a0310bd061e874dee6d3)
 
 Next we will calculate the NDWI for Landsat 5 and Landsat 7. Please note that the bands designations are different.  Open the Data Catalog information on Landsat 5 and Landsat 7 to see which bands correspond to Green and NIR wavelengths. Remember, you can click on your script's imported datasets at the top to open the Data Catalog information. 
 
 In the next step, we will do the filtering, cloud masking, band selection and NDWI computation all at once to the Landsat 5 and Landsat 7 collections.  (The date cutoffs are arbitrary.)
 
 ```javascript
-var l5ndwi = L5
+// preprocess Landsat5 and Landsat7 the same way as Landsat8
+var l5ndwi = l5
   .filterBounds(aoi)
   .filterDate('1984-01-01', '1998-12-31')
   .map(cloudFunction)
   .select(['B2', 'B4'], bands)
   .map(addNdwi);
 
-var l7ndwi = L7
+var l7ndwi = l7
   .filterBounds(aoi)
   .filterDate('1999-01-01', '2012-12-31')
   .select(['B2', 'B4'], bands)
@@ -190,6 +192,7 @@ var l7ndwi = L7
 Since the bands are now homogeneous between the three Landsat `ImageCollections`, we can merge them.
 
 ```javascript
+// Merge all 3 Landsat missions together
 var collection = ee.ImageCollection(
   l5ndwi.merge(l7ndwi).merge(l8ndwi));
 ```
@@ -197,14 +200,14 @@ var collection = ee.ImageCollection(
 You can now make a water layer for any year in the merged collection by filtering it to the desired date range.  For example:
 
 ```js
-var year = 1990;
+var year = 2000;
 
-var ndwi1990 = collection.filterDate({
+var ndwi2000 = collection.filterDate({
   start: ee.Date.fromYMD(year, 1, 1),
   end: ee.Date.fromYMD(year, 12, 31)
 }).max();
 
-Map.addLayer(ndwi1990.selfMask(), ndwiViz, '1990 NDWI');
+Map.addLayer(ndwi2000.selfMask(), ndwiViz, '2000 NDWI');
 ```
 You can also compute things like frequency of inundation (the zero threshold is arbitrary). Uncomment commented out code to better understand what the `frequency` is doing with `waterBinary`
 
@@ -222,6 +225,8 @@ Map.addLayer(frequency.selfMask(),
 ```
 
 <img align="center" src="../images/flood-mapping-gee/06frequency.PNG" hspace="15" vspace="10" width="600">
+
+Code Checkpoint: [https://code.earthengine.google.com/df9073ffcfa8e059a5a4ac196b83e055](https://code.earthengine.google.com/df9073ffcfa8e059a5a4ac196b83e055)
 
 Challenge 1: modify the start and end parameters to map surface water detected in one season of the year over several years. 
 
