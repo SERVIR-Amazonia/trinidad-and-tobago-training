@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Flood Mapping Using SAR in QGIS"
+title: Flood Mapping Using SAR in QGIS
 permalink: /flood-mapping-sar
 has_children: True
 nav_order: 5
