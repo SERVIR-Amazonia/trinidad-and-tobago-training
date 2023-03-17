@@ -28,3 +28,4 @@ The radar backscatter contains information about the Earth’s surface, which dr
 – Dielectric constant: surface parameter
 – Surface roughness relative to the wavelength: surface parameter
 
+
