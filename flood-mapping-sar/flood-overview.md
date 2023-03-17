@@ -2,7 +2,7 @@
 layout: page
 title: "Introduction - Flood overview"
 parent: "Flood Mapping Using SAR in QGIS"
-nav_order: 2
+nav_order: 1
 ---
 
 # Flood events overview
