@@ -11,7 +11,7 @@ A flood is a temporary overflow of water onto land that is normally dry. Floodin
 pluvial floods: they are the product of intense rainfall, monsoon rains, or snowmelt
 fluvial floods: they result from riverine flooding and overbank flow
 storm surge floods: they happen in coastal zones due to winds and sea wave activities
-overflow of dams or water reservoirs
+overflow of dams or water reservoirs 
 
 <img align="center" src="../images/flood-mapping-sar-images/00_flood.jpg"  vspace="10" width="600">
 
