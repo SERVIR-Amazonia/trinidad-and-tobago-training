@@ -11,9 +11,6 @@ Training Day 3: Flood Mapping Using Radar in QGIS
 **Date**: 23 February 2023
 **Instructor:** José (Pepe) Ochoa
 
-|      Time     |                                                                                                       Topics                                                                                                      |
-|:-------------:|
-
 09:00 – 09:45
 Welcome and set-up check
 Flood events overview
@@ -39,5 +36,5 @@ Lunch
 Morning recap
 Review of HYDRAfloods
 
-### Requirements
+### Pre-requisites
 You need to have QGIS installed in your computer

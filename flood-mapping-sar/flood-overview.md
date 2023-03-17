@@ -1,11 +1,11 @@
 ---
 layout: page
-title: "Flood overview"
+title: "Flood events overview"
 parent: "Flood Mapping Using SAR in QGIS"
 nav_order: 2
 ---
 
-# Flood events overview
+## Flood events overview
 
 A flood is a temporary overflow of water onto land that is normally dry. Flooding is the most common disaster affecting humankind and provoking several consequences such as infrastructure destruction, crop-plantation loss, electric power outages, disruption of transportation services, landslides, etc. There are different types of floods:
 pluvial floods: they are the product of intense rainfall, monsoon rains, or snowmelt
