@@ -28,7 +28,7 @@ Now we need to process our new SAR file, following the same steps as we learnt f
 
 Let’s take a look at our file added, and its structure and the four components, amplitude and phase for two polarizations.
 
-<img align="center" src="../images/flood-mapping-sar-images/07_polari.png"  vspace="10" width="600">
+<img align="center" src="../images/flood-mapping-sar-images/07_polari.png"  vspace="10" width="300">
 
 **Figure 7.** The four polarization bands present in the SAR product.
 
@@ -57,7 +57,7 @@ Perform radiometric calibration.
 Click on the subset filename in the Product Explorer window to highlight the file.
 In the upper menu bar, select Radar > Radiometric > Calibrate.
 
-<img align="center" src="../images/flood-mapping-sar-images/10_cali.png"  vspace="10" width="600">
+<img align="center" src="../images/flood-mapping-sar-images/10_cali.png"  vspace="10" width="500">
 
 **Figure 10.** Image calibration
     
@@ -82,7 +82,7 @@ In the upper menu bar, select Radar > Radiometric > Calibrate.
     a. In the upper menu bar, go to Radar > Geometric > Terrain Correction > Range-Doppler Terrain Correction.
     b. Note that this process relies on a digital elevation model (DEM) to make the corrections. You may customize the DEM by clicking on the Processing Parameters and selecting any of the options in the Digital Elevation Model drop-down menu, or using your own if you have one. We will be sticking with the default options for this exercise.
 
-<img align="center" src="../images/flood-mapping-sar-images/12_geom_cali.png"  vspace="10" width="600">
+<img align="center" src="../images/flood-mapping-sar-images/12_geom_cali.png"  vspace="10" width="400">
 
 **Figure 12.** Reducing speckle
 
@@ -97,7 +97,7 @@ In the upper menu bar, select Radar > Radiometric > Calibrate.
     d. Repeat steps a-c for the Sigma0_VV band.
     e. Add both of the db bands to the image viewer and inspect the data.
 
-<img align="center" src="../images/flood-mapping-sar-images/13_decibels.png"  vspace="10" width="600">
+<img align="center" src="../images/flood-mapping-sar-images/13_decibels.png"  vspace="10" width="400">
 
 **Figure 13.** Converting to decibels
 
@@ -204,7 +204,7 @@ Now draw a polygon surrounding a flooded spot of your choice.  Try to point out 
 
 You can look at the secondary window for the information about the computed estimate for area. You can select different arial units for this purpose.
 
-<img align="center" src="../images/flood-mapping-sar-images/28_measure_area.png"  vspace="10" width="600">
+<img align="center" src="../images/flood-mapping-sar-images/28_measure_area.png"  vspace="10" width="400">
 
 **Figure 27.** Measure window showing the calculated area
 
@@ -212,8 +212,11 @@ We found 535795.61 m² or 53.6 ha of flood occurred only in this region. The mag
 
 Finally we can create a map using the cartographical tools from QGIS.  Don’t forget the four main components: legend, scale, north arrow, and title.
 
-<img align="center" src="../images/flood-mapping-sar-images/29_flood map.png"  vspace="10" width="600">
+<img align="center" src="../images/flood-mapping-sar-images/29_flood map.png"  vspace="10" width="700">
 
 Figure 28. Flood map produced for the study area.
 
-<img align="center" src="../images/flood-mapping-sar-images/30_hydrafloods.png"  vspace="10" width="600">
+## Exercise 2 - challenge: 
+
+Explore the platform SMAP Microwave Radiometer & Radar and make a short research about its functionality, data products, and applications. (https://smap.jpl.nasa.gov/)
+Write down a short paragraph about these items, and download a scene for your personal region of interest using the Alaska Satellite Facility domain just as an exercise of data access. Take a look at the metadata panel to see important data.

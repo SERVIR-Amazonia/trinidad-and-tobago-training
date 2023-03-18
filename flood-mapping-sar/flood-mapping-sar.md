@@ -72,26 +72,3 @@ Navigate through the different lesson sections by using the menu on the lefthand
 
 ### Pre-requisites
 You need to have QGIS installed in your computer
-
-
-
-
-
-9:45 – 11:00
-
-
-11:00 – 11:15
-Coffee break
-
-11:15 – 12:00
-
-
-12:00 – 13:00
-Lunch
-
-13:00 –15:00
-Morning recap
-Review of HYDRAfloods
-
-### Pre-requisites
-You need to have QGIS installed in your computer
