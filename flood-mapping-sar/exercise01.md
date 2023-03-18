@@ -63,7 +63,7 @@ In the upper menu bar, select Radar > Radiometric > Calibrate.
     
     a. Leave all of the default options as is, except for the directory. Set the directory as your intro-radar-data folder.
 
-<img align="center" src="../images/flood-mapping-sar-images/11_direc.png"  vspace="10" width="600">
+<img align="center" src="../images/flood-mapping-sar-images/11_direc.png"  vspace="10" width="300">
 
 **Figure 11.** Setting directory
 
@@ -117,38 +117,103 @@ Now highlight the portion of the equation where it says VV and input the actual 
 
 Take a look at our image pre-processing computation so far.
 
+<img align="center" src="../images/flood-mapping-sar-images/16_db_result.png"  vspace="10" width="600">
+
 **Figure 16.** VV polarization in db units
 
-Now we calculate the ratio. The steps are the same we applied in our previous workshop.    Select Raster > Raster Calculator.  In the Raster Calculator Expression field, enter the following: "Sigma0_VV_db@1"/"Sigma0_VH_db@1" . Click on the ... next to the Output layer field. Save the file in the intro-radar-data folder and name it Sigma0_db_ratio.  Click OK.
-
-<img align="center" src="../images/flood-mapping-sar-images/16_db_result.png"  vspace="10" width="600">
+Now we calculate the ratio. The steps are the same we applied in our previous workshop.    Select Raster > Raster Calculator.  In the Raster Calculator Expression field, enter the following: *"Sigma0_VV_db@1"/"Sigma0_VH_db@1"* . Click on the ... next to the Output layer field. Save the file in the intro-radar-data folder and name it Sigma0_db_ratio.  Click OK.
 
 <img align="center" src="../images/flood-mapping-sar-images/17_ratio.png"  vspace="10" width="600">
 
+**Figure 17.** Ratio band computed
+
+Tip: We can use a Planet visualization (if we have an account) to add a true color basemap and compare our SAR visualization. Otherwise we can use other basemaps available in QGIS. 
+
 <img align="center" src="../images/flood-mapping-sar-images/18_1_planet.png"  vspace="10" width="600">
 
-<img align="center" src="../images/flood-mapping-sar-images/19_histo.png"  vspace="10" width="600">
+**Figure 18.** Planet plugin available to retrieve Planet imagery
+
+With this band we can create a RGB product, by merging Sigma0_VV_db, Sigma0_VH_db, Sigma0_db_ratio.  
 
 <img align="center" src="../images/flood-mapping-sar-images/19_rgb.png"  vspace="10" width="600">
 
-<img align="center" src="../images/flood-mapping-sar-images/.png"  vspace="10" width="600">
+**Figure 19.** RGB visualization for the October 2021 SAR image.
 
-<img align="center" src="../images/flood-mapping-sar-images/.png"  vspace="10" width="600">
+Now it’s time to proceed to our classification of water /  non water by using a threshold. Confirm the threshold for our classification scheme.
+    a. Right-click on the Sigma0_VH_db@1 layer name and select Properties.
+    b. Click on the Histogram tab.
+    c. Click Compute Histogram.
+    d. A histogram with two peaks should appear. Confirm the value that separates the water values (minimum peak) from the non-water values (maximum peak).
 
-<img align="center" src="../images/flood-mapping-sar-images/.png"  vspace="10" width="600">
+<img align="center" src="../images/flood-mapping-sar-images/19_histo.png"  vspace="10" width="500">
 
-<img align="center" src="../images/flood-mapping-sar-images/.png"  vspace="10" width="600">
+**Figure 20.** Histogram for our October 2021 SAR image.
 
-<img align="center" src="../images/flood-mapping-sar-images/.png"  vspace="10" width="600">
+It appears that the value is about the same, so we can use the same threshold that we did in the SNAP software. We can add our image from our past training corresponding to January 2023
 
-<img align="center" src="../images/flood-mapping-sar-images/.png"  vspace="10" width="600">
+<img align="center" src="../images/flood-mapping-sar-images/20_histo_vh_jan2023.png"  vspace="10" width="500">
 
-<img align="center" src="../images/flood-mapping-sar-images/.png"  vspace="10" width="600">
+**Figure 20.** Histogram for our January 2023 SAR image.
 
-<img align="center" src="../images/flood-mapping-sar-images/.png"  vspace="10" width="600">
+Now, let’s continue with our October 2021 image, and create a binary image.
+    a. Select Raster > Raster Calculator….
+    b. In the Raster Calculator Expression field, enter the following: 255*(Sigma0_VH_db@1<-18.38)
+    c. Click on the ... next to the Output layer field. Save the file in the folder and name it *water_nowater_oct2021*
 
-<img align="center" src="../images/flood-mapping-sar-images/.png"  vspace="10" width="600">
+<img align="center" src="../images/flood-mapping-sar-images/21_water_nw_layers.png"  vspace="10" width="600">
 
-<img align="center" src="../images/flood-mapping-sar-images/.png"  vspace="10" width="600">
+**Figure 21.** Water-non water image for October 2021. The red circle indicates the region we want to focus on for our flood detection procedure.
 
-<img align="center" src="../images/flood-mapping-sar-images/.png"  vspace="10" width="600">
+In figure 21 we can see a zone circled in red.  This is the area that we will focus on to compared the river flow and water surface from a potential flood event occurred in October 2021, by comparing it with January 2023
+Provide with color the image. Right-click on the *water_nowater_oct2021* image name in the Layers panel and click Properties. Select the Symbology tab. Next to the Render type field, choose Singleband psuedocolor from the dropdown menu. Select a color ramp or make your own. Make sure to follow the golden rules of data visualization.
+Now let’s apply the change detection technique!. We will use the raster calculator to make a simple multi-temporal difference. It’s time to load the product water_nonwater file from our last training session.  Rename this last product as water_nonwater_jan2023 to make the difference with our current product. Next, applying the most common change detection approach, let’s compute the difference between both dates using Raster Calculator tool again.
+
+<img align="center" src="../images/flood-mapping-sar-images/22_changede.png"  vspace="10" width="600">
+
+**Figure 22.** Multi-temporal change detection technique
+
+Save the resulting product with the name Change_detec_oct2021_jan2023.tif. 
+
+<img align="center" src="../images/flood-mapping-sar-images/23_change.png"  vspace="10" width="600">
+
+**Figure 23.** Saving the new file
+
+Now let’s look at the final result. We should be able to identify the flooded areas with bright-white colors
+
+<img align="center" src="../images/flood-mapping-sar-images/24_change.png"  vspace="10" width="600">
+
+**Figure 24.** Multi-temporal change detection difference between a rainy month and a dry month
+
+Using the symbology tool we can highlight the flooded parts by riverine flooding with blue color. October corresponds to the wet season, while January belongs to the dry season. 
+
+<img align="center" src="../images/flood-mapping-sar-images/25_change_azul.png"  vspace="10" width="600">
+
+**Figure 24.** Multi-temporal change detection difference highlighting in blue the flooded regions. Product for October 2021, using January 2023 as reference for dry land.
+
+Let’s use the measure tool to evaluate the area of the flood.
+
+<img align="center" src="../images/flood-mapping-sar-images/26_measure.png"  vspace="10" width="300">
+
+**Figure 25.** Measure area tool.
+
+Now draw a polygon surrounding a flooded spot of your choice.  Try to point out a large one.
+
+<img align="center" src="../images/flood-mapping-sar-images/27_area.png"  vspace="10" width="500">
+
+**Figure 26.** Tracing a polygon to measure the area of an identified flooded area.
+
+You can look at the secondary window for the information about the computed estimate for area. You can select different arial units for this purpose.
+
+<img align="center" src="../images/flood-mapping-sar-images/28_measure_area.png"  vspace="10" width="600">
+
+**Figure 27.** Measure window showing the calculated area
+
+We found 535795.61 m² or 53.6 ha of flood occurred only in this region. The magnitude of change in water surface extent suggests this is not a normal situation of river flow, but this a flood event. This estimate can vary a bit depending on the precision to draw the polygon of measurement around the flooded region.
+
+Finally we can create a map using the cartographical tools from QGIS.  Don’t forget the four main components: legend, scale, north arrow, and title.
+
+<img align="center" src="../images/flood-mapping-sar-images/29_flood map.png"  vspace="10" width="600">
+
+Figure 28. Flood map produced for the study area.
+
+<img align="center" src="../images/flood-mapping-sar-images/30_hydrafloods.png"  vspace="10" width="600">

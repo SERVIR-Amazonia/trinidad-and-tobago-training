@@ -31,20 +31,13 @@ Navigate through the different lesson sections by using the menu on the lefthand
       </td>
     </tr>
     <tr>
-      <td>09:45 - 10:00</td>
+      <td>09:45 - 11:00</td>
       <td>
         <ul>
-            <li>Data collection: Earth Explorer and Copernicus Open Access Hub</li>
+            <li>Relevant satellite sources for flood monitoring and management</li>
+            <li>Optical flood monitoring</li>
+            <li>RADAR & SAR flood monitoring</li>
         </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>10:00 - 11:00</td>
-      <td>
-        <ul>
-            <li>How to visualize and interpret remote sensing data</li>
-            <li>Visualizing vegetation indices using Landsat</li>
-          </ul>
       </td>
     </tr>
     <tr>
@@ -55,9 +48,9 @@ Navigate through the different lesson sections by using the menu on the lefthand
       <td>11:15 - 12:00</td>
       <td>
         <ul>
-            <li>How to select the right type of remote sensing data for your research</li>
-            <li>Visualizing vegetation indices with Sentinel-2</li>
-            <li>Sentinel-2 vs. Landsat</li>
+            <li>Practice Session:</li>
+                <li>Exercise 1: Mapping surface water using SAR data with QGIS</li>
+                <li>Exercise 2-challenge: SMAP Microwave Radiometer & Radar</li>
           </ul>
       </td>
     </tr>
@@ -70,38 +63,28 @@ Navigate through the different lesson sections by using the menu on the lefthand
       <td>
         <ul>
             <li>Morning recap</li>
-            <li>Introduction to high-resolution imagery</li>
-            <li>How projections affect your data</li>
-            <li>Visualizing vegetation indices with Planet</li>
-          </ul>
+            <li>Review of HYDRAfloods</li>
+         </ul>
       </td>
     </tr>
   </tbody>
 </table>
 
+### Pre-requisites
+You need to have QGIS installed in your computer
 
 
 
-## Session Agenda
 
-
-09:00 – 09:45
-Welcome and set-up check
-Flood events overview
-Fundamentals of satellite remote sensing for flood monitoring and mapping
 
 9:45 – 11:00
-Relevant satellite sources for flood monitoring and management
-Optical flood monitoring
-RADAR & SAR flood monitoring		
+
 
 11:00 – 11:15
 Coffee break
 
 11:15 – 12:00
-Practice Session:
-Exercise 1: Mapping surface water using SAR data with QGIS
-Exercise 2-challenge: SMAP Microwave Radiometer & Radar
+
 
 12:00 – 13:00
 Lunch
