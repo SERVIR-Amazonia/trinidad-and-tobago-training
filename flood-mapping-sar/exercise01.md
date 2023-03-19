@@ -208,7 +208,7 @@ You can look at the secondary window for the information about the computed esti
 
 **Figure 27.** Measure window showing the calculated area
 
-We found 535795.61 m² or 53.6 ha of flood occurred only in this region. The magnitude of change in water surface extent suggests this is not a normal situation of river flow, but this a flood event. This estimate can vary a bit depending on the precision to draw the polygon of measurement around the flooded region.
+We found 535795.61 m² or 53.6 ha of flood occurred only in this region. The magnitude of change in water surface extent suggests this is not a normal situation of river flow, but rather a flood event. This estimate can vary a bit depending on the precision to draw the polygon of measurement around the flooded region.
 
 Finally we can create a map using the cartographical tools from QGIS.  Don’t forget the four main components: legend, scale, north arrow, and title.
 
