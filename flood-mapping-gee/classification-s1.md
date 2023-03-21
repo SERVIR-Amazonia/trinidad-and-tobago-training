@@ -53,9 +53,9 @@ var collection = ee.ImageCollection('COPERNICUS/S1_GRD')
 We want to retrieve one S1 scene each from the wet season and the dry season. For each period, we will define a start and end date with which to filter the whole Sentinel S1 collection, select the first scene from the result and clip it to our AOI.
 
 ```js
-//construct median composites of dry and wet period SAR data
-var dry = collection.filterDate('2022-03-01','2022-04-30').median().clip(aoi);
-var wet = collection.filterDate('2022-08-01','2022-09-30').median().clip(aoi);
+//collect one observation each of dry and wet period SAR data
+var dry = collection.filterDate('2022-03-01','2022-03-30').first().clip(aoi);
+var wet = collection.filterDate('2022-08-01','2022-08-30').first().clip(aoi);
 
 // Display on map
 var vis = {bands:['VV'],min:-20,max:0};
@@ -118,7 +118,7 @@ Now that we have reference polygons for our four map classes, we will merge thei
 var newFc = openWater.merge(floodedVegetation).merge(urban).merge(forest);
 ```
 
-Code Checkpoint: [https://code.earthengine.google.com/15b60dea09dc7cb79bb61e0874ac5a19](https://code.earthengine.google.com/15b60dea09dc7cb79bb61e0874ac5a19)
+Code Checkpoint: [https://code.earthengine.google.com/03c9175f18ca5d47e558e401f5280896](https://code.earthengine.google.com/03c9175f18ca5d47e558e401f5280896)
 
 Next, we will use the merged `FeatureCollection` of reference polygons to extract the SAR backscatter pixel values for each landcover. The polygons within the `newFc` `FeatureCollection` are overlaid on the image, and each pixel is converted to a point containing the image's pixel values and the other properties inherited from the polygon (in our case 'landcover' property). After you run this, note in the **Console** the total size of reference points we now have to train and validate our map. 
 
