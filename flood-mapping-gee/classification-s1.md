@@ -7,7 +7,7 @@ nav_order: 3
 
 # Overview
 
-*Create a new script named *
+*Create a new script for this workflow*
 
 In this session we will classify flooded land covers from Sentinel1 SAR scenes. We will focus in on specific SAR scenes collected during 'normal' conditions, and after a major flooding event. 
 
