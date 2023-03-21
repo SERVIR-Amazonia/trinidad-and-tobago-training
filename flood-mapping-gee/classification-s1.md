@@ -89,17 +89,17 @@ Using the Satellite basemap and your wet and dry season SAR layers in your map, 
 
 Below is the workflow for creating reference data directly in Earth Engine. We will use Open Permanent Water as the example.
 
-1. In the geometry drawing toolbar (top-left of the **Map** panel), go to Geometry Imports and click 'new layer'.
+* In the geometry drawing toolbar (top-left of the **Map** panel), go to Geometry Imports and click 'new layer'.
 
 <img align="center" src="../images/flood-mapping-gee/10geom.PNG" hspace="15" vspace="10" width="600">
 
-2. Click on the 'Edit layer properties' button (cog icon next to the geometry's name) to configure the new geometry layer. Name the new layer 'openWater' and change its color. Under 'Import as', change it to 'FeatureCollection'. Finally, click on the '+ Property' button and enter a new property 'landcover' with a value of 0.  
+* Click on the 'Edit layer properties' button (cog icon next to the geometry's name) to configure the new geometry layer. Name the new layer 'openWater' and change its color. Under 'Import as', change it to 'FeatureCollection'. Finally, click on the '+ Property' button and enter a new property 'landcover' with a value of 0.  
 
 <img align="center" src="../images/flood-mapping-gee/11configure.PNG" hspace="15" vspace="10" width="600">
 
 Each geometry layer, imported to your script now as a `FeatureCollection` will represent one class within your map product. 
 
-3. Draw representative polygons on the map. Click again on the geometry layer 'openWater' in the **Geometry Imports** panel and ensure it shows up in bold text. Then click on the polygon icon. Draw your open water polygons. 
+* Draw representative polygons on the map. Click again on the geometry layer 'openWater' in the **Geometry Imports** panel and ensure it shows up in bold text. Then click on the polygon icon. Draw your open water polygons. 
 
 <img align="center" src="../images/flood-mapping-gee/12openWater.PNG" hspace="15" vspace="10" width="600">
 
