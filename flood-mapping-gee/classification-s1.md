@@ -9,23 +9,23 @@ nav_order: 3
 
 *Create a new script for this workflow*
 
-In this session we will classify flooded land covers from Sentinel1 SAR scenes. We will focus in on specific SAR scenes collected during 'normal' conditions, and after a major flooding event. 
+In this session we will train a classifer to predict flooded land covers using Sentinel1 SAR scenes collected in both dry and wet seasons.
 
-**Classification Workflow**
+**General Supervised Classification Workflow**
 
-1. Load the image or images to be classified 
+Step 1. Load the image or images to be classified 
 
-2. Gather the training data: 
-    * Collect training data to teach the classifier 
-    * Collect representative samples of backscatter for each landcover class of interest 
+Step 2. Gather the training data: 
+  * Collect training data to teach the classifier 
+  * Collect representative samples of backscatter for each landcover class of interest 
 
-3. Create the training dataset: 
-    * Overlay the training areas over the images of interest 
-    * Extract backscatter for those areas 
+Step 3. Create the training dataset: 
+  * Overlay the training areas over the images of interest 
+  * Extract backscatter for those areas 
 
-4. Train the classifier and run the classification 
+Step 4. Train the classifier and run the classification 
 
-5. Validate your results
+Step 5. Validate your results
 
 **Identify Area of Interest**
 
@@ -53,15 +53,15 @@ var collection = ee.ImageCollection('COPERNICUS/S1_GRD')
 We want to retrieve one S1 scene each from the wet season and the dry season. For each period, we will define a start and end date with which to filter the whole Sentinel S1 collection, select the first scene from the result and clip it to our AOI.
 
 ```js
-//construct before and after date filters for dry and wet period
-var dry = collection.filterDate('2022-03-01','2022-03-15').first().clip(aoi);
-var wet = collection.filterDate('2022-08-15','2022-08-31').first().clip(aoi);
+//construct median composites of dry and wet period SAR data
+var dry = collection.filterDate('2022-03-01','2022-04-30').median().clip(aoi);
+var wet = collection.filterDate('2022-08-01','2022-09-30').median().clip(aoi);
 
 // Display on map
 var vis = {bands:['VV'],min:-20,max:0};
 Map.centerObject(aoi,12);
 Map.addLayer(dry,vis,'dry season',false);
-Map.addLayer(wet,vis,'wet season',false);
+Map.addLayer(wet,vis,'wet season ',false);
 ```
 
 <img align="center" src="../images/flood-mapping-gee/08dryWet.PNG" hspace="15" vspace="10" width="600">
@@ -93,7 +93,7 @@ Below is the workflow for creating reference data directly in Earth Engine. We w
 
 <img align="center" src="../images/flood-mapping-gee/10geom.PNG" hspace="15" vspace="10" width="600">
 
-2. Click on the 'Edit layer properties' button (cog icon next to the geometry's name) to configure the new geometry layer. Name the new layer 'openWater' and change its color. Under 'Import as', change it to 'FeatureCollection'. Finally, click on the '+ Property' button and enter a new property 'landcover' with a value of 1. 
+2. Click on the 'Edit layer properties' button (cog icon next to the geometry's name) to configure the new geometry layer. Name the new layer 'openWater' and change its color. Under 'Import as', change it to 'FeatureCollection'. Finally, click on the '+ Property' button and enter a new property 'landcover' with a value of 0.  
 
 <img align="center" src="../images/flood-mapping-gee/11configure.PNG" hspace="15" vspace="10" width="600">
 
@@ -105,7 +105,7 @@ Each geometry layer, imported to your script now as a `FeatureCollection` will r
 
 Repeat these steps for each of the remaining map classes: Flooded Vegetation, Urban/Built Area, and Forest. 
 
-**Remember**: since each geometry layer represents its own map class, the value for the 'landcover' property must change when you are at the configuration step. For example, use landcover value of 2 for the next geometry layer that you create. 
+**Remember**: since each geometry layer represents its own map class, the value for the 'landcover' property must change when you are at the configuration step. For example, use landcover value of 1 for the next geometry layer that you create. 
 
 To get through this demonstration, shoot for 3 or 4 large polygons or 7 or 8 smaller ones per class. We can refine the quality of our reference data later if we have time.
 
@@ -118,40 +118,45 @@ Now that we have reference polygons for our four map classes, we will merge thei
 var newFc = openWater.merge(floodedVegetation).merge(urban).merge(forest);
 ```
 
-Code Checkpoint: [https://code.earthengine.google.com/a7839ea408e0f48d1cc3c73b9baba12f](https://code.earthengine.google.com/a7839ea408e0f48d1cc3c73b9baba12f)
+Code Checkpoint: [https://code.earthengine.google.com/15b60dea09dc7cb79bb61e0874ac5a19](https://code.earthengine.google.com/15b60dea09dc7cb79bb61e0874ac5a19)
 
 Next, we will use the merged `FeatureCollection` of reference polygons to extract the SAR backscatter pixel values for each landcover. The polygons within the `newFc` `FeatureCollection` are overlaid on the image, and each pixel is converted to a point containing the image's pixel values and the other properties inherited from the polygon (in our case 'landcover' property). After you run this, note in the **Console** the total size of reference points we now have to train and validate our map. 
 
 ```js
 // define bands to be used to train the data
-var final = ee.Image.cat(dryFiltered,wetFiltered);
-var bands = ['VV','VH'];
+var bands = ['dryVV','dryVH','wetVV','wetVH'];
+
+// combine dry and wet season composite SAR data
+var final = ee.Image.cat(dryFiltered,wetFiltered)
+.rename(['dryVV','dryVH','wetVV','wetVH']);
+print('combined dry/wet season SAR data', final);
+
 var samples = final.select(bands).sampleRegions({
   collection:newFc,
   properties:['landcover'],
   scale:30});
 
 print('Sample size: ',samples.size());
-
 ```
 
 Next, we want to set aside 80% of the reference points to train our classifier, and use the remaining 20% for validation. We do this simply by adding a new column to the reference point set called 'random', which contains random decimal numbers between 0 and 1, then filtering them into the two groups.
 
 ```js
 //split sample data into training and testing
-var trainTest = samples.randomColumn()
+var trainTest = samples.randomColumn();
+print('First Train/Test Sample', trainTest.first());
 
-var training = trainTest.filter(ee.Filter.lte('random',0.8))
-var testing = trainTest.filter(ee.Filter.gt('random',0.8))
-print('training size: ', training.size())
-print('testing size: ', testing.size())
+var training = trainTest.filter(ee.Filter.lte('random',0.8));
+var testing = trainTest.filter(ee.Filter.gt('random',0.8));
+print('training size: ', training.size());
+print('testing size: ', testing.size());
 ```
 
 <img align="center" src="../images/flood-mapping-gee/13trainSize.PNG" hspace="15" vspace="10" width="600">
 
 **Create and Apply Classifier**
 
-We choose a classifier algorithm from `ee.Classifier` family of functions, and train it on the `training` `FeatureCollection`. We must specify the `classProperty` to be the property we want to map, or predict, with the model, and the `inputProperties` as the SAR backscatter values ('VV' and 'VH'). 
+We choose a classifier algorithm from `ee.Classifier` family of functions, and train it on the `training` `FeatureCollection`. We must specify the `classProperty` to be the property we want to map, or predict, with the model, and the `inputProperties` as the SAR backscatter values defined by the `bands` variable. 
 
 ```js
 // train the classifier
@@ -173,7 +178,7 @@ Display the results, modify the color palette if needed.
 
 ```js
 // Display the results, adjust colors according to your land cover stratification
-var classVis = {min:1,max:4,palette:['blue','cyan','red','green']}
+var classVis = {min:0,max:3,palette:['blue','cyan','red','green']}
 Map.centerObject(classified,12)
 Map.addLayer(classified,classVis,'classified')
 ```
@@ -228,13 +233,20 @@ Now that we have a trained model, we could _deploy_ it, or apply it to other Sen
 
 ```js
 // Classify another Sentinel SAR observation
-var newObs = collection.filterDate('2021-08-01','2021-08-31').first().clip(aoi);
-var newObsFiltered = newObs.focal_mean(smoothingRadius,'circle','meters');
+// one SAR observation from dry season
+var newObsDry = collection.filterDate('2018-03-01','2018-03-31').first().clip(aoi);
+// one SAR observation from wet season
+var newObsWet = collection.filterDate('2018-08-01','2018-08-31').first().clip(aoi);
+
+// combine the two season observations
+var newObsFinal = ee.Image.cat(newObsDry,newObsWet).rename(bands);
+print('New Obs Final', newObsFinal);
+
+var newObsFiltered = newObsFinal.focal_mean(smoothingRadius,'circle','meters');
 var newObsClassified = newObsFiltered.select(bands).classify(classifier)
- 
-Map.addLayer(newObs,vis,'new Observation')
-Map.addLayer(newObsClassified,classVis,'new Observation Classification')
 ```
+
+Code Checkpoint: [https://code.earthengine.google.com/76ef63dc5be9e31cd521ceca45f1d0aa](https://code.earthengine.google.com/76ef63dc5be9e31cd521ceca45f1d0aa)
 
 <img align="center" src="../images/flood-mapping-gee/17newObsClassif.PNG" hspace="15" vspace="10" width="600">
 
