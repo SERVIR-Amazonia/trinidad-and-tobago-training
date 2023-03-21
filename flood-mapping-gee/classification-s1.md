@@ -246,7 +246,7 @@ var newObsFiltered = newObsFinal.focal_mean(smoothingRadius,'circle','meters');
 var newObsClassified = newObsFiltered.select(bands).classify(classifier)
 ```
 
-Code Checkpoint: [https://code.earthengine.google.com/76ef63dc5be9e31cd521ceca45f1d0aa](https://code.earthengine.google.com/76ef63dc5be9e31cd521ceca45f1d0aa)
+Code Checkpoint: [https://code.earthengine.google.com/8d406f19f6226df89ecbb4b77c88364a](https://code.earthengine.google.com/8d406f19f6226df89ecbb4b77c88364a)
 
 <img align="center" src="../images/flood-mapping-gee/17newObsClassif.PNG" hspace="15" vspace="10" width="600">
 
