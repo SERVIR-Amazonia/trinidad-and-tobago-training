@@ -11,6 +11,8 @@ Add links and general resources here.
  Documentation: https://area2.readthedocs.io/en/latest/overview.html
  
  GEE code:https://code.earthengine.google.com/?accept_repo=projects/AREA2/public
+ 
+ ID Asset: projects/caribbean-trainings/assets/trinidad-tobago-2022/mangroveClassifGiri
 
 2. CEO project to validate Mangroves mapping created using Landsat with GEE (session 8).
 
