@@ -214,4 +214,6 @@ print('Users Accuracy:', confusionMatrix.consumersAccuracy());
 
 <img align="center" src="../images/mangrove-mapping/AccuracyAssessment.PNG" hspace="15" vspace="10" width="600">
 
+Code Checkpoint: [https://code.earthengine.google.com/332194d54f2ccdfec00257cc08abc8b1](https://code.earthengine.google.com/332194d54f2ccdfec00257cc08abc8b1)
+
 Congratulations! You have setup a Random Forest classifier for mangrove mapping using multiple Landsat sensors. 
