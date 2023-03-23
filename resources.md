@@ -15,3 +15,7 @@ Add links and general resources here.
 2. CEO project to validate Mangroves mapping created using Landsat with GEE (session 8).
 
 Link: https://app.collect.earth/review-project?projectId=34637 
+
+3. GEE book
+
+Link: https://www.eefabook.org/table-of-contents.html
