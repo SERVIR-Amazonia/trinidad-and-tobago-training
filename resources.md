@@ -11,4 +11,4 @@ Documentation: https://area2.readthedocs.io/en/latest/overview.html
 GEE code:https://code.earthengine.google.com/?accept_repo=projects/AREA2/public
 
 2. CEO project to validate Mangroves mapping created using Landsat with GEE (session 8).
-Link: https://app.collect.earth/review-project?projectId=34637
+Link: https://app.collect.earth/review-project?projectId=34637 
