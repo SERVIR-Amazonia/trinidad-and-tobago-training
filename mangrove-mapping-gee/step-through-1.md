@@ -227,4 +227,6 @@ print(landsatFiltered)
 Map.addLayer(landsatFiltered,{},'Landsat Collection',false)
 ```
 
+Code Checkpoint: [https://code.earthengine.google.com/0064c2b2764e781d4f8f1abf9c59f762](https://code.earthengine.google.com/0064c2b2764e781d4f8f1abf9c59f762)
+
 Congratulations, you now have an `ImageCollection` consiting of data from multiple Landsat sensors for your area and date range of interest. Continue onto Step Through Part 2 to finish your workflow.

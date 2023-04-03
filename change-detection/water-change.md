@@ -66,8 +66,6 @@ Before running any sort of change detection analysis, it is useful to first visu
 
 Following the format in the code block below, first create a variable `visParam` to hold the display parameters, selecting the NIR, greem, and red bands, with values drawn that are between 7750 and 22200. Next, add the pre-event and post-event images to the map and click Run. Click and drag the opacity slider on the post-event image layer back and forth to view the changes between your two images. 
 
-
-**not sold on dates i selected lots of cloud cover**
 ```js
 var visParam = {
     'bands': ['nir', 'green', 'blue'],
