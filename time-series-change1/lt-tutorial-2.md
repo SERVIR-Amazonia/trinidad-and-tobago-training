@@ -1,3 +1,9 @@
+---
+layout: page
+title: Postprocessing LandTrendr Outputs
+parent: Time Series Change Detection 1
+nav_order: 2
+---
 # Post-process the LandTrendr Loss and Gain Maps
 
 This workflow computes Loss (degradation & deforestation) and Gain (forest growth) independently of one another. Use your LandTrendr Gain Run outputs to calculate a Growth image and your Landtrendr Loss Run outputs to calculate a Loss Image. If you choose not to map Reforestation you will only need the Loss Image that is generated in this tool.

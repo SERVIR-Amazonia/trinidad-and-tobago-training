@@ -1,3 +1,9 @@
+---
+layout: page
+title: Running the LandTrendr GUI
+parent: Time Series Change Detection 1
+nav_order: 2
+---
 # Running the LandTrendr GUI (2_LT-Data-Visualization)
 
 In the caribbean trainings script repository ([users/kwoodward/caribbean-trainings](https://code.earthengine.google.com/?accept_repo=users/kwoodward/caribbean-trainings)), open the script named **2_LT-Data-Visualization**. When loaded and run, this script creates a LandTrendr-GEE GUI.
