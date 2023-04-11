@@ -21,3 +21,7 @@ Link: https://app.collect.earth/review-project?projectId=34637
 3. GEE book
 
 Link: https://www.eefabook.org/table-of-contents.html
+
+4. Image Classification and Change Detection slides
+
+Links: https://docs.google.com/presentation/d/1YPY0MzGYcraMQOmlPv2PP_ibPjMQh9bT/edit?usp=sharing&ouid=115564508851028065035&rtpof=true&sd=true
