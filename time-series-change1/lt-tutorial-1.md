@@ -46,13 +46,14 @@ While the point mode is the only way to fully understand and evaluate the source
 
 The RGB visualization tool in the LandTrendr GUI is designed to quickly evaluate spatial patterns of spectral fitting by the algorithm. In this tool, we run LT across many pixels, and then show images of the LT-fitted values across pixels, with different years of fitted imagery in the red, green, and blue colors on the screen. With awareness of the years being displayed and the properties of the spectral values being rendered, it is possible to interpret spatial patterns in the RGB images in terms of their land cover change processes, or problems with the imagery or fitting.
 
-First, load a study area for the analysis. The LandTrendr algorithms are computationally intensive and take some time to run. For training purposes, it is useful to constrain our analysis to a relatively small geographic domain.
+First, we will load a study area for the analysis. The LandTrendr algorithms are computationally intensive and take some time to run. For training purposes, it is useful to constrain our analysis to a relatively small geographic domain.
+
 In the Control Panel, select the "Asset Overlay Options" menu, and enter these values:
-1. In the first box, enter the path to your AOI asset, or a smaller sample area.
+1. In the first box of the "Define file path to an asset" section, enter the path to your AOI asset, or a smaller sample area.
 2. In the first box of the "Define Layer Name" section, enter a name that you will recognize when it appears in the layers of the map.
 3. Near the bottom, click the check-box that makes the first layer one to use to constrain later analyses.
 4. Click on the 'Add asset to map'.
-Next, open the RGB change mapper menu in the GUI. A basic video showing the RGB tool is here: [https://youtu.be/VSeia3NRa3c](https://youtu.be/VSeia3NRa3c)
+Next, open the "RGB Change Options" menu in the GUI. A basic video showing the RGB tool is here: [https://youtu.be/VSeia3NRa3c](https://youtu.be/VSeia3NRa3c)
 
 <img align="center" src="../images/time-series-1/rgb-screenshot.PNG" hspace="15" vspace="10" width="600">
 
@@ -113,9 +114,9 @@ The spatial patterns of the red and yellow areas are consistent with the underly
 
 However, we also see an example of a purple disturbance with an odd spatial pattern (lower right figure). Hovering over the chart itself and examining the grey source data, one can inspect which years of data are actually present. In doing so, it emerges that many years of source data are missing. This occurs when clouds are present.
 
-**Setting the Parameters in the GUI**
+**Generating LandTrendr Outputs**
 
-1. LandTrendr Options: You can update the input parameters for the algorithm by expanding the "LandTrendr Options" menu of the GUI. A basic video showing this process is here: [https://youtu.be/TNQOdHIg24s](https://youtu.be/TNQOdHIg24s). Many of the values have been pre-set to work for Nepal, but you can adjust them for your region. For example, after experimentation, TCW (Tasseled Cap Wetness) was found to be an index that works well in Nepal’s environments. The date range choice is one of the more important choices in the LandTrendr implementation process. The user must balance the goal of using images in times of year when clear observations are most likely against the goal of finding the change of interest. Full parameters description are [here](https://github.com/wespestad/MRV/blob/9380035aff6fd7b65dc8b28bb28ae3e9f4deff3d/Modules_2/change_detection_landtrendr_v3.md#353-exploring-impacts-of-the-fitting-parameters)
+Step 1. LandTrendr Options: You can update the input parameters for the algorithm by expanding the "LandTrendr Options" menu of the GUI. A basic video showing this process is here: [https://youtu.be/TNQOdHIg24s](https://youtu.be/TNQOdHIg24s). Many of the values have been pre-set to work for Nepal, but you can adjust them for your region. For example, after experimentation, TCW (Tasseled Cap Wetness) was found to be an index that works well in Nepal’s environments. The date range choice is one of the more important choices in the LandTrendr implementation process. The user must balance the goal of using images in times of year when clear observations are most likely against the goal of finding the change of interest. Full parameters description are [here](https://github.com/wespestad/MRV/blob/9380035aff6fd7b65dc8b28bb28ae3e9f4deff3d/Modules_2/change_detection_landtrendr_v3.md#353-exploring-impacts-of-the-fitting-parameters)
 
     * *Max Segments*: Set to 8. With about 30 possible years of data, eight segments is still appropriate, as it is well under the 3:1 ratio rule of thumb
 
@@ -151,7 +152,7 @@ Step 5. The Change Filter Options and Download Options sections you will run twi
 * Make sure “Loss” and “Greatest” are selected. You can experiment with other Change Types and Change Sort options later on. 
 * Have the “Filter by Year'' checked and adjust the time period if needed to include the full time you analyzed. 
 * All other options should remain not checked. You will complete this post processing in the next script. 
-* Adjust the years to your time period of interest, not the longer time period used to train the model.
+* Adjust the years to your time period of interest. This is the time period that the LandTrendr analysis will be run on. 
 
 <img align="center" src="../images/time-series-1/change-filter-opts.PNG" hspace="15" vspace="10" width="600">
 

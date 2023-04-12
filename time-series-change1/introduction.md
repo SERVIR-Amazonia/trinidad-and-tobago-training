@@ -2,7 +2,7 @@
 layout: page
 title: Introduction
 parent: Time Series Change Detection 1
-nav_order: 2
+nav_order: 1
 ---
 
 # Introduction
@@ -13,10 +13,10 @@ Welcome to Time Series Change Detection 1. In this workshop, we will seek to und
 
 1. Click this link to accept a new script repository: [https://code.earthengine.google.com/?accept_repo=users/kwoodward/caribbean-trainings](https://code.earthengine.google.com/?accept_repo=users/kwoodward/caribbean-trainings). 
 
-2. Slides from today are in the Resources page of this website and also linked here: [https://docs.google.com/presentation/d/1YPY0MzGYcraMQOmlPv2PP_ibPjMQh9bT/edit?usp=sharing&ouid=115564508851028065035&rtpof=true&sd=true](https://docs.google.com/presentation/d/1YPY0MzGYcraMQOmlPv2PP_ibPjMQh9bT/edit?usp=sharing&ouid=115564508851028065035&rtpof=true&sd=true)
+2. Slides from today are in the Resources page of this website and also linked [here](https://docs.google.com/presentation/d/1YPY0MzGYcraMQOmlPv2PP_ibPjMQh9bT/edit?usp=sharing&ouid=115564508851028065035&rtpof=true&sd=true)
 
 **Objectives**
 
 1. Understand generally what a pixel-based imagery time series is and why it is useful for change detection
 2. Gain exposure to several time series change detection algorithms
-3. Get hands-on practice running LandTrendr using the LandTrendr GUI adapted for the Caribbean.
+3. Get hands-on practice running LandTrendr using the LandTrendr GUI.
