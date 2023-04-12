@@ -19,7 +19,7 @@ Using the expanding menus in the Control Panel, the user sets parameters for the
 
 <img align="center" src="../images/time-series-1/expanding-menu.PNG" hspace="15" vspace="10" width="600">
 
-**(OPTIONAL) Explore the point-mode LandTrendr fitting**
+**Explore the point-mode LandTrendr fitting**
 
 The simplest starting way to understand LandTrendr is to apply the algorithms in point mode. This allows you to visualize how fitting works, and how changing your settings can change the fit. To access the point-mode, select the "Pixel Time Series Options" menu. You should see a window something like this:
 
@@ -32,15 +32,16 @@ Orient yourself to the layout and meaning of the components of the chart below:
 <img align="center" src="../images/time-series-1/point-mode-2.PNG" hspace="15" vspace="10" width="600">
 
 The core interpretation is the difference between the grey line and the red line.
-The grey line represents the trajectory of the observed (measured) spectral values for the pixel. The values are extracted from image collections with properties that define the date window and years of the collection.  We refer to these as the "source" spectral values. They bounce around from year to year because of subtle changes in the atmosphere, the timing of image acquisition, etc.
+The grey line represents the trajectory of the observed (measured) spectral values for the pixel. The values are extracted from image collections with properties that define the date window and years of the collection.  We refer to these as the **"source"** spectral values. They bounce around from year to year because of subtle changes in the atmosphere, the timing of image acquisition, etc.
 
-The red line shows what the algorithms decided was the best temporal segmentation through those observed values. This is a function of the fitting parameters of the segmentation model. We refer to these as the "fitted" spectral values.
+The red line shows what the algorithms decided was the best temporal segmentation through those observed values. This is a function of the fitting parameters of the segmentation model. We refer to these as the **"fitted"** spectral values.
 
 The goal with these plots is to determine if:
 1. The trajectory of the source values captures the processes you believe are occuring at the surface
 2. The fitted values adequately capture the overall "shape" of the trajectory of the source values.
 
-**(Optional) Exploring dynamics with three-color composite images**
+**Exploring dynamics with three-color composite images**
+
 While the point mode is the only way to fully understand and evaluate the source and fitted values, it is an inefficient way to explore the spatial patterns. We can happen upon pixels where the source values indicate a problem with the imagery, or where the fitting parameters are likely not chosen appropriately, but such findings happen by chance. It would be handy to have a quick visual tool to scan the landscape and evaluate trends and potential problems.
 
 The RGB visualization tool in the LandTrendr GUI is designed to quickly evaluate spatial patterns of spectral fitting by the algorithm. In this tool, we run LT across many pixels, and then show images of the LT-fitted values across pixels, with different years of fitted imagery in the red, green, and blue colors on the screen. With awareness of the years being displayed and the properties of the spectral values being rendered, it is possible to interpret spatial patterns in the RGB images in terms of their land cover change processes, or problems with the imagery or fitting.
@@ -83,7 +84,7 @@ Finally, if there is persistent decline over the full time period, red will be h
 
 <img align="center" src="../images/time-series-1/rgb-interp-6.PNG" hspace="15" vspace="10" width="600">
 
-**(OPTIONAL) Use pixel-level plotter with RGB images to interpret colors**
+**Use pixel-level plotter with RGB images to interpret colors**
 
 Those color rules can be somewhat abstract until you see them in action. The LandTrendr GUI gives us the chance to do that: use the RGB color map to select pixels and plot them in the pixel-level mode!
 First, double check that your RGB image has loaded into the map view.
@@ -114,28 +115,27 @@ However, we also see an example of a purple disturbance with an odd spatial patt
 
 **Setting the Parameters in the GUI**
 
-1. You can update the input parameters for the algorithm by expanding the "LandTrendr Options" menu of the GUI. A basic video showing this process is here: [https://youtu.be/TNQOdHIg24s](https://youtu.be/TNQOdHIg24s). Many of the values have been pre-set to work for Nepal, but you can adjust them. For example, after experimentation, TCW (Tasseled Cap Wetness) was found to be an indice that works well in Nepal’s environments. The date range choice is one of the more important choices in the LandTrendr implementation process. The user must balance the goal of using images in times of year when clear observations are most likely against the goal of finding the change of interest. Full parameters description are here: [https://github.com/wespestad/MRV/blob/9380035aff6fd7b65dc8b28bb28ae3e9f4deff3d/Modules_2/change_detection_landtrendr_v3.md#353-exploring-impacts-of-the-fitting-parameters](https://github.com/wespestad/MRV/blob/9380035aff6fd7b65dc8b28bb28ae3e9f4deff3d/Modules_2/change_detection_landtrendr_v3.md#353-exploring-impacts-of-the-fitting-parameters))
+1. LandTrendr Options: You can update the input parameters for the algorithm by expanding the "LandTrendr Options" menu of the GUI. A basic video showing this process is here: [https://youtu.be/TNQOdHIg24s](https://youtu.be/TNQOdHIg24s). Many of the values have been pre-set to work for Nepal, but you can adjust them for your region. For example, after experimentation, TCW (Tasseled Cap Wetness) was found to be an index that works well in Nepal’s environments. The date range choice is one of the more important choices in the LandTrendr implementation process. The user must balance the goal of using images in times of year when clear observations are most likely against the goal of finding the change of interest. Full parameters description are [here](https://github.com/wespestad/MRV/blob/9380035aff6fd7b65dc8b28bb28ae3e9f4deff3d/Modules_2/change_detection_landtrendr_v3.md#353-exploring-impacts-of-the-fitting-parameters)
 
+    * *Max Segments*: Set to 8. With about 30 possible years of data, eight segments is still appropriate, as it is well under the 3:1 ratio rule of thumb
+
+    * *Spike Threshold*: Keep at 0.9. This parameter can have some effect when there are noisy trajectories, but it may not need to be changed until after we view the impacts of changing the date range. Setting it to 1.0 allows all spikes to be kept, while lower values remove some sharp features that may be noise.
+
+    * *Vertex Count Overshoot*: Keep at 3. This parameter rarely needs to change.
+
+    * *Prevent One Year Recovery*: Set to "false". This is an aggressive parameter that does what it suggests -- it prevents one-year recovery segments. However it is more generally useful to tune the recovery using the next parameter -- the Recovery threshold.
+
+    * *Recovery Threshold*: Set to 0.5. Lower numbers disallow very quick recoveries, but in tropical regions quick vegetative recovery after disturbance is the norm. 0.5 is a moderate value and dampens the impacts of noise. A value of 1 would allow all details in the recovery pattern to be seen, but can also lead to overfitting of noise and artifacts.
+
+    * *p-value Threshold*: Keep at 0.05. However, if we note that the fits are not tracking somewhat noisy source data, this value could  be relaxed to 0.15. Increasing the p-value threshold allows fits to be captured that retain more residual noise after fitting.
+
+    * *Best model Proportion*: Keep at 0.75
+
+    * *Min Observations needed*: Keep at 6.
+
+    * *Image Id’s to exclude*: Leave blank unless you completed the optional High-Quality Landsaty Image selector tool.
 
 <img align="center" src="../images/time-series-1/seg-params.PNG" hspace="15" vspace="10" width="600">
-
-*Max Segments*: Set to 8. With about 30 possible years of data, eight segments is still appropriate, as it is well under the 3:1 ratio rule of thumb
-
-*Spike Threshold*: Keep at 0.9. This parameter can have some effect when there are noisy trajectories, but it may not need to be changed until after we view the impacts of changing the date range. Setting it to 1.0 allows all spikes to be kept, while lower values remove some sharp features that may be noise.
-
-*Vertex Count Overshoot*: Keep at 3. This parameter rarely needs to change.
-
-*Prevent One Year Recovery*: Set to "false". This is an aggressive parameter that does what it suggests -- it prevents one-year recovery segments. However it is more generally useful to tune the recovery using the next parameter -- the Recovery threshold.
-
-*Recovery Threshold*: Set to 0.5. Lower numbers disallow very quick recoveries, but in tropical regions quick vegetative recovery after disturbance is the norm. 0.5 is a moderate value and dampens the impacts of noise. A value of 1 would allow all details in the recovery pattern to be seen, but can also lead to overfitting of noise and artifacts.
-
-*p-value Threshold*: Keep at 0.05. However, if we note that the fits are not tracking somewhat noisy source data, this value could  be relaxed to 0.15.Increasing the p-value threshold allows fits to be captured that retain more residual noise after fitting. For Nepal, 0.05 was chosen after iterative testing.
-
-*Best model Proportion*: Keep at 0.75
-
-*Min Observations needed*: Keep at 6.
-
-*Image Id’s to exclude*: Leave blank unless you completed the optional High-Quality Landsaty Image selector tool.
 
 2. In the Asset Overlay section, put the path to your AOI in the first blank. Then check the box at the end to use it for the AOI in your analysis. Click the ‘Add Asset to Map’ button.
 
