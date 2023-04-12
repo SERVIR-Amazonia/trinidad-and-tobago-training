@@ -2,7 +2,7 @@
 layout: page
 title: Postprocessing LandTrendr Outputs
 parent: Time Series Change Detection 1
-nav_order: 2
+nav_order: 3
 ---
 # Post-process the LandTrendr Loss and Gain Maps
 

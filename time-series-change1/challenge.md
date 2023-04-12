@@ -6,7 +6,7 @@ nav_order: 4
 ---
 # Overview
 
-## Collaborate with your colleagues on creating a Forest Loss (Degradation & Deforestation) Map for a particular time period and area of interest.**
+## Create a Forest Loss (Degradation & Deforestation) Map for a particular time period and area of interest
 
 * Run the **2_LT-Data-Visualization** tool following Steps 1-8 in "Generating LandTrendr Outputs" section of "Running the LandTrendr GUI" module to generate outputs related to "Greatest Loss"
 
