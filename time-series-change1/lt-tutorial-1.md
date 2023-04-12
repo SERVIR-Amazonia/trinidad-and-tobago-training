@@ -137,34 +137,37 @@ However, we also see an example of a purple disturbance with an odd spatial patt
 
 <img align="center" src="../images/time-series-1/seg-params.PNG" hspace="15" vspace="10" width="600">
 
-2. In the Asset Overlay section, put the path to your AOI in the first blank. Then check the box at the end to use it for the AOI in your analysis. Click the ‘Add Asset to Map’ button.
+Step 2. In the Asset Overlay section, put the path to your AOI in the first blank. Then check the box at the end to use it for the AOI in your analysis. Click the ‘Add Asset to Map’ button.
 
 <img align="center" src="../images/time-series-1/use-aoi-preprocess.PNG" hspace="15" vspace="10" width="600">
 
-3. The RGB Change Options section will be used later to calculate changes over time. The value for Red should be your first year of your time period of interest, Blue your last year, and Green somewhere in between. Click the Add RGB imagery button to see the results. This may take a while to load or may fail to visualize if you have a very large study area.
+Step 3. The RGB Change Options section will be used later to calculate changes over time. The value for Red should be your first year of your time period of interest, Blue your last year, and Green somewhere in between. Click the Add RGB imagery button to see the results. This may take a while to load or may fail to visualize if you have a very large study area.
 
 <img align="center" src="../images/time-series-1/rgb-change-opts.PNG" hspace="15" vspace="10" width="600">
 
-4. The Pixel Time Series options sections of the tool are optional. It is a quick way to visualize changes and the effects of your chosen parameters, but is not needed for the change analysis.
+Step 4. The Pixel Time Series options sections of the tool are optional. It is a quick way to visualize changes and the effects of your chosen parameters, but is not needed for the change analysis.
 
-5. The Change Filter Options and Download Options sections you will run twice, once to map forest loss and then forest gain. Set the parameters like the screenshot below. 
-    * Make sure “Loss” and “Greatest” are selected. Have the “Filter by Year'' checked and adjust the time period if needed to include the full time you analyzed. All other options should remain not checked. You will complete this post processing in the next script. Adjust the years to your time period of interest, not the longer time period used to train the model.
+Step 5. The Change Filter Options and Download Options sections you will run twice, once to map forest loss and then forest gain. Set the parameters like the screenshot below. 
+* Make sure “Loss” and “Greatest” are selected. You can experiment with other Change Types and Change Sort options later on. 
+* Have the “Filter by Year'' checked and adjust the time period if needed to include the full time you analyzed. 
+* All other options should remain not checked. You will complete this post processing in the next script. 
+* Adjust the years to your time period of interest, not the longer time period used to train the model.
 
 <img align="center" src="../images/time-series-1/change-filter-opts.PNG" hspace="15" vspace="10" width="600">
 
-6. Set the ESPG to 4326 for WGS 84 and set your output file name. 
+Step 6. In "Download Options", set the ESPG to 4326 for WGS 84 and set your output file name. 
 
-7. Download the automatically selected files. The others are optional.
+Step 7. Leave the checked boxes as default in the "Download Selection" subsection and click the Download button. (The other downloads are optional)
 
 <img align="center" src="../images/time-series-1/download-opts.PNG" hspace="15" vspace="10" width="600">
 
-8. Download all the resulting files from the Tasks tab to your GEE assets to be used in the next script. There will be 6 files to download, those ending with: RGB-year-year-year, DSNR, MAG, DUR, PREVAL, YOD.
+Step 8. Download all the resulting files from the Tasks tab to your GEE assets to be used in the next script. There will be 6 files to download, those ending with: RGB-year-year-year, DSNR, MAG, DUR, PREVAL, YOD.
 
-9. Repeat steps 5, 6, and 7 with the minor changes explained below.
-    * This time use “Gain” instead of “Loss” and change “Greatest” to “Newest”. 
-    * Uncheck the Filter by Year option.
-    * Name the exports so you can tell they are the “Gain” version. 
-    * The RGB-year-year-year and DSNR files are the same as before so for your gain run you only need to download the files ending with: MAG, DUR, PREVAL, YOD.
+Step 9. Repeat steps 5 thru 8 with the minor changes explained below.
+* This time use “Gain” instead of “Loss” and change “Greatest” to “Newest”. 
+* Uncheck the Filter by Year option.
+* Name the exports differently so you can tell they are the “Gain” version. 
+* The RGB-year-year-year and DSNR files are the same as before so for your gain run you only need to download the files ending with: MAG, DUR, PREVAL, YOD.
 
 
 
