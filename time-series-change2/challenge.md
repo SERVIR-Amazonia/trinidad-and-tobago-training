@@ -1,3 +1,10 @@
+---
+layout: page
+title: Challenge - Time Series Modeling with HYDRAFloods 
+parent: Time Series Change Detection 2
+nav_order: 5
+---
+
 # Overview
 
 <img align="center" src="../images/time-series-2/colab-logo.PNG" hspace="12" vspace="8" width="500">
