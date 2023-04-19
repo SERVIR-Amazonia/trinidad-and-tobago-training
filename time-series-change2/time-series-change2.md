@@ -21,6 +21,6 @@ Navigate through the different lesson sections by using the menu on the lefthand
 | 10:00 – 10:15 |                                              Coffee break                                                              |
 | 10:15 – 10:30 |                                       Introduction to Google Colab                                                    |
 | 10:30 - 11:00 |                               Introduction to the GEE Python API
-| 11:00 - 12:00 |                               HYDRAFloods Overview Presentation<br>HYDRAFloods Colab Notebook
+| 11:00 - 12:00 |                               HYDRAFloods Overview Presentation<br>HYDRAFloods Water Extraction
 | 12:00 – 13:00 |                                                Lunch                                                                   |
-| 13:00 –15:00  |                  HYDRAFloods Colab Notebook cont.<br>Challenge - Explore the HYDRAFloods python package and modify your workflow                                      |
+| 13:00 –15:00  |                  HYDRAFloods Water Extraction cont.<br>Challenge - HYDRAFloods Time Series Modeling                                  |
