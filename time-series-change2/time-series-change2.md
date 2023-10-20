@@ -15,6 +15,8 @@ Navigate through the different lesson sections by using the menu on the lefthand
 **Date**: April 20, 2023  
 **Instructor:** Kyle Woodward
 
+**Contact information**: [em-trainings@sig-gis.com](em-trainings@sig-gis.com)
+
 |      Time     |                                                                                                       Topics                                                                                                                                     |
 |:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | 09:00 – 10:00 |                                  Discuss Capstone Presentation<br>                                  |

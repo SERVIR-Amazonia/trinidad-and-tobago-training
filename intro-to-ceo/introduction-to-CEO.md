@@ -14,6 +14,8 @@ Navigate through the different lesson sections by using the menu on the lefthand
 **Date**: March 9, 2023  
 **Instructor:** Crystal Wespestad
 
+**Contact information**: [em-trainings@sig-gis.com](em-trainings@sig-gis.com)
+
 |      Time     | Topics                                                                                                                                                                                                                                         |
 |:-------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 09:00 – 09:45 | Welcome and set-up check<br> - What is CEO and how is it used? e.g. Map validation<br> - Making a CEO account<br> - Making and joining a CEO institution                                                                                                |

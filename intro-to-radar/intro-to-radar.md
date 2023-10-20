@@ -13,6 +13,8 @@ Navigate through the different lesson sections by using the menu on the lefthand
 **Date**: January 26, 2023  
 **Instructor:** José Ochoa Brito
 
+**Contact information**: [em-trainings@sig-gis.com](em-trainings@sig-gis.com)
+
 <table>
   <tbody>
     <tr>
